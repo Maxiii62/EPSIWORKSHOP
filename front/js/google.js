@@ -1,6 +1,7 @@
 var map;
 var infowindow;
 var geoPosition = {lat: 50.283333, lng: 2.783333};
+var destinationObjectif;
 var directionsDisplay;
 var directionsService;
 
@@ -39,12 +40,22 @@ function initMap() {
   directionsDisplay.setMap(map);
   directionsDisplay.setPanel(document.getElementById('right-panel'));
 
+  document.getElementById('mode').addEventListener('change', function() {
+    if(destinationObjectif){
+      calculateAndDisplayRoute(destinationObjectif);
+    }
+  });
+
+  var control = document.getElementById('floating-panel');
+  control.style.display = 'block';
+  map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
+
   infowindow = new google.maps.InfoWindow();
 
   var service = new google.maps.places.PlacesService(map);
   service.nearbySearch({
     location: geoPosition,
-    radius: 1500,
+    radius: 15000,
     types: ['restaurant']
   }, callback);
 }
@@ -66,8 +77,9 @@ function createMarker(place) {
 
 
   google.maps.event.addListener(marker, 'click', function() {
-    infowindow.setContent(place.name +"\n Adresse :" + place.vicinity);
+    infowindow.setContent(place.name);
     infowindow.open(map, this);
+    destinationObjectif = place;
     calculateAndDisplayRoute(place);
   });
 }
@@ -81,7 +93,7 @@ function calculateAndDisplayRoute(place) {
   directionsService.route({
     origin: geoPosition,
     destination: place.geometry.location,
-    travelMode: google.maps.TravelMode.DRIVING,
+    travelMode: document.getElementById('mode').value,
     unitSystem: google.maps.UnitSystem.METRIC
   }, function(response, status) {
     if (status === google.maps.DirectionsStatus.OK) {
