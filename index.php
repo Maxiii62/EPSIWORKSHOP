@@ -82,18 +82,22 @@ font-size: 12px;
 var map;
 var infowindow;
 var arras = {lat: 50.2819029, lng: 2.7738087};
+var directionsDisplay;
+var directionsService;
+
 
 function initMap() {
 
-  var directionsDisplay = new google.maps.DirectionsRenderer;
+  directionsService = new google.maps.DirectionsService;
+  directionsDisplay = new google.maps.DirectionsRenderer;
 
   map = new google.maps.Map(document.getElementById('map'), {
     center: arras,
     zoom: 15
   });
 
-  // directionsDisplay.setMap(map);
-  // directionsDisplay.setPanel(document.getElementById('right-panel'));
+  directionsDisplay.setMap(map);
+  directionsDisplay.setPanel(document.getElementById('right-panel'));
 
   infowindow = new google.maps.InfoWindow();
 
@@ -122,17 +126,13 @@ function createMarker(place) {
 
 
   google.maps.event.addListener(marker, 'click', function() {
-    infowindow.setContent(place.name);
+    infowindow.setContent(place.name +"\n Adresse :" + place.vicinity);
     infowindow.open(map, this);
     calculateAndDisplayRoute(place);
   });
 }
 
 function calculateAndDisplayRoute(place) {
-
-  var directionsService = new google.maps.DirectionsService;
-  var directionsDisplay = new google.maps.DirectionsRenderer;
-
   // directionsDisplay.setMap(null);
   directionsDisplay.setMap(map);
 //  document.getElementById('right-panel').empty();
@@ -145,6 +145,7 @@ function calculateAndDisplayRoute(place) {
     unitSystem: google.maps.UnitSystem.METRIC
   }, function(response, status) {
     if (status === google.maps.DirectionsStatus.OK) {
+      directionsDisplay.setDirections();
       directionsDisplay.setDirections(response);
     } else {
       window.alert('Directions request failed due to ' + status);
