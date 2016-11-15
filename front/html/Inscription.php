@@ -7,43 +7,45 @@ include '../../fragments/header.php';
         <meta charset="UTF-8">
         <link href="../../materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
         <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-        
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		
         <title>Inscription</title>
 		
 	</head>
     <body>
        
             <div id="login-page" class="row">
+			 <div class="transparence">
 			 <div id="Register_Container" class="row card horizontal">
-            <h3 class="center">Inscription</h3>
+			
                 <form class="col s12">
 				
                     <div class="row">
                         <div class="input-field col s6">
                             <input id="first_name" type="text" class="validate">
-                            <label for="first_name">Prénom</label>
+                            <label for="first_name"><i class="tiny material-icons">mode_edit</i>Prénom</label>
                         </div>
                         <div class="input-field col s6">
                             <input id="last_name" type="text" class="validate">
-                            <label for="last_name">Nom</label>
+                            <label for="last_name"<i class="tiny material-icons">mode_edit</i>Nom</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
                             <input id="password" type="password" class="validate">
-                            <label for="password">Mot de passe</label>
+                            <label for="password"><i class="tiny material-icons">lock</i>Mot de passe</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
                             <input id="email" type="email" class="validate">
-                            <label for="email">Email</label>
+                            <label for="email"><i class="tiny material-icons">email</i>Email</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
                             <input id="telephone" type="email" class="validate">
-                            <label for="telephone">Telephone</label>
+                            <label for="telephone"><i class="tiny material-icons">phone</i>Telephone</label>
                         </div>
                     </div>
                     <div class="row">
@@ -51,30 +53,19 @@ include '../../fragments/header.php';
                             <input id="datepicker_register" type="date" class="validate" placeholder="Date de naissace">
                         </div>
                     </div>
-                    <span id="sauvegarder">
-                    <button class="btn waves-effect waves-light" type="button" id="sauvegarder" name="action">Sauvegarder
+                    <span>
+                    <button class="btn waves-effect waves-light" type="button" id="valider" name="action">Valider
                     </button>
                     </span>
-                    <button class="btn waves-effect waves-light" type="button" id="annuler" name="action">Annuler
+                   <button class="btn waves-effect waves-light" type="button reset" value="Reset!" id="reset" name="action">Effacer
                     </button>
+					 </span>
+                     <a href="/epsiworkshop/front/html/Login.php"><button class="btn waves-effect waves-light" type="button" id="back" name="action">Retour</button></a>
+					<br>
+					<p> </p>
+					
                 </form>
-				  <div class="row">
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s6">
-          <i class="material-icons prefix">account_circle</i>
-          <input id="icon_prefix" type="text" class="validate">
-          <label for="icon_prefix">First Name</label>
-        </div>
-        <div class="input-field col s6">
-          <i class="material-icons prefix">phone</i>
-          <input id="icon_telephone" type="tel" class="validate">
-          <label for="icon_telephone">Telephone</label>
-        </div>
-      </div>
-    </form>
-  </div>
-        
+				</div>
             </div>
         </div>
         <script type="text/javascript" src="../js/jquery/jquery-1.11.0.min.js"></script>

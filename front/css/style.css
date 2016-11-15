@@ -32,7 +32,13 @@ body:before{
     -o-background-size: cover; /* pour Opera */
     background-size: cover; /* version standardisée */
 }
-
+.transparence{
+    opacity : 0.9!important;
+    -moz-opacity : 0.1!important;
+    -ms-filter: "alpha(opacity=10)"!important; /* IE 8 */
+    filter : alpha(opacity=10)!important; /* IE < 8 */
+  }
+}
 body {
 position: absolute;
         top: 0; bottom: 0; left: 0; right: 0;
