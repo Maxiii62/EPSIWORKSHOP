@@ -145,6 +145,7 @@ function displayInfos(place){
 function displayComplementairesInfos(place){
 
   $("#telephoneMagasin").text(place.international_phone_number);
+  $("#siteWebMagasin").text();
   $("#siteWebMagasin").text(place.website);
   $("#siteWebMagasin").attr("href",place.website);
 
