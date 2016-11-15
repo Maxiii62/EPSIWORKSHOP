@@ -19,6 +19,12 @@ function initMap() {
 
   var infoWindow = new google.maps.InfoWindow({map: map});
 
+  map.controls[google.maps.ControlPosition.TOP_LEFT].push(document.getElementById('pac-input'));
+  map.controls[google.maps.ControlPosition.TOP_RIGHT].push(document.getElementById('type-selector'));
+
+  var autocomplete = new google.maps.places.Autocomplete(document.getElementById('pac-input'));
+  autocomplete.bindTo('bounds', map);
+
   // Try HTML5 geolocation.
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
@@ -41,20 +47,29 @@ function initMap() {
   directionsDisplay.setMap(map);
   directionsDisplay.setPanel(document.getElementById('right-panel'));
 
-  document.getElementById('mode').addEventListener('change', function() {
+  $("input[name=mode]").on('click',function(){
     if(destinationObjectif){
-      displayInfos(destinationObjectif);
-      calculateAndDisplayRoute(destinationObjectif);
+     displayInfos(destinationObjectif);
+     calculateAndDisplayRoute(destinationObjectif);
+   }
+  });
+
+  autocomplete.addListener('place_changed', function() {
+    // infowindow.close();
+    // marker.setVisible(false);
+    var place = autocomplete.getPlace();
+    if (!place.geometry) {
+      window.alert("Autocomplete's returned place contains no geometry");
+      return;
     }
+
+    calculateAndDisplayRoute(place);
+    displayInfos(place);
   });
 
   map.addListener('dblclick', function(place) {
    placeMarkerAndPanTo(place, map);
   });
-
-  var control = document.getElementById('floating-panel');
-  control.style.display = 'block';
-  map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
 
   infowindow = new google.maps.InfoWindow();
 
@@ -133,7 +148,7 @@ function displayComplementairesInfos(place){
   $("#siteWebMagasin").text(place.website);
   $("#siteWebMagasin").attr("href",place.website);
 
-  $("#noteMagasin").text();
+  $("#noteMagasin").empty();
   for(var i = 0; i < place.rating; i++){
     $("#noteMagasin").append("<i class='material-icons dp48'>star</i>");
   }
@@ -149,7 +164,7 @@ function calculateAndDisplayRoute(place) {
   directionsService.route({
     origin: geoPosition,
     destination: place.geometry.location,
-    travelMode: document.getElementById('mode').value,
+    travelMode: $( "input[name=mode]:checked" ).val(),
     waypoints: waypts,
     unitSystem: google.maps.UnitSystem.METRIC
   }, function(response, status) {
