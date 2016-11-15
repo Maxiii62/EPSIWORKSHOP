@@ -41,39 +41,29 @@ include '../../fragments/header.php';
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
+                            <input id="telephone" type="email" class="validate">
+                            <label for="telephone">Telephone</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
                             <input id="datepicker_register" type="date" class="validate" placeholder="Date de naissace">
                         </div>
                     </div>
-                    <div id="sauvegarder">
+                    <span id="sauvegarder">
                     <button class="btn waves-effect waves-light" type="button" id="sauvegarder" name="action">Sauvegarder
-                    </button></div>
+                    </button>
+                    </span>
                     <button class="btn waves-effect waves-light" type="button" id="annuler" name="action">Annuler
                     </button>
                 </form>
             </div>
         </div>
         <script type="text/javascript" src="../js/jquery/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript">
-        $('#sauvegarder').click(function() {
-            $.ajax({
-                url: "http://localhost/EPSIWORKSHOP/controller/controller.php?",
-                type: 'POST',
-                async: false,
-                data: {'ws' : 'utilisateur', 'action' : 'addUser','prenom': $('#first_name').val(), 'nom': $('#last_name').val(), 'password': $('#password').val(), 'email': $('#email').val(), 'datepicker_register': $('#datepicker_register').val()},
-                success: function (response) {
-                    alert(response);
-                },
-                error: function (msg) {
-                    console.log(msg.responseType);
-                    console.log('Problème rencontré dans le réseau.');
-                }
-            });
-        });
-
-    </script>
+        <script src="../js/main.js" />
     </body>
 </html>
-    <?php
-    include '../../fragments/footer.php';
+<?php
+include '../../fragments/footer.php';
 
-    ?>
+?>

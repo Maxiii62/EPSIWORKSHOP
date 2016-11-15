@@ -17,6 +17,7 @@
         <li><a href="">Carte</a></li>
         <li><a href="">Historique</a></li>
         <li><a href="">Mon profil</a></li>
+          <li><a href="../html/Login.php">Connexion</a></li>
       </ul>
     </div>
   </nav>    

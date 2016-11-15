@@ -37,7 +37,7 @@ class WS_Utilisateur implements IWebServiciable{
                 $sql = "SELECT * FROM Utilisateur ORDER BY nombrePoints";
                 return returnOneArray($sql);
             case VERIF_USER :
-                $sql = "SELECT * FROM UTILISATEUR WHERE mail = " . $_POST['mail']. " AND password = " .$_POST['password'];
+                $sql = "SELECT * FROM UTILISATEUR WHERE mail = " . $_POST['email']. " AND password = " .$_POST['password'];
                 return returnOneLine($sql);
             default:
                 Helper::ThrowAccessDenied();
