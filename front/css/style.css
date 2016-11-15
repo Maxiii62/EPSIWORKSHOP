@@ -9,7 +9,6 @@ and open the template in the editor.
 */
 
 #login-page{
-    margin-top: 10%;
     margin-left:  20%;
     margin-right: 20%;
 
@@ -17,4 +16,10 @@ and open the template in the editor.
 
 .cadre{
     border: 1px solid black;
+}
+
+.fixe{
+    margin-top: 100%;
+    width: 100%;
+    position: fixed;
 }

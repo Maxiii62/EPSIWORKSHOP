@@ -1,15 +1,9 @@
-<!DOCTYPE html>
+
 <?php
+$title = "EATinéraire";
 include '../../fragments/header.php';
 ?>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <link href="../../materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-        <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-        <title>EATinèraire</title>
-    </head>
-    <body>
+
         <div id="login-page" class="row">
             <div class="col s12 z-depth-4 card-panel">
                 <form class="login-form">

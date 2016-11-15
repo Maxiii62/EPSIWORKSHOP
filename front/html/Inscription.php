@@ -6,12 +6,13 @@ include '../../fragments/header.php';
         <meta charset="UTF-8">
         <link href="../../materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
         <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-
+        
         <title>Inscription</title>
 
     </head>
     <body>
         <div id="login-page" class="row card horizontal">
+            </br>
             <h3 class="center">Inscription</h3>
             <div class="row">
                 <form class="col s12">
