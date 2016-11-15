@@ -21,42 +21,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="WS_UTILISATEUR.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ws/WS_UTILISATEUR.php">
+      <file leaf-file-name="WS_Utilisateur.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ws/WS_Utilisateur.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7433832">
-              <caret line="38" column="122" selection-start-line="38" selection-start-column="122" selection-end-line="38" selection-end-column="122" />
+            <state vertical-scroll-proportion="0.72612196">
+              <caret line="38" column="29" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
               <folding>
-                <marker date="1479234683772" expanded="true" signature="501:568" placeholder="INSERT INTO ..." />
-                <marker date="1479234683772" expanded="true" signature="501:615" placeholder="INSERT INTO ..." />
-                <marker date="1479234683772" expanded="true" signature="501:702" placeholder="INSERT INTO ..." />
-                <marker date="1479234683772" expanded="true" signature="501:750" placeholder="INSERT INTO ..." />
-                <marker date="1479234683772" expanded="true" signature="501:751" placeholder="INSERT INTO ..." />
-                <marker date="1479234683772" expanded="true" signature="501:752" placeholder="INSERT INTO ..." />
-                <marker date="1479234683772" expanded="true" signature="501:786" placeholder="INSERT INTO ..." />
-                <marker date="1479234683772" expanded="true" signature="896:924" placeholder="UPDATE UTILI..." />
-                <marker date="1479234683772" expanded="true" signature="896:925" placeholder="UPDATE UTILI..." />
-                <marker date="1479234683772" expanded="true" signature="896:954" placeholder="UPDATE UTILI..." />
-                <marker date="1479234683772" expanded="true" signature="896:955" placeholder="UPDATE UTILI..." />
-                <marker date="1479234683772" expanded="true" signature="896:956" placeholder="UPDATE UTILI..." />
-                <marker date="1479234683772" expanded="true" signature="896:991" placeholder="UPDATE UTILI..." />
-                <marker date="1479234683772" expanded="true" signature="896:992" placeholder="UPDATE UTILI..." />
-                <marker date="1479234683772" expanded="true" signature="896:1021" placeholder="UPDATE UTILI..." />
-                <marker date="1479234683772" expanded="true" signature="896:1029" placeholder="UPDATE UTILI..." />
-                <marker date="1479234683772" expanded="true" signature="896:1030" placeholder="UPDATE UTILI..." />
-                <marker date="1479234683772" expanded="true" signature="896:1031" placeholder="UPDATE UTILI..." />
-                <marker date="1479234683772" expanded="true" signature="896:1069" placeholder="UPDATE UTILI..." />
-                <marker date="1479234683772" expanded="true" signature="896:1070" placeholder="UPDATE UTILI..." />
-                <marker date="1479234683772" expanded="true" signature="896:1071" placeholder="UPDATE UTILI..." />
-                <marker date="1479234683772" expanded="true" signature="896:1098" placeholder="UPDATE UTILI..." />
-                <marker date="1479234683772" expanded="true" signature="896:1114" placeholder="UPDATE UTILI..." />
-                <marker date="1479234683772" expanded="true" signature="1240:1277" placeholder="SELECT * FRO..UTILISATEUR..." />
-                <marker date="1479234683772" expanded="true" signature="1408:1455" placeholder="SELECT * FRO..Utilisateur..." />
-                <marker date="1479234683772" expanded="true" signature="1557:1596" placeholder="SELECT * FRO..UTILISATEUR..." />
-                <marker date="1479234683772" expanded="true" signature="1557:1615" placeholder="SELECT * FRO..UTILISATEUR..." />
-                <marker date="1479234683772" expanded="true" signature="1557:1621" placeholder="SELECT * FRO..UTILISATEUR..." />
-                <marker date="1479234683772" expanded="true" signature="1557:1622" placeholder="SELECT * FRO..UTILISATEUR..." />
-                <marker date="1479234683772" expanded="true" signature="1557:1633" placeholder="SELECT * FRO..UTILISATEUR..." />
+                <marker date="1479237692886" expanded="true" signature="501:513" placeholder="INSERT INTO ..." />
+                <marker date="1479237692886" expanded="true" signature="501:615" placeholder="INSERT INTO ..." />
+                <marker date="1479237692886" expanded="true" signature="501:628" placeholder="INSERT INTO ..." />
+                <marker date="1479237692886" expanded="true" signature="501:673" placeholder="INSERT INTO ..." />
+                <marker date="1479237692886" expanded="true" signature="501:688" placeholder="INSERT INTO ..." />
+                <marker date="1479237692886" expanded="true" signature="501:739" placeholder="INSERT INTO ..." />
+                <marker date="1479237692886" expanded="true" signature="501:741" placeholder="INSERT INTO ..." />
+                <marker date="1479237692886" expanded="true" signature="501:742" placeholder="INSERT INTO ..." />
+                <marker date="1479237692886" expanded="true" signature="501:778" placeholder="INSERT INTO ..." />
+                <marker date="1479237692886" expanded="true" signature="909:937" placeholder="UPDATE UTILI..." />
+                <marker date="1479237692886" expanded="true" signature="909:938" placeholder="UPDATE UTILI..." />
+                <marker date="1479237692886" expanded="true" signature="909:967" placeholder="UPDATE UTILI..." />
+                <marker date="1479237692886" expanded="true" signature="909:968" placeholder="UPDATE UTILI..." />
+                <marker date="1479237692886" expanded="true" signature="909:969" placeholder="UPDATE UTILI..." />
+                <marker date="1479237692886" expanded="true" signature="909:1004" placeholder="UPDATE UTILI..." />
+                <marker date="1479237692886" expanded="true" signature="909:1005" placeholder="UPDATE UTILI..." />
+                <marker date="1479237692886" expanded="true" signature="909:1034" placeholder="UPDATE UTILI..." />
+                <marker date="1479237692886" expanded="true" signature="909:1042" placeholder="UPDATE UTILI..." />
+                <marker date="1479237692886" expanded="true" signature="909:1043" placeholder="UPDATE UTILI..." />
+                <marker date="1479237692886" expanded="true" signature="909:1044" placeholder="UPDATE UTILI..." />
+                <marker date="1479237692886" expanded="true" signature="909:1082" placeholder="UPDATE UTILI..." />
+                <marker date="1479237692886" expanded="true" signature="909:1083" placeholder="UPDATE UTILI..." />
+                <marker date="1479237692886" expanded="true" signature="909:1084" placeholder="UPDATE UTILI..." />
+                <marker date="1479237692886" expanded="true" signature="909:1111" placeholder="UPDATE UTILI..." />
+                <marker date="1479237692886" expanded="true" signature="909:1127" placeholder="UPDATE UTILI..." />
+                <marker date="1479237692886" expanded="true" signature="1253:1290" placeholder="SELECT * FRO..UTILISATEUR..." />
+                <marker date="1479237692886" expanded="true" signature="1421:1468" placeholder="SELECT * FRO..Utilisateur..." />
+                <marker date="1479237692886" expanded="true" signature="1570:1609" placeholder="SELECT * FRO..UTILISATEUR..." />
+                <marker date="1479237692886" expanded="true" signature="1570:1628" placeholder="SELECT * FRO..UTILISATEUR..." />
+                <marker date="1479237692886" expanded="true" signature="1570:1634" placeholder="SELECT * FRO..UTILISATEUR..." />
+                <marker date="1479237692886" expanded="true" signature="1570:1635" placeholder="SELECT * FRO..UTILISATEUR..." />
+                <marker date="1479237692886" expanded="true" signature="1570:1646" placeholder="SELECT * FRO..UTILISATEUR..." />
               </folding>
             </state>
           </provider>
@@ -65,8 +67,8 @@
       <file leaf-file-name="Inscription.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/front/html/Inscription.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-19.692308">
-              <caret line="63" column="36" selection-start-line="63" selection-start-column="36" selection-end-line="63" selection-end-column="36" />
+            <state vertical-scroll-proportion="-18.384615">
+              <caret line="55" column="20" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -96,7 +98,7 @@
         <entry file="file://$PROJECT_DIR$/front/js/google.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -153,11 +155,11 @@
         <option value="$PROJECT_DIR$/front/js/main.js" />
         <option value="$PROJECT_DIR$/ws/require.php" />
         <option value="$PROJECT_DIR$/ws/UtilisateurWS.php" />
-        <option value="$PROJECT_DIR$/ws/WS_Utilisateur.php" />
-        <option value="$PROJECT_DIR$/ws/WS_UTILISATEUR.php" />
         <option value="$PROJECT_DIR$/controller/controller.php" />
+        <option value="$PROJECT_DIR$/ws/WS_UTILISATEUR.php" />
         <option value="$PROJECT_DIR$/ws/bdd.ini.php" />
         <option value="$PROJECT_DIR$/front/html/Inscription.php" />
+        <option value="$PROJECT_DIR$/ws/WS_Utilisateur.php" />
       </list>
     </option>
   </component>
@@ -232,46 +234,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="ws" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EPSIWORKSHOP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EPSIWORKSHOP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EPSIWORKSHOP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="EPSIWORKSHOP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jquery" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -364,7 +326,7 @@
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.122994654" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14705883" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -423,41 +385,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ws/WS_UTILISATEUR.php">
+    <entry file="file://$PROJECT_DIR$/ws/WS_Utilisateur.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1479234683772" expanded="true" signature="501:568" placeholder="INSERT INTO ..." />
-            <marker date="1479234683772" expanded="true" signature="501:615" placeholder="INSERT INTO ..." />
-            <marker date="1479234683772" expanded="true" signature="501:702" placeholder="INSERT INTO ..." />
-            <marker date="1479234683772" expanded="true" signature="501:750" placeholder="INSERT INTO ..." />
-            <marker date="1479234683772" expanded="true" signature="501:751" placeholder="INSERT INTO ..." />
-            <marker date="1479234683772" expanded="true" signature="501:752" placeholder="INSERT INTO ..." />
-            <marker date="1479234683772" expanded="true" signature="501:786" placeholder="INSERT INTO ..." />
-            <marker date="1479234683772" expanded="true" signature="896:924" placeholder="UPDATE UTILI..." />
-            <marker date="1479234683772" expanded="true" signature="896:925" placeholder="UPDATE UTILI..." />
-            <marker date="1479234683772" expanded="true" signature="896:954" placeholder="UPDATE UTILI..." />
-            <marker date="1479234683772" expanded="true" signature="896:955" placeholder="UPDATE UTILI..." />
-            <marker date="1479234683772" expanded="true" signature="896:956" placeholder="UPDATE UTILI..." />
-            <marker date="1479234683772" expanded="true" signature="896:991" placeholder="UPDATE UTILI..." />
-            <marker date="1479234683772" expanded="true" signature="896:992" placeholder="UPDATE UTILI..." />
-            <marker date="1479234683772" expanded="true" signature="896:1021" placeholder="UPDATE UTILI..." />
-            <marker date="1479234683772" expanded="true" signature="896:1029" placeholder="UPDATE UTILI..." />
-            <marker date="1479234683772" expanded="true" signature="896:1030" placeholder="UPDATE UTILI..." />
-            <marker date="1479234683772" expanded="true" signature="896:1031" placeholder="UPDATE UTILI..." />
-            <marker date="1479234683772" expanded="true" signature="896:1069" placeholder="UPDATE UTILI..." />
-            <marker date="1479234683772" expanded="true" signature="896:1070" placeholder="UPDATE UTILI..." />
-            <marker date="1479234683772" expanded="true" signature="896:1071" placeholder="UPDATE UTILI..." />
-            <marker date="1479234683772" expanded="true" signature="896:1098" placeholder="UPDATE UTILI..." />
-            <marker date="1479234683772" expanded="true" signature="896:1114" placeholder="UPDATE UTILI..." />
-            <marker date="1479234683772" expanded="true" signature="1240:1277" placeholder="SELECT * FRO..UTILISATEUR..." />
-            <marker date="1479234683772" expanded="true" signature="1408:1455" placeholder="SELECT * FRO..Utilisateur..." />
-            <marker date="1479234683772" expanded="true" signature="1557:1596" placeholder="SELECT * FRO..UTILISATEUR..." />
-            <marker date="1479234683772" expanded="true" signature="1557:1615" placeholder="SELECT * FRO..UTILISATEUR..." />
-            <marker date="1479234683772" expanded="true" signature="1557:1621" placeholder="SELECT * FRO..UTILISATEUR..." />
-            <marker date="1479234683772" expanded="true" signature="1557:1622" placeholder="SELECT * FRO..UTILISATEUR..." />
-            <marker date="1479234683772" expanded="true" signature="1557:1633" placeholder="SELECT * FRO..UTILISATEUR..." />
+            <marker date="1479237692886" expanded="true" signature="501:513" placeholder="INSERT INTO ..." />
+            <marker date="1479237692886" expanded="true" signature="501:615" placeholder="INSERT INTO ..." />
+            <marker date="1479237692886" expanded="true" signature="501:628" placeholder="INSERT INTO ..." />
+            <marker date="1479237692886" expanded="true" signature="501:673" placeholder="INSERT INTO ..." />
+            <marker date="1479237692886" expanded="true" signature="501:688" placeholder="INSERT INTO ..." />
+            <marker date="1479237692886" expanded="true" signature="501:739" placeholder="INSERT INTO ..." />
+            <marker date="1479237692886" expanded="true" signature="501:741" placeholder="INSERT INTO ..." />
+            <marker date="1479237692886" expanded="true" signature="501:742" placeholder="INSERT INTO ..." />
+            <marker date="1479237692886" expanded="true" signature="501:778" placeholder="INSERT INTO ..." />
+            <marker date="1479237692886" expanded="true" signature="909:937" placeholder="UPDATE UTILI..." />
+            <marker date="1479237692886" expanded="true" signature="909:938" placeholder="UPDATE UTILI..." />
+            <marker date="1479237692886" expanded="true" signature="909:967" placeholder="UPDATE UTILI..." />
+            <marker date="1479237692886" expanded="true" signature="909:968" placeholder="UPDATE UTILI..." />
+            <marker date="1479237692886" expanded="true" signature="909:969" placeholder="UPDATE UTILI..." />
+            <marker date="1479237692886" expanded="true" signature="909:1004" placeholder="UPDATE UTILI..." />
+            <marker date="1479237692886" expanded="true" signature="909:1005" placeholder="UPDATE UTILI..." />
+            <marker date="1479237692886" expanded="true" signature="909:1034" placeholder="UPDATE UTILI..." />
+            <marker date="1479237692886" expanded="true" signature="909:1042" placeholder="UPDATE UTILI..." />
+            <marker date="1479237692886" expanded="true" signature="909:1043" placeholder="UPDATE UTILI..." />
+            <marker date="1479237692886" expanded="true" signature="909:1044" placeholder="UPDATE UTILI..." />
+            <marker date="1479237692886" expanded="true" signature="909:1082" placeholder="UPDATE UTILI..." />
+            <marker date="1479237692886" expanded="true" signature="909:1083" placeholder="UPDATE UTILI..." />
+            <marker date="1479237692886" expanded="true" signature="909:1084" placeholder="UPDATE UTILI..." />
+            <marker date="1479237692886" expanded="true" signature="909:1111" placeholder="UPDATE UTILI..." />
+            <marker date="1479237692886" expanded="true" signature="909:1127" placeholder="UPDATE UTILI..." />
+            <marker date="1479237692886" expanded="true" signature="1253:1290" placeholder="SELECT * FRO..UTILISATEUR..." />
+            <marker date="1479237692886" expanded="true" signature="1421:1468" placeholder="SELECT * FRO..Utilisateur..." />
+            <marker date="1479237692886" expanded="true" signature="1570:1609" placeholder="SELECT * FRO..UTILISATEUR..." />
+            <marker date="1479237692886" expanded="true" signature="1570:1628" placeholder="SELECT * FRO..UTILISATEUR..." />
+            <marker date="1479237692886" expanded="true" signature="1570:1634" placeholder="SELECT * FRO..UTILISATEUR..." />
+            <marker date="1479237692886" expanded="true" signature="1570:1635" placeholder="SELECT * FRO..UTILISATEUR..." />
+            <marker date="1479237692886" expanded="true" signature="1570:1646" placeholder="SELECT * FRO..UTILISATEUR..." />
           </folding>
         </state>
       </provider>
@@ -660,7 +624,7 @@
     <entry file="file://$PROJECT_DIR$/front/js/google.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -669,6 +633,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/js/jquery/jquery-1.11.0.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -689,14 +661,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.275862">
-          <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front/html/Appointement.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.783334">
@@ -705,57 +669,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/js/jquery/jquery-1.11.0.min.js">
+    <entry file="file://$PROJECT_DIR$/controller/controller.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="-5.275862">
+          <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/front/html/Inscription.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.692308">
-          <caret line="63" column="36" selection-start-line="63" selection-start-column="36" selection-end-line="63" selection-end-column="36" />
+        <state vertical-scroll-proportion="-18.384615">
+          <caret line="55" column="20" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ws/WS_UTILISATEUR.php">
+    <entry file="file://$PROJECT_DIR$/ws/WS_Utilisateur.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7433832">
-          <caret line="38" column="122" selection-start-line="38" selection-start-column="122" selection-end-line="38" selection-end-column="122" />
+        <state vertical-scroll-proportion="0.72612196">
+          <caret line="38" column="29" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
           <folding>
-            <marker date="1479234683772" expanded="true" signature="501:568" placeholder="INSERT INTO ..." />
-            <marker date="1479234683772" expanded="true" signature="501:615" placeholder="INSERT INTO ..." />
-            <marker date="1479234683772" expanded="true" signature="501:702" placeholder="INSERT INTO ..." />
-            <marker date="1479234683772" expanded="true" signature="501:750" placeholder="INSERT INTO ..." />
-            <marker date="1479234683772" expanded="true" signature="501:751" placeholder="INSERT INTO ..." />
-            <marker date="1479234683772" expanded="true" signature="501:752" placeholder="INSERT INTO ..." />
-            <marker date="1479234683772" expanded="true" signature="501:786" placeholder="INSERT INTO ..." />
-            <marker date="1479234683772" expanded="true" signature="896:924" placeholder="UPDATE UTILI..." />
-            <marker date="1479234683772" expanded="true" signature="896:925" placeholder="UPDATE UTILI..." />
-            <marker date="1479234683772" expanded="true" signature="896:954" placeholder="UPDATE UTILI..." />
-            <marker date="1479234683772" expanded="true" signature="896:955" placeholder="UPDATE UTILI..." />
-            <marker date="1479234683772" expanded="true" signature="896:956" placeholder="UPDATE UTILI..." />
-            <marker date="1479234683772" expanded="true" signature="896:991" placeholder="UPDATE UTILI..." />
-            <marker date="1479234683772" expanded="true" signature="896:992" placeholder="UPDATE UTILI..." />
-            <marker date="1479234683772" expanded="true" signature="896:1021" placeholder="UPDATE UTILI..." />
-            <marker date="1479234683772" expanded="true" signature="896:1029" placeholder="UPDATE UTILI..." />
-            <marker date="1479234683772" expanded="true" signature="896:1030" placeholder="UPDATE UTILI..." />
-            <marker date="1479234683772" expanded="true" signature="896:1031" placeholder="UPDATE UTILI..." />
-            <marker date="1479234683772" expanded="true" signature="896:1069" placeholder="UPDATE UTILI..." />
-            <marker date="1479234683772" expanded="true" signature="896:1070" placeholder="UPDATE UTILI..." />
-            <marker date="1479234683772" expanded="true" signature="896:1071" placeholder="UPDATE UTILI..." />
-            <marker date="1479234683772" expanded="true" signature="896:1098" placeholder="UPDATE UTILI..." />
-            <marker date="1479234683772" expanded="true" signature="896:1114" placeholder="UPDATE UTILI..." />
-            <marker date="1479234683772" expanded="true" signature="1240:1277" placeholder="SELECT * FRO..UTILISATEUR..." />
-            <marker date="1479234683772" expanded="true" signature="1408:1455" placeholder="SELECT * FRO..Utilisateur..." />
-            <marker date="1479234683772" expanded="true" signature="1557:1596" placeholder="SELECT * FRO..UTILISATEUR..." />
-            <marker date="1479234683772" expanded="true" signature="1557:1615" placeholder="SELECT * FRO..UTILISATEUR..." />
-            <marker date="1479234683772" expanded="true" signature="1557:1621" placeholder="SELECT * FRO..UTILISATEUR..." />
-            <marker date="1479234683772" expanded="true" signature="1557:1622" placeholder="SELECT * FRO..UTILISATEUR..." />
-            <marker date="1479234683772" expanded="true" signature="1557:1633" placeholder="SELECT * FRO..UTILISATEUR..." />
+            <marker date="1479237692886" expanded="true" signature="501:513" placeholder="INSERT INTO ..." />
+            <marker date="1479237692886" expanded="true" signature="501:615" placeholder="INSERT INTO ..." />
+            <marker date="1479237692886" expanded="true" signature="501:628" placeholder="INSERT INTO ..." />
+            <marker date="1479237692886" expanded="true" signature="501:673" placeholder="INSERT INTO ..." />
+            <marker date="1479237692886" expanded="true" signature="501:688" placeholder="INSERT INTO ..." />
+            <marker date="1479237692886" expanded="true" signature="501:739" placeholder="INSERT INTO ..." />
+            <marker date="1479237692886" expanded="true" signature="501:741" placeholder="INSERT INTO ..." />
+            <marker date="1479237692886" expanded="true" signature="501:742" placeholder="INSERT INTO ..." />
+            <marker date="1479237692886" expanded="true" signature="501:778" placeholder="INSERT INTO ..." />
+            <marker date="1479237692886" expanded="true" signature="909:937" placeholder="UPDATE UTILI..." />
+            <marker date="1479237692886" expanded="true" signature="909:938" placeholder="UPDATE UTILI..." />
+            <marker date="1479237692886" expanded="true" signature="909:967" placeholder="UPDATE UTILI..." />
+            <marker date="1479237692886" expanded="true" signature="909:968" placeholder="UPDATE UTILI..." />
+            <marker date="1479237692886" expanded="true" signature="909:969" placeholder="UPDATE UTILI..." />
+            <marker date="1479237692886" expanded="true" signature="909:1004" placeholder="UPDATE UTILI..." />
+            <marker date="1479237692886" expanded="true" signature="909:1005" placeholder="UPDATE UTILI..." />
+            <marker date="1479237692886" expanded="true" signature="909:1034" placeholder="UPDATE UTILI..." />
+            <marker date="1479237692886" expanded="true" signature="909:1042" placeholder="UPDATE UTILI..." />
+            <marker date="1479237692886" expanded="true" signature="909:1043" placeholder="UPDATE UTILI..." />
+            <marker date="1479237692886" expanded="true" signature="909:1044" placeholder="UPDATE UTILI..." />
+            <marker date="1479237692886" expanded="true" signature="909:1082" placeholder="UPDATE UTILI..." />
+            <marker date="1479237692886" expanded="true" signature="909:1083" placeholder="UPDATE UTILI..." />
+            <marker date="1479237692886" expanded="true" signature="909:1084" placeholder="UPDATE UTILI..." />
+            <marker date="1479237692886" expanded="true" signature="909:1111" placeholder="UPDATE UTILI..." />
+            <marker date="1479237692886" expanded="true" signature="909:1127" placeholder="UPDATE UTILI..." />
+            <marker date="1479237692886" expanded="true" signature="1253:1290" placeholder="SELECT * FRO..UTILISATEUR..." />
+            <marker date="1479237692886" expanded="true" signature="1421:1468" placeholder="SELECT * FRO..Utilisateur..." />
+            <marker date="1479237692886" expanded="true" signature="1570:1609" placeholder="SELECT * FRO..UTILISATEUR..." />
+            <marker date="1479237692886" expanded="true" signature="1570:1628" placeholder="SELECT * FRO..UTILISATEUR..." />
+            <marker date="1479237692886" expanded="true" signature="1570:1634" placeholder="SELECT * FRO..UTILISATEUR..." />
+            <marker date="1479237692886" expanded="true" signature="1570:1635" placeholder="SELECT * FRO..UTILISATEUR..." />
+            <marker date="1479237692886" expanded="true" signature="1570:1646" placeholder="SELECT * FRO..UTILISATEUR..." />
           </folding>
         </state>
       </provider>
