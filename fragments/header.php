@@ -8,7 +8,7 @@
     </head>
     <body>
   <nav>
-    <div class="nav-wrapper blue-grey">
+    <div class="nav-wrapper blue-grey navbar-fixed">
       <a href="#" class="brand-logo right blue-grey">EATinéraire</a>
       <ul id="nav-mobile" class="left hide-on-med-and-down blue-grey">
         <li><a href="">Carte</a></li>
