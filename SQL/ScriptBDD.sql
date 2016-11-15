@@ -2,6 +2,9 @@
 #        Script MySQL.
 #------------------------------------------------------------
 
+CREATE SCHEMA IF NOT EXISTS `workshopEATineraire` DEFAULT CHARACTER SET utf8 ;
+USE `workshopEATineraire` ;
+
 
 #------------------------------------------------------------
 # Table: Utilisateur
