@@ -1,6 +1,8 @@
 
 
-
+        <?php if($title != "EATinéraire"){
+            
+        ?>
 <footer class="page-footer fixe blue-grey">
     <div class="container">
         <div class="row">
@@ -19,6 +21,7 @@
             </div>
         </div>
     </div>
+        <?php } ?>
     <div class="footer-copyright">
         <div class="container">
             © 2016   Copyright Text EATMen 

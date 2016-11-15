@@ -1,4 +1,5 @@
 <?php
+$title = "Inscription";
 include '../../fragments/header.php';
 ?>
 <html>
@@ -11,7 +12,7 @@ include '../../fragments/header.php';
 
     </head>
     <body>
-        <div id="login-page" class="row card horizontal">
+        <div id="Register_Container" class="row card horizontal">
             </br>
             <h3 class="center">Inscription</h3>
             <div class="row">
