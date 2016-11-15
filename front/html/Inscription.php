@@ -44,14 +44,36 @@ include '../../fragments/header.php';
                             <input id="datepicker_register" type="date" class="validate" placeholder="Date de naissace">
                         </div>
                     </div>
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Sauvegarder
-                    </button>
-                    <button class="btn waves-effect waves-light" type="button" name="action">Annuler
+                    <div id="sauvegarder">
+                    <button class="btn waves-effect waves-light" type="button" id="sauvegarder" name="action">Sauvegarder
+                    </button></div>
+                    <button class="btn waves-effect waves-light" type="button" id="annuler" name="action">Annuler
                     </button>
                 </form>
             </div>
         </div>
+        <script type="text/javascript" src="../js/jquery/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript">
+        $('#sauvegarder').click(function() {
+            $.ajax({
+                url: "http://localhost/EPSIWORKSHOP/controller/controller.php?",
+                type: 'POST',
+                async: false,
+                data: {'ws' : 'utilisateur', 'action' : 'addUser','prenom': $('#first_name').val(), 'nom': $('#last_name').val(), 'password': $('#password').val(), 'email': $('#email').val(), 'datepicker_register': $('#datepicker_register').val()},
+                success: function (response) {
+                    alert(response);
+                },
+                error: function (msg) {
+                    console.log(msg.responseType);
+                    console.log('Problème rencontré dans le réseau.');
+                }
+            });
+        });
+
+    </script>
     </body>
+</html>
     <?php
     include '../../fragments/footer.php';
+
     ?>

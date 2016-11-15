@@ -1,10 +1,12 @@
 <?php
 
-    const ADD_USER = 'addUser';
-    const UPDATE_USER = 'updateUser';
-    const GET_USER = 'getUser';
-    const GET_CLASSEMENT = 'getClassement';
-    const VERIF_USER = 'verifUser';
+require_once '../ws/require.php';
+
+const ADD_USER = 'addUser';
+const UPDATE_USER = 'updateUser';
+const GET_USER = 'getUser';
+const GET_CLASSEMENT = 'getClassement';
+const VERIF_USER = 'verifUser';
 
 
 class WS_Utilisateur implements IWebServiciable{
@@ -22,7 +24,7 @@ class WS_Utilisateur implements IWebServiciable{
 
         switch ($_POST['action']) {
             case ADD_USER :
-                $sql = "INSERT INTO Utilisateur ('nom', 'prenom', 'dateNaissance', 'mail', 'numeroTelephone', 'password', 'nombrePoints') VALUES (" .$_POST['nom']. ", ". $_POST['prenom'] . ", ". $_POST['dateNaissance'] . ", ". $_POST['numeroTelephone'] .", ". $_POST['password'] .",0)";
+                $sql = "INSERT INTO Utilisateur ('nom', 'prenom', 'dateNaissance', 'mail',  'password', 'numeroTelephone', 'nombrePoints') VALUES (" .$_POST['nom']. ", ". $_POST['prenom'] . ", ". $_POST['dateNaissance'] . ", ". $_POST['email'] . ", ". $_POST['password'] .", ". $_POST['numeroTelephone'] .",0)";
                 return  execReqWithoutResult($sql);
             case UPDATE_USER :
                 $sql = "UPDATE UTILISATEUR SET nom = " .$_POST['nom']. ", prenom = " .$_POST['nom']. ", dateNaissance = " .$_POST['dateNaissance']. ", mail = " .$_POST['mail']. ", numeroTelephone = " .$_POST['numeroTelephone']. ", password = " .$_POST['password'];

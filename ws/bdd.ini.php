@@ -2,7 +2,7 @@
 function getConnexion(){
 try
 {
-    $pdo = new PDO('mysql:host=localhost:3306;dbname=workshopeatineraire', 'root', '');
+    $pdo = new PDO('mysql:host=localhost:3306;dbname=workshopeatineraire', 'root', 'root');
     return $pdo;
 }
 catch(Exception $e)
