@@ -47,20 +47,14 @@ class WS_Rdv implements IWebServiciable
 
             if ($idLieu == null){
                 $sql = "INSERT INTO LIEU ('coordonnees', 'nom') VALUES (" .$_POST['coordonnees']. ", ". $_POST['nom'] . ")";
-                execReqWithoutResult($sql);
-
-                $idLieu =  $dbh->lastInsertId();
-
+                $idLieu = retournemoiunid($sql);
             }
 
             $sql = "INSERT INTO RDV ('horraire', 'idCreateur', 'date', idLieu ) VALUES (" .$_POST['horraire']. ", ". $_POST['idCreateur'] . ", ". $_POST['date'] . ", " . $idLieu .")";
-            execReqWithoutResult($sql);
-
-            $idRdv = $dbh->lastInsertId();
+            $idRdv = retournemoiunid($sql);
 
             $sql = "INSERT INTO UTILISATEUR_RDV ('idUtilisateur', 'idRdv') VALUES (" .$_POST['idUser']. ", ". $idRdv . ")";
             execReqWithoutResult($sql);
-
 
              return true;
 

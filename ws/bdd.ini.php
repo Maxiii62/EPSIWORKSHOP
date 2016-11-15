@@ -72,4 +72,20 @@ function execReqWithoutResult($var){
             return $ret;
         }
 }
+
+function retournemoiunid($var){
+      try{
+            $pdo = getConnexion();
+            $res = $pdo->prepare($var);
+            $res->execute();
+            $id = $res->lastInsertId();
+            $res->closeCursor();
+            return $id ;
+        }
+        catch(Exception $e)
+        {
+            $ret = 'error';
+            return $ret;
+        }
+}
 ?>
