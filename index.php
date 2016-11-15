@@ -10,16 +10,13 @@
   </head>
   <body>
     <div id="floating-panel">
-      <b>Mode de transport: </b>
-      <select id="mode">
-        <option value="DRIVING">Voiture</option>
-        <option value="WALKING">Marche</option>
-        <option value="BICYCLING">Vélo</option>
-        <option value="TRANSIT">Transport en commun</option>
-      </select>
-
-      <!-- <b>Rayon: </b>
-      <input type="text" id="rayon" placeholder="Indiquez un rayon"> -->
+        <select class="browser-default" id="mode">
+          <option value="DRIVING" selected>Voiture</option>
+          <option value="WALKING">Marche</option>
+          <option value="BICYCLING">Vélo</option>
+          <option value="TRANSIT">Transport en commun</option>
+        </select>
+        <b>Mode de transport</b>
     </div>
     <div id="right-panel"></div>
     <div id="map"></div>
@@ -73,5 +70,6 @@
   <script src="front/js/google.js" />
   <script>
     initMap();
+    $('#mode').material_select();
   </script>
 </html>
