@@ -81,7 +81,7 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `nom` varchar(25) NOT NULL,
   `prenom` varchar(25) NOT NULL,
   `dateNaissance` date NOT NULL,
-  `mail` varchar(25) NOT NULL,
+  `mail` varchar(50) NOT NULL,
   `password` varchar(25) NOT NULL,
   `numeroTelephone` varchar(25) NOT NULL,
   `nombrePoints` int(11) DEFAULT NULL,
@@ -96,7 +96,7 @@ INSERT INTO `utilisateur` (`idUtilisateur`, `nom`, `prenom`, `dateNaissance`, `m
 (1, 'LECAILLE', 'Maxime', '1994-08-19', 'maxime.lecaille@epsi.fr', 'maxmax', '0610684839', NULL),
 (2, 'ROUSSEL', 'Maxime', '1993-09-13', 'maxime.roussel1@epsi.fr', 'maxmax', '0606060606', NULL),
 (3, 'GOMEL', 'Benjamin', '1994-08-09', 'benjamin.gomel@epsi.fr', 'benben', '0606060606', NULL),
-(4, 'COUSSEMAEKER', 'Arnaud', '1994-06-14', 'arnaud.couss@epsi.fr', 'arnaudarnaud', '0606060606', NULL);
+(4, 'COUSSEMAEKER', 'Arnaud', '1994-06-14', 'arnaud.coussmaeker@epsi.fr', 'arnaudarnaud', '0606060606', NULL);
 
 -- --------------------------------------------------------
 
