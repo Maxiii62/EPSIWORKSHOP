@@ -4,6 +4,7 @@ const GET_MINE = "getMine";
 const GET_BYID = "getByid";
 const GET_SEARCH = "getSearch";
 const GET_DETAILS = "getDetails";
+const ADD_RDV = "addRdv";
 
 class WS_Rdv implements IWebServiciable
 {
@@ -32,9 +33,37 @@ class WS_Rdv implements IWebServiciable
             case GET_DETAILS :
                 $sql = "SELECT * FROM Rdv rdv INNER JOIN Utilisateur user ON user.id = rdv.idCreateur LEFT JOIN Verdict verd ON verd.idRdv = rdv.id WHERE rdv.id ="  . $_POST['idRdv'];
                 return returnOneArray($sql);
+            case ADD_RDV :
+                add_rdv();
             default:
                 Helper::ThrowAccessDenied();
                 break;
+        }
+
+        function add_rdv(){
+
+            $sql = "SELECT id FROM Lieu WHERE coordonnees =" . $_POST['coordonnees'] . "AND nom =" . $_POST['nom'];
+            $idLieu = returnOneLine($sql);
+
+            if ($idLieu == null){
+                $sql = "INSERT INTO LIEU ('coordonnees', 'nom') VALUES (" .$_POST['coordonnees']. ", ". $_POST['nom'] . ")";
+                execReqWithoutResult($sql);
+
+                $idLieu =  $dbh->lastInsertId();
+
+            }
+
+            $sql = "INSERT INTO RDV ('horraire', 'idCreateur', 'date', idLieu ) VALUES (" .$_POST['horraire']. ", ". $_POST['idCreateur'] . ", ". $_POST['date'] . ", " . $idLieu .")";
+            execReqWithoutResult($sql);
+
+            $idRdv = $dbh->lastInsertId();
+
+            $sql = "INSERT INTO UTILISATEUR_RDV ('idUtilisateur', 'idRdv') VALUES (" .$_POST['idUser']. ", ". $idRdv . ")";
+            execReqWithoutResult($sql);
+
+
+             return true;
+
         }
     }
 }
