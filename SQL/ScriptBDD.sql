@@ -16,6 +16,7 @@ CREATE TABLE Utilisateur(
         prenom          Varchar (25) NOT NULL ,
         dateNaissance   Date NOT NULL ,
         mail            Varchar (25) NOT NULL ,
+		password		Varchar(25) NOT NULL,
         numeroTelephone Varchar (25) NOT NULL ,
         nombrePoints    Int ,
         PRIMARY KEY (id )
