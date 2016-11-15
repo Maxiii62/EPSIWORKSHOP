@@ -27,8 +27,8 @@ include '../../fragments/header.php';
                         </div>
                     </div>
                     <div class="row">
-                        <div class="input-field col s12" id="connexion">
-                            <a href="Appointement.php" class="btn waves-effect waves-light col s12">Connexion</a>
+                        <div class="input-field col s12" >
+                            <a id="connexion" class="btn waves-effect waves-light col s12">Connexion</a>
                         </div>
                     </div>
                     <div class="row">
@@ -43,10 +43,8 @@ include '../../fragments/header.php';
                 </form>
             </div>
         </div>
-
-        <?php
-        include '../../fragments/footer.php';
-        ?>
+        <script type="text/javascript" src="../js/jquery/jquery-1.11.0.min.js"></script>
+        <script src="../js/main.js" />
     </body>
 </html>
 <?php

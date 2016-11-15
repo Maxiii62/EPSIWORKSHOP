@@ -12,14 +12,19 @@
         ?>
   <nav>
     <div class="navbar-fixed blue-grey ">
-      <a href="#" class="brand-logo right blue-grey">EATinéraire</a>
-      <ul id="nav-mobile" class="left hide-on-med-and-down blue-grey">
-        <li><a href="">Carte</a></li>
-        <li><a href="">Historique</a></li>
-        <li><a href="">Mon profil</a></li>
-          <li><a href="../html/Login.php">Connexion</a></li>
+      <ul id="nav-mobile" class="hide-on-med-and-down blue-grey">
+          <div class="left">
+            <li><a href="">Carte</a></li>
+             <li><a href="">Historique</a></li>
+             <li><a href="">Mon profil</a></li>
+          </div>
+          <div class="right">
+              <li><a class="" href="../html/Inscription.php">Inscription</a></li>
+              <li><a class="" href="../html/Login.php">Connexion</a></li>
+              <li><a class="" href="../html/Login.php">Déconnexion</a></li>
+          </div>
       </ul>
     </div>
-  </nav>    
+  </nav>
         <?php } 
         ?>

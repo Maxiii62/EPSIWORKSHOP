@@ -21,7 +21,13 @@ $('#connexion').click(function() {
         async: false,
         data: {'ws' : 'utilisateur', 'action' : 'verifUser','email': $('#email').val(), 'password': $('#password').val()},
         success: function (response) {
-            alert(response);
+            response = JSON.parse(response);
+
+            if(response.idUtilisateur == null){
+                alert('Wrong');
+            } else {
+                document.location.href="../html/Appointement.php"
+            }
         },
         error: function (msg) {
             console.log(msg.responseType);
