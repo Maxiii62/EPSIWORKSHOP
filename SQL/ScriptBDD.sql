@@ -5,7 +5,6 @@
 CREATE SCHEMA IF NOT EXISTS `workshopEATineraire` DEFAULT CHARACTER SET utf8 ;
 USE `workshopEATineraire` ;
 
-
 #------------------------------------------------------------
 # Table: Utilisateur
 #------------------------------------------------------------
@@ -27,11 +26,11 @@ CREATE TABLE Utilisateur(
 #------------------------------------------------------------
 
 CREATE TABLE Rdv(
-        id         int (11) Auto_increment  NOT NULL ,
-        horaire    Varchar (25) NOT NULL ,
-        idCreateur Int NOT NULL ,
-        dateRdv    Date NOT NULL ,
-        id_Lieu    Int NOT NULL ,
+        id            int (11) Auto_increment  NOT NULL ,
+        horaire       Varchar (25) NOT NULL ,
+        idUtilisateur Int NOT NULL ,
+        dateRdv       Date NOT NULL ,
+        id_Lieu       Int NOT NULL ,
         PRIMARY KEY (id )
 )ENGINE=InnoDB;
 
@@ -75,4 +74,3 @@ ALTER TABLE Rdv ADD CONSTRAINT FK_Rdv_id_Lieu FOREIGN KEY (id_Lieu) REFERENCES L
 ALTER TABLE Verdict ADD CONSTRAINT FK_Verdict_id_Rdv FOREIGN KEY (id_Rdv) REFERENCES Rdv(id);
 ALTER TABLE utilisateur_rdv ADD CONSTRAINT FK_utilisateur_rdv_id FOREIGN KEY (id) REFERENCES Utilisateur(id);
 ALTER TABLE utilisateur_rdv ADD CONSTRAINT FK_utilisateur_rdv_id_Rdv FOREIGN KEY (id_Rdv) REFERENCES Rdv(id);
-
