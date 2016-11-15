@@ -4,6 +4,7 @@ var geoPosition = {lat: 50.283333, lng: 2.783333};
 var destinationObjectif;
 var directionsDisplay;
 var directionsService;
+var waypts = [];
 
 
 function initMap() {
@@ -42,8 +43,13 @@ function initMap() {
 
   document.getElementById('mode').addEventListener('change', function() {
     if(destinationObjectif){
+      displayInfos(destinationObjectif);
       calculateAndDisplayRoute(destinationObjectif);
     }
+  });
+
+  map.addListener('dblclick', function(place) {
+   placeMarkerAndPanTo(place, map);
   });
 
   var control = document.getElementById('floating-panel');
@@ -56,8 +62,23 @@ function initMap() {
   service.nearbySearch({
     location: geoPosition,
     radius: 15000,
-    types: ['restaurant']
+    types: ['restaurant']//,'meal_takeaway','meal_delivery','cafe','food','resto','bakery']
   }, callback);
+}
+
+function placeMarkerAndPanTo(place, map) {
+  var marker = new google.maps.Marker({
+    position: place.latLng,
+    map: map
+  });
+
+  waypts.push({
+    location: place.latLng,
+    stopover: true
+  });
+
+
+  map.panTo(place.latLng);
 }
 
 function callback(results, status) {
@@ -81,7 +102,42 @@ function createMarker(place) {
     infowindow.open(map, this);
     destinationObjectif = place;
     calculateAndDisplayRoute(place);
+    displayInfos(place);
   });
+}
+
+function displayInfos(place){
+
+  var request = {
+    placeId: place.place_id
+  };
+
+  new google.maps.places.PlacesService(map).getDetails(request,displayComplementairesInfos);
+
+  $("#photoMagasin").attr("src",place.photos[0].getUrl({'maxWidth': 1500, 'maxHeight': 1500}));
+
+  if (place.opening_hours.open_now || !place.opening_hours){
+    $("#estOuvert").text("OUVERT").css('color', 'green');
+  }else{
+    $("#estOuvert").text("FERME").css('color', 'red');
+  }
+
+
+  $("#nomMagasin").text(place.name);
+  $("#adresseMagasin").text(place.vicinity);
+}
+
+function displayComplementairesInfos(place){
+
+  $("#telephoneMagasin").text(place.international_phone_number);
+  $("#siteWebMagasin").text(place.website);
+  $("#siteWebMagasin").attr("href",place.website);
+
+  $("#noteMagasin").text();
+  for(var i = 0; i < place.rating; i++){
+    $("#noteMagasin").append("<i class='material-icons dp48'>star</i>");
+  }
+
 }
 
 function calculateAndDisplayRoute(place) {
@@ -94,6 +150,7 @@ function calculateAndDisplayRoute(place) {
     origin: geoPosition,
     destination: place.geometry.location,
     travelMode: document.getElementById('mode').value,
+    waypoints: waypts,
     unitSystem: google.maps.UnitSystem.METRIC
   }, function(response, status) {
     if (status === google.maps.DirectionsStatus.OK) {
@@ -103,6 +160,7 @@ function calculateAndDisplayRoute(place) {
       window.alert('Directions request failed due to ' + status);
     }
   });
+
 }
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
