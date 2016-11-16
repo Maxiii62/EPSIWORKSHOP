@@ -1,7 +1,5 @@
 
-<footer class="page-footer  blue-grey footer">
-
-    <div class="footer-copyright copyright">
+    <div class="page-footer blue-grey copyright footer">
         <div class="container">
             © 2016   Copyright Text EATMen 
         </div>
@@ -11,4 +9,3 @@
     <script src="../../materialize/js/init.js"></script>
       <script src="../js/main.js" />
     <script src="../../materialize/js/script.js"></script>
-</footer>
