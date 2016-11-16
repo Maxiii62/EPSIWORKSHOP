@@ -44,6 +44,7 @@ class WS_Rdv implements IWebServiciable
                     $sql = "INSERT INTO LIEU (coordonnees, nomLieu) VALUES ('".$_POST['coordonnees']."','".$_POST['nom']."')";
                     $idLieu = execReqWithoutResult($sql);
 
+                    
                     $sql = "SELECT MAX(idLieu) as id FROM LIEU";
                     $idLieu = returnOneLine($sql);
 
