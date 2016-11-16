@@ -20,20 +20,6 @@
           <div class="left">
             <li><a href="">Carte</a></li>
 
-            <?php
-
-            Print_r ($_SESSION);
-
-              /*if(isset($_SESSION['monUserCo'])){
-                  echo "<li><a href=''>Historique</a></li>";
-              }*/
-
-
-
-            ?>
-
-
-
           </div>
           <div class="right">
 
