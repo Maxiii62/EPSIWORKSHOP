@@ -65,7 +65,6 @@ function initMap() {
 
     calculateAndDisplayRoute(place);
     displayInfos(place);
-    destinationObjectif = place;
   });
 
   map.addListener('dblclick', function(place) {
@@ -159,6 +158,9 @@ function displayComplementairesInfos(place){
 
 function calculateAndDisplayRoute(place) {
   // directionsDisplay.setMap(null);
+
+  destinationObjectif = place;
+
   directionsDisplay.setMap(map);
 //  document.getElementById('right-panel').empty();
   directionsDisplay.setPanel(document.getElementById('right-panel'));
