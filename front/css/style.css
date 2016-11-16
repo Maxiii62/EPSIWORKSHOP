@@ -7,7 +7,13 @@
     z-index : 1;
 }
 
+.container-footer{
+    height: 15%;
+}
 
+.copyright{
+    height: 5%;
+}
 .contain{
     margin-left: 20%;
     margin-right: 20%;
