@@ -65,6 +65,7 @@ function initMap() {
 
     calculateAndDisplayRoute(place);
     displayInfos(place);
+    destinationObjectif = place;
   });
 
   map.addListener('dblclick', function(place) {
