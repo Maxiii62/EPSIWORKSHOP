@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mar 15 Novembre 2016 à 13:27
+-- Généré le :  Mer 16 Novembre 2016 à 10:45
 -- Version du serveur :  5.7.9
 -- Version de PHP :  5.6.16
 
@@ -31,7 +31,7 @@ USE `workshopeatineraire`;
 DROP TABLE IF EXISTS `lieu`;
 CREATE TABLE IF NOT EXISTS `lieu` (
   `idLieu` int(11) NOT NULL AUTO_INCREMENT,
-  `coordonnees` varchar(25) NOT NULL,
+  `coordonnees` text NOT NULL,
   `nomLieu` varchar(25) DEFAULT NULL,
   PRIMARY KEY (`idLieu`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
@@ -56,6 +56,7 @@ CREATE TABLE IF NOT EXISTS `rdv` (
   `horaire` varchar(25) NOT NULL,
   `idUtilisateur` int(11) NOT NULL,
   `dateRdv` date NOT NULL,
+  `nbPlaces` int(11) DEFAULT NULL,
   `idLieu` int(11) NOT NULL,
   PRIMARY KEY (`idRDV`),
   KEY `FK_Rdv_idLieu` (`idLieu`)
@@ -65,9 +66,9 @@ CREATE TABLE IF NOT EXISTS `rdv` (
 -- Contenu de la table `rdv`
 --
 
-INSERT INTO `rdv` (`idRDV`, `horaire`, `idUtilisateur`, `dateRdv`, `idLieu`) VALUES
-(1, '12h30', 1, '2016-11-16', 1),
-(2, '13h00', 2, '2016-11-17', 2);
+INSERT INTO `rdv` (`idRDV`, `horaire`, `idUtilisateur`, `dateRdv`, `nbPlaces`, `idLieu`) VALUES
+(1, '12h30', 1, '2016-11-16', 3, 1),
+(2, '13h00', 2, '2016-11-17', 2, 2);
 
 -- --------------------------------------------------------
 
@@ -81,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `nom` varchar(25) NOT NULL,
   `prenom` varchar(25) NOT NULL,
   `dateNaissance` date NOT NULL,
-  `mail` varchar(50) NOT NULL,
+  `mail` text NOT NULL,
   `password` varchar(25) NOT NULL,
   `numeroTelephone` varchar(25) NOT NULL,
   `nombrePoints` int(11) DEFAULT NULL,
