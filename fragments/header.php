@@ -1,16 +1,19 @@
 <!DOCTYPE html>
+
+<?php
+
+    if (!isset($_SESSION)){
+        session_start();
+    }
+
+?>
+
 <html>
     <head>
         <meta charset="UTF-8">
         <link href="../../materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
         <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
         <title>
-
-            <?php echo $title;
-
-            session_start();
-
-            ?>
 
         </title>
     </head>
@@ -22,9 +25,18 @@
             <li><a href="">Carte</a></li>
 
             <?php
+
+            if(isset($_SESSION{'monUserCo'})){
+                var_dump($_SESSION);
+            }
+
+
+            echo "ok";
+
               if(isset($_SESSION['monUserCo'])){
                   echo "<li><a href=''>Historique</a></li>";
               }
+
             ?>
 
 

@@ -1,4 +1,4 @@
-<?php$title = "Inscription";?>
+<?php $title = "Inscription";?>
 <html>
 	<head>
 		<meta charset="UTF-8">
