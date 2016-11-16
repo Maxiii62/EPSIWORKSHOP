@@ -6,6 +6,10 @@ session_unset();
 
 session_destroy();
 
-include '../../fragments/header.php';
-
 ?>
+
+<script>
+
+    document.location.href="../html/Appointements.php"
+
+</script>
