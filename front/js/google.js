@@ -185,3 +185,27 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
                         'Error: The Geolocation service failed.' :
                         'Error: Your browser doesn\'t support geolocation.');
 }
+
+$("#createRdv").on('click',function(){
+  $("#modalConnexion").openModal();
+})
+
+$(".closeModal").on('click',function(){
+  $($(".modal").closest()).closeModal();
+})
+
+$( "#creationRDV" ).click(function() {
+    console.log("doto");
+           $.ajax({
+               method: "POST",
+               url : "/EPSIWORKSHOP/controller/controller.php",
+               data: { ws: 'rdv', action : 'addRdv', date: $("#dateRDV").val(), horaire: $("#heureRDV").val(), coordonnees : destinationObjectif.geometry.location.lat() + ", " + destinationObjectif.geometry.location.lng(), nom : destinationObjectif.name, idUser : 1},
+               success: function(response) {
+                  if(response === "true"){
+                    Materialize.toast('Rendez-vous ajouté ! ;-)', 4000 ,'green');
+                   }else{
+                     Materialize.toast('Problème(s) pour créer un rendez-vous', 4000 ,'red');
+                   }
+               }
+          });
+});
