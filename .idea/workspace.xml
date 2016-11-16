@@ -24,19 +24,19 @@
       <file leaf-file-name="WS_Utilisateur.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ws/WS_Utilisateur.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-30.153847">
-              <caret line="53" column="1" selection-start-line="53" selection-start-column="1" selection-end-line="53" selection-end-column="1" />
+            <state vertical-scroll-proportion="-11.192307">
+              <caret line="27" column="41" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
               <folding>
-                <marker date="1479324697154" expanded="true" signature="773:1050" placeholder="INSERT INTO ..." />
-                <marker date="1479324697154" expanded="true" signature="1181:1420" placeholder="UPDATE UTILI..." />
-                <marker date="1479324697154" expanded="true" signature="1181:1466" placeholder="UPDATE UTILI..." />
-                <marker date="1479324697154" expanded="true" signature="1181:1467" placeholder="UPDATE UTILI..." />
-                <marker date="1479324697154" expanded="true" signature="1181:1482" placeholder="UPDATE UTILI..." />
-                <marker date="1479324697154" expanded="true" signature="1181:1647" placeholder="UPDATE UTILI..." />
-                <marker date="1479324697154" expanded="true" signature="1552:1621" placeholder="SELECT * FRO..UTILISATEUR..." />
-                <marker date="1479324697154" expanded="true" signature="1720:1757" placeholder="SELECT * FRO..UTILISATEUR..." />
-                <marker date="1479324697154" expanded="true" signature="1888:1935" placeholder="SELECT * FRO..Utilisateur..." />
-                <marker date="1479324697154" expanded="true" signature="2037:2142" placeholder="SELECT * FRO..UTILISATEUR..." />
+                <marker date="1479325006359" expanded="true" signature="773:1050" placeholder="INSERT INTO ..." />
+                <marker date="1479325006359" expanded="true" signature="1477:1716" placeholder="UPDATE UTILI..." />
+                <marker date="1479325006359" expanded="true" signature="1477:1762" placeholder="UPDATE UTILI..." />
+                <marker date="1479325006359" expanded="true" signature="1477:1763" placeholder="UPDATE UTILI..." />
+                <marker date="1479325006359" expanded="true" signature="1477:1778" placeholder="UPDATE UTILI..." />
+                <marker date="1479325006359" expanded="true" signature="1477:1943" placeholder="UPDATE UTILI..." />
+                <marker date="1479325006359" expanded="true" signature="1848:1917" placeholder="SELECT * FRO..UTILISATEUR..." />
+                <marker date="1479325006359" expanded="true" signature="2016:2053" placeholder="SELECT * FRO..UTILISATEUR..." />
+                <marker date="1479325006359" expanded="true" signature="2184:2231" placeholder="SELECT * FRO..Utilisateur..." />
+                <marker date="1479325006359" expanded="true" signature="2333:2438" placeholder="SELECT * FRO..UTILISATEUR..." />
               </folding>
             </state>
           </provider>
@@ -62,10 +62,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Modification.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Modification.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/front/html/Modification.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.82163405">
+            <state vertical-scroll-proportion="-27.461538">
               <caret line="60" column="60" selection-start-line="60" selection-start-column="60" selection-end-line="60" selection-end-column="60" />
               <folding />
             </state>
@@ -82,11 +82,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controller.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="controller.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controller/controller.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.637931">
-              <caret line="56" column="41" selection-start-line="56" selection-start-column="41" selection-end-line="56" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.8148148">
+              <caret line="56" column="108" selection-start-line="56" selection-start-column="108" selection-end-line="56" selection-end-column="108" />
               <folding>
                 <element signature="e#8#927#0#PHP" expanded="true" />
               </folding>
@@ -108,7 +108,7 @@
         <entry file="file://$PROJECT_DIR$/front/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="53" column="56" selection-start-line="53" selection-start-column="56" selection-end-line="53" selection-end-column="56" />
+              <caret line="30" column="54" selection-start-line="30" selection-start-column="54" selection-end-line="30" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -162,11 +162,11 @@
         <option value="$PROJECT_DIR$/ws/bdd.ini.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/fragments/header.php" />
-        <option value="$PROJECT_DIR$/controller/controller.php" />
-        <option value="$PROJECT_DIR$/ws/WS_Utilisateur.php" />
-        <option value="$PROJECT_DIR$/front/js/main.js" />
         <option value="$PROJECT_DIR$/front/html/Inscription.php" />
         <option value="$PROJECT_DIR$/front/html/Modification.php" />
+        <option value="$PROJECT_DIR$/ws/WS_Utilisateur.php" />
+        <option value="$PROJECT_DIR$/front/js/main.js" />
+        <option value="$PROJECT_DIR$/controller/controller.php" />
       </list>
     </option>
   </component>
@@ -541,16 +541,16 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="29" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="29" />
           <folding>
-            <marker date="1479324697154" expanded="true" signature="773:1050" placeholder="INSERT INTO ..." />
-            <marker date="1479324697154" expanded="true" signature="1181:1420" placeholder="UPDATE UTILI..." />
-            <marker date="1479324697154" expanded="true" signature="1181:1466" placeholder="UPDATE UTILI..." />
-            <marker date="1479324697154" expanded="true" signature="1181:1467" placeholder="UPDATE UTILI..." />
-            <marker date="1479324697154" expanded="true" signature="1181:1482" placeholder="UPDATE UTILI..." />
-            <marker date="1479324697154" expanded="true" signature="1181:1647" placeholder="UPDATE UTILI..." />
-            <marker date="1479324697154" expanded="true" signature="1552:1621" placeholder="SELECT * FRO..UTILISATEUR..." />
-            <marker date="1479324697154" expanded="true" signature="1720:1757" placeholder="SELECT * FRO..UTILISATEUR..." />
-            <marker date="1479324697154" expanded="true" signature="1888:1935" placeholder="SELECT * FRO..Utilisateur..." />
-            <marker date="1479324697154" expanded="true" signature="2037:2142" placeholder="SELECT * FRO..UTILISATEUR..." />
+            <marker date="1479325006359" expanded="true" signature="773:1050" placeholder="INSERT INTO ..." />
+            <marker date="1479325006359" expanded="true" signature="1477:1716" placeholder="UPDATE UTILI..." />
+            <marker date="1479325006359" expanded="true" signature="1477:1762" placeholder="UPDATE UTILI..." />
+            <marker date="1479325006359" expanded="true" signature="1477:1763" placeholder="UPDATE UTILI..." />
+            <marker date="1479325006359" expanded="true" signature="1477:1778" placeholder="UPDATE UTILI..." />
+            <marker date="1479325006359" expanded="true" signature="1477:1943" placeholder="UPDATE UTILI..." />
+            <marker date="1479325006359" expanded="true" signature="1848:1917" placeholder="SELECT * FRO..UTILISATEUR..." />
+            <marker date="1479325006359" expanded="true" signature="2016:2053" placeholder="SELECT * FRO..UTILISATEUR..." />
+            <marker date="1479325006359" expanded="true" signature="2184:2231" placeholder="SELECT * FRO..Utilisateur..." />
+            <marker date="1479325006359" expanded="true" signature="2333:2438" placeholder="SELECT * FRO..UTILISATEUR..." />
           </folding>
         </state>
       </provider>
@@ -639,16 +639,16 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1479324697154" expanded="true" signature="773:1050" placeholder="INSERT INTO ..." />
-            <marker date="1479324697154" expanded="true" signature="1181:1420" placeholder="UPDATE UTILI..." />
-            <marker date="1479324697154" expanded="true" signature="1181:1466" placeholder="UPDATE UTILI..." />
-            <marker date="1479324697154" expanded="true" signature="1181:1467" placeholder="UPDATE UTILI..." />
-            <marker date="1479324697154" expanded="true" signature="1181:1482" placeholder="UPDATE UTILI..." />
-            <marker date="1479324697154" expanded="true" signature="1181:1647" placeholder="UPDATE UTILI..." />
-            <marker date="1479324697154" expanded="true" signature="1552:1621" placeholder="SELECT * FRO..UTILISATEUR..." />
-            <marker date="1479324697154" expanded="true" signature="1720:1757" placeholder="SELECT * FRO..UTILISATEUR..." />
-            <marker date="1479324697154" expanded="true" signature="1888:1935" placeholder="SELECT * FRO..Utilisateur..." />
-            <marker date="1479324697154" expanded="true" signature="2037:2142" placeholder="SELECT * FRO..UTILISATEUR..." />
+            <marker date="1479325006359" expanded="true" signature="773:1050" placeholder="INSERT INTO ..." />
+            <marker date="1479325006359" expanded="true" signature="1477:1716" placeholder="UPDATE UTILI..." />
+            <marker date="1479325006359" expanded="true" signature="1477:1762" placeholder="UPDATE UTILI..." />
+            <marker date="1479325006359" expanded="true" signature="1477:1763" placeholder="UPDATE UTILI..." />
+            <marker date="1479325006359" expanded="true" signature="1477:1778" placeholder="UPDATE UTILI..." />
+            <marker date="1479325006359" expanded="true" signature="1477:1943" placeholder="UPDATE UTILI..." />
+            <marker date="1479325006359" expanded="true" signature="1848:1917" placeholder="SELECT * FRO..UTILISATEUR..." />
+            <marker date="1479325006359" expanded="true" signature="2016:2053" placeholder="SELECT * FRO..UTILISATEUR..." />
+            <marker date="1479325006359" expanded="true" signature="2184:2231" placeholder="SELECT * FRO..Utilisateur..." />
+            <marker date="1479325006359" expanded="true" signature="2333:2438" placeholder="SELECT * FRO..UTILISATEUR..." />
           </folding>
         </state>
       </provider>
@@ -838,43 +838,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ws/WS_Utilisateur.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-30.153847">
-          <caret line="53" column="1" selection-start-line="53" selection-start-column="1" selection-end-line="53" selection-end-column="1" />
-          <folding>
-            <marker date="1479324697154" expanded="true" signature="773:1050" placeholder="INSERT INTO ..." />
-            <marker date="1479324697154" expanded="true" signature="1181:1420" placeholder="UPDATE UTILI..." />
-            <marker date="1479324697154" expanded="true" signature="1181:1466" placeholder="UPDATE UTILI..." />
-            <marker date="1479324697154" expanded="true" signature="1181:1467" placeholder="UPDATE UTILI..." />
-            <marker date="1479324697154" expanded="true" signature="1181:1482" placeholder="UPDATE UTILI..." />
-            <marker date="1479324697154" expanded="true" signature="1181:1647" placeholder="UPDATE UTILI..." />
-            <marker date="1479324697154" expanded="true" signature="1552:1621" placeholder="SELECT * FRO..UTILISATEUR..." />
-            <marker date="1479324697154" expanded="true" signature="1720:1757" placeholder="SELECT * FRO..UTILISATEUR..." />
-            <marker date="1479324697154" expanded="true" signature="1888:1935" placeholder="SELECT * FRO..Utilisateur..." />
-            <marker date="1479324697154" expanded="true" signature="2037:2142" placeholder="SELECT * FRO..UTILISATEUR..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="53" column="56" selection-start-line="53" selection-start-column="56" selection-end-line="53" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.637931">
-          <caret line="56" column="41" selection-start-line="56" selection-start-column="41" selection-end-line="56" selection-end-column="41" />
-          <folding>
-            <element signature="e#8#927#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front/html/Inscription.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-24.923077">
@@ -885,9 +848,46 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/front/html/Modification.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.82163405">
+        <state vertical-scroll-proportion="-27.461538">
           <caret line="60" column="60" selection-start-line="60" selection-start-column="60" selection-end-line="60" selection-end-column="60" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="54" selection-start-line="30" selection-start-column="54" selection-end-line="30" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ws/WS_Utilisateur.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.192307">
+          <caret line="27" column="41" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
+          <folding>
+            <marker date="1479325006359" expanded="true" signature="773:1050" placeholder="INSERT INTO ..." />
+            <marker date="1479325006359" expanded="true" signature="1477:1716" placeholder="UPDATE UTILI..." />
+            <marker date="1479325006359" expanded="true" signature="1477:1762" placeholder="UPDATE UTILI..." />
+            <marker date="1479325006359" expanded="true" signature="1477:1763" placeholder="UPDATE UTILI..." />
+            <marker date="1479325006359" expanded="true" signature="1477:1778" placeholder="UPDATE UTILI..." />
+            <marker date="1479325006359" expanded="true" signature="1477:1943" placeholder="UPDATE UTILI..." />
+            <marker date="1479325006359" expanded="true" signature="1848:1917" placeholder="SELECT * FRO..UTILISATEUR..." />
+            <marker date="1479325006359" expanded="true" signature="2016:2053" placeholder="SELECT * FRO..UTILISATEUR..." />
+            <marker date="1479325006359" expanded="true" signature="2184:2231" placeholder="SELECT * FRO..Utilisateur..." />
+            <marker date="1479325006359" expanded="true" signature="2333:2438" placeholder="SELECT * FRO..UTILISATEUR..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8148148">
+          <caret line="56" column="108" selection-start-line="56" selection-start-column="108" selection-end-line="56" selection-end-column="108" />
+          <folding>
+            <element signature="e#8#927#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
