@@ -13,6 +13,9 @@ include '../../fragments/header.php';?>
         <div id="Register_Container" class="row card horizontal">
             <form class="col s12">
                 <div class="row">
+
+                    <input type="hidden" id="id" value="<?php echo $_SESSION['monUserCo']['idUtilisateur'] ?>">
+
                     <div class="input-field col s6">
                         <input id="first_name" type="text" class="validate" value="<?php echo $_SESSION['monUserCo']['prenom'] ?>">
                         <label for="first_name"><i class="tiny material-icons">mode_edit</i> Pr&eacutenom</label>
