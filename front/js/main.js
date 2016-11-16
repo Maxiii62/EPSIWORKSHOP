@@ -41,5 +41,9 @@ $('#deconnexion').click(function(){
 })
 
 $('#modifierProfil').click(function(){
-
+    document.location.href = "../html/Modification.php";
 })
+
+$('#reset')
+
+$('#modifier')

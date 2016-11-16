@@ -67,21 +67,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WS_Rdv.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ws/WS_Rdv.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-37.346153">
-              <caret line="75" column="1" selection-start-line="75" selection-start-column="1" selection-end-line="75" selection-end-column="1" />
-              <folding>
-                <marker date="1479309141059" expanded="true" signature="479:652" placeholder="SELECT rdv.h..Rdv..." />
-                <marker date="1479309141059" expanded="true" signature="771:943" placeholder="SELECT rdv.h..Rdv..." />
-                <marker date="1479309141059" expanded="true" signature="1062:1318" placeholder="SELECT rdv.h..Rdv..." />
-                <marker date="1479309141059" expanded="true" signature="1437:1575" placeholder="SELECT * FRO..Rdv..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="footer.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fragments/footer.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -105,9 +90,29 @@
       <file leaf-file-name="Inscription.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/front/html/Inscription.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.9615384">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="8" selection-end-column="11" />
+            <state vertical-scroll-proportion="-10.461538">
+              <caret line="16" column="83" selection-start-line="16" selection-start-column="83" selection-end-line="16" selection-end-column="83" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Modification.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front/html/Modification.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-22.884615">
+              <caret line="44" column="172" selection-start-line="44" selection-start-column="172" selection-end-line="44" selection-end-column="172" />
+              <folding>
+                <marker date="1479312232548" expanded="true" signature="1009:1268" placeholder="..." />
+                <marker date="1479312232548" expanded="true" signature="1325:1672" placeholder="..." />
+                <marker date="1479312232548" expanded="true" signature="1379:1649" placeholder="..." />
+                <marker date="1479312232548" expanded="true" signature="1706:2034" placeholder="..." />
+                <marker date="1479312232548" expanded="true" signature="1760:2011" placeholder="..." />
+                <marker date="1479312232548" expanded="true" signature="2068:2430" placeholder="..." />
+                <marker date="1479312232548" expanded="true" signature="2122:2407" placeholder="..." />
+                <marker date="1479312232548" expanded="true" signature="2464:2748" placeholder="..." />
+                <marker date="1479312232548" expanded="true" signature="2518:2725" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -124,21 +129,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Mon_Profil.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Mon_Profil.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/front/html/Mon_Profil.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.39355582">
+            <state vertical-scroll-proportion="-11.192307">
               <caret line="68" column="84" selection-start-line="68" selection-start-column="84" selection-end-line="68" selection-end-column="84" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/front/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.91173184">
+              <caret line="48" column="12" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -193,9 +198,10 @@
         <option value="$PROJECT_DIR$/front/html/Logout.php" />
         <option value="$PROJECT_DIR$/ws/WS_Utilisateur.php" />
         <option value="$PROJECT_DIR$/front/html/Login.php" />
-        <option value="$PROJECT_DIR$/front/html/Inscription.php" />
-        <option value="$PROJECT_DIR$/front/js/main.js" />
         <option value="$PROJECT_DIR$/front/html/Mon_Profil.php" />
+        <option value="$PROJECT_DIR$/front/html/Inscription.php" />
+        <option value="$PROJECT_DIR$/front/html/Modification.php" />
+        <option value="$PROJECT_DIR$/front/js/main.js" />
       </list>
     </option>
   </component>
@@ -424,7 +430,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15187165" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -738,10 +744,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="56" column="39" selection-start-line="56" selection-start-column="11" selection-end-line="56" selection-end-column="39" />
           <folding>
-            <marker date="1479309141059" expanded="true" signature="479:652" placeholder="SELECT rdv.h..Rdv..." />
-            <marker date="1479309141059" expanded="true" signature="771:943" placeholder="SELECT rdv.h..Rdv..." />
-            <marker date="1479309141059" expanded="true" signature="1062:1318" placeholder="SELECT rdv.h..Rdv..." />
-            <marker date="1479309141059" expanded="true" signature="1437:1575" placeholder="SELECT * FRO..Rdv..." />
+            <marker date="1479309141059" expanded="true" signature="-1:-1" placeholder="SELECT rdv.h..Rdv..." />
+            <marker date="1479309141059" expanded="true" signature="-1:-1" placeholder="SELECT rdv.h..Rdv..." />
+            <marker date="1479309141059" expanded="true" signature="-1:-1" placeholder="SELECT rdv.h..Rdv..." />
+            <marker date="1479309141059" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Rdv..." />
           </folding>
         </state>
       </provider>
@@ -791,10 +797,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1479309141059" expanded="true" signature="479:652" placeholder="SELECT rdv.h..Rdv..." />
-            <marker date="1479309141059" expanded="true" signature="771:943" placeholder="SELECT rdv.h..Rdv..." />
-            <marker date="1479309141059" expanded="true" signature="1062:1318" placeholder="SELECT rdv.h..Rdv..." />
-            <marker date="1479309141059" expanded="true" signature="1437:1575" placeholder="SELECT * FRO..Rdv..." />
+            <marker date="1479309141059" expanded="true" signature="-1:-1" placeholder="SELECT rdv.h..Rdv..." />
+            <marker date="1479309141059" expanded="true" signature="-1:-1" placeholder="SELECT rdv.h..Rdv..." />
+            <marker date="1479309141059" expanded="true" signature="-1:-1" placeholder="SELECT rdv.h..Rdv..." />
+            <marker date="1479309141059" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Rdv..." />
           </folding>
         </state>
       </provider>
@@ -871,10 +877,10 @@
         <state vertical-scroll-proportion="-37.346153">
           <caret line="75" column="1" selection-start-line="75" selection-start-column="1" selection-end-line="75" selection-end-column="1" />
           <folding>
-            <marker date="1479309141059" expanded="true" signature="479:652" placeholder="SELECT rdv.h..Rdv..." />
-            <marker date="1479309141059" expanded="true" signature="771:943" placeholder="SELECT rdv.h..Rdv..." />
-            <marker date="1479309141059" expanded="true" signature="1062:1318" placeholder="SELECT rdv.h..Rdv..." />
-            <marker date="1479309141059" expanded="true" signature="1437:1575" placeholder="SELECT * FRO..Rdv..." />
+            <marker date="1479309141059" expanded="true" signature="-1:-1" placeholder="SELECT rdv.h..Rdv..." />
+            <marker date="1479309141059" expanded="true" signature="-1:-1" placeholder="SELECT rdv.h..Rdv..." />
+            <marker date="1479309141059" expanded="true" signature="-1:-1" placeholder="SELECT rdv.h..Rdv..." />
+            <marker date="1479309141059" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Rdv..." />
           </folding>
         </state>
       </provider>
@@ -949,14 +955,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/html/Inscription.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9615384">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="8" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fragments/header.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.230769">
@@ -973,18 +971,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/js/main.js">
+    <entry file="file://$PROJECT_DIR$/front/html/Mon_Profil.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+        <state vertical-scroll-proportion="-11.192307">
+          <caret line="68" column="84" selection-start-line="68" selection-start-column="84" selection-end-line="68" selection-end-column="84" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/html/Mon_Profil.php">
+    <entry file="file://$PROJECT_DIR$/front/html/Inscription.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39355582">
-          <caret line="68" column="84" selection-start-line="68" selection-start-column="84" selection-end-line="68" selection-end-column="84" />
+        <state vertical-scroll-proportion="-10.461538">
+          <caret line="16" column="83" selection-start-line="16" selection-start-column="83" selection-end-line="16" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/html/Modification.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.884615">
+          <caret line="44" column="172" selection-start-line="44" selection-start-column="172" selection-end-line="44" selection-end-column="172" />
+          <folding>
+            <marker date="1479312232548" expanded="true" signature="1009:1268" placeholder="..." />
+            <marker date="1479312232548" expanded="true" signature="1325:1672" placeholder="..." />
+            <marker date="1479312232548" expanded="true" signature="1379:1649" placeholder="..." />
+            <marker date="1479312232548" expanded="true" signature="1706:2034" placeholder="..." />
+            <marker date="1479312232548" expanded="true" signature="1760:2011" placeholder="..." />
+            <marker date="1479312232548" expanded="true" signature="2068:2430" placeholder="..." />
+            <marker date="1479312232548" expanded="true" signature="2122:2407" placeholder="..." />
+            <marker date="1479312232548" expanded="true" signature="2464:2748" placeholder="..." />
+            <marker date="1479312232548" expanded="true" signature="2518:2725" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.91173184">
+          <caret line="48" column="12" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
           <folding />
         </state>
       </provider>
