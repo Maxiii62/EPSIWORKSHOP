@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mar 15 Novembre 2016 à 13:27
+-- Généré le :  Mer 16 Novembre 2016 à 13:38
 -- Version du serveur :  5.7.9
 -- Version de PHP :  5.6.16
 
@@ -31,7 +31,7 @@ USE `workshopeatineraire`;
 DROP TABLE IF EXISTS `lieu`;
 CREATE TABLE IF NOT EXISTS `lieu` (
   `idLieu` int(11) NOT NULL AUTO_INCREMENT,
-  `coordonnees` varchar(25) NOT NULL,
+  `coordonnees` text NOT NULL,
   `nomLieu` varchar(25) DEFAULT NULL,
   PRIMARY KEY (`idLieu`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
@@ -54,8 +54,9 @@ DROP TABLE IF EXISTS `rdv`;
 CREATE TABLE IF NOT EXISTS `rdv` (
   `idRDV` int(11) NOT NULL AUTO_INCREMENT,
   `horaire` varchar(25) NOT NULL,
-  `idUtilisateur` int(11) NOT NULL,
+  `idCreateur` int(11) NOT NULL,
   `dateRdv` date NOT NULL,
+  `nbPlaces` int(11) DEFAULT NULL,
   `idLieu` int(11) NOT NULL,
   PRIMARY KEY (`idRDV`),
   KEY `FK_Rdv_idLieu` (`idLieu`)
@@ -65,9 +66,52 @@ CREATE TABLE IF NOT EXISTS `rdv` (
 -- Contenu de la table `rdv`
 --
 
-INSERT INTO `rdv` (`idRDV`, `horaire`, `idUtilisateur`, `dateRdv`, `idLieu`) VALUES
-(1, '12h30', 1, '2016-11-16', 1),
-(2, '13h00', 2, '2016-11-17', 2);
+INSERT INTO `rdv` (`idRDV`, `horaire`, `idCreateur`, `dateRdv`, `nbPlaces`, `idLieu`) VALUES
+(1, '12:00', 1, '2016-11-17', 3, 1),
+(2, '13h', 3, '2016-11-23', 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `rdv_trajet`
+--
+
+DROP TABLE IF EXISTS `rdv_trajet`;
+CREATE TABLE IF NOT EXISTS `rdv_trajet` (
+  `idRDV` int(11) NOT NULL,
+  `idTrajet` int(11) NOT NULL,
+  PRIMARY KEY (`idRDV`,`idTrajet`),
+  KEY `FK_rdv_trajet_idTrajet` (`idTrajet`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `rdv_trajet`
+--
+
+INSERT INTO `rdv_trajet` (`idRDV`, `idTrajet`) VALUES
+(1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `trajet`
+--
+
+DROP TABLE IF EXISTS `trajet`;
+CREATE TABLE IF NOT EXISTS `trajet` (
+  `idTrajet` int(11) NOT NULL AUTO_INCREMENT,
+  `idRdv` int(11) NOT NULL,
+  `numEtape` int(11) DEFAULT NULL,
+  `idUtilisateur` int(11) NOT NULL,
+  PRIMARY KEY (`idTrajet`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `trajet`
+--
+
+INSERT INTO `trajet` (`idTrajet`, `idRdv`, `numEtape`, `idUtilisateur`) VALUES
+(1, 1, 3, 2);
 
 -- --------------------------------------------------------
 
@@ -81,7 +125,7 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `nom` varchar(25) NOT NULL,
   `prenom` varchar(25) NOT NULL,
   `dateNaissance` date NOT NULL,
-  `mail` varchar(50) NOT NULL,
+  `mail` text NOT NULL,
   `password` varchar(25) NOT NULL,
   `numeroTelephone` varchar(25) NOT NULL,
   `nombrePoints` int(11) DEFAULT NULL,
@@ -106,6 +150,9 @@ INSERT INTO `utilisateur` (`idUtilisateur`, `nom`, `prenom`, `dateNaissance`, `m
 
 DROP TABLE IF EXISTS `utilisateur_rdv`;
 CREATE TABLE IF NOT EXISTS `utilisateur_rdv` (
+  `note` int(11) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `idCreateur` int(11) DEFAULT NULL,
   `idUtilisateur` int(11) NOT NULL,
   `idRDV` int(11) NOT NULL,
   PRIMARY KEY (`idUtilisateur`,`idRDV`),
@@ -116,32 +163,8 @@ CREATE TABLE IF NOT EXISTS `utilisateur_rdv` (
 -- Contenu de la table `utilisateur_rdv`
 --
 
-INSERT INTO `utilisateur_rdv` (`idUtilisateur`, `idRDV`) VALUES
-(1, 1),
-(2, 2);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `verdict`
---
-
-DROP TABLE IF EXISTS `verdict`;
-CREATE TABLE IF NOT EXISTS `verdict` (
-  `idVerdict` int(11) NOT NULL AUTO_INCREMENT,
-  `note` int(11) DEFAULT NULL,
-  `description` varchar(200) DEFAULT NULL,
-  `idRDV` int(11) NOT NULL,
-  PRIMARY KEY (`idVerdict`),
-  KEY `FK_Verdict_idRDV` (`idRDV`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-
---
--- Contenu de la table `verdict`
---
-
-INSERT INTO `verdict` (`idVerdict`, `note`, `description`, `idRDV`) VALUES
-(1, 5, 'TOP TOP TOP', 1);
+INSERT INTO `utilisateur_rdv` (`note`, `description`, `idCreateur`, `idUtilisateur`, `idRDV`) VALUES
+(5, 'TOP TOP TOP', 1, 3, 2);
 
 --
 -- Contraintes pour les tables exportées
@@ -154,17 +177,18 @@ ALTER TABLE `rdv`
   ADD CONSTRAINT `FK_Rdv_idLieu` FOREIGN KEY (`idLieu`) REFERENCES `lieu` (`idLieu`);
 
 --
+-- Contraintes pour la table `rdv_trajet`
+--
+ALTER TABLE `rdv_trajet`
+  ADD CONSTRAINT `FK_rdv_trajet_idRDV` FOREIGN KEY (`idRDV`) REFERENCES `rdv` (`idRDV`),
+  ADD CONSTRAINT `FK_rdv_trajet_idTrajet` FOREIGN KEY (`idTrajet`) REFERENCES `trajet` (`idTrajet`);
+
+--
 -- Contraintes pour la table `utilisateur_rdv`
 --
 ALTER TABLE `utilisateur_rdv`
   ADD CONSTRAINT `FK_utilisateur_rdv_idRDV` FOREIGN KEY (`idRDV`) REFERENCES `rdv` (`idRDV`),
   ADD CONSTRAINT `FK_utilisateur_rdv_idUtilisateur` FOREIGN KEY (`idUtilisateur`) REFERENCES `utilisateur` (`idUtilisateur`);
-
---
--- Contraintes pour la table `verdict`
---
-ALTER TABLE `verdict`
-  ADD CONSTRAINT `FK_Verdict_idRDV` FOREIGN KEY (`idRDV`) REFERENCES `rdv` (`idRDV`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
