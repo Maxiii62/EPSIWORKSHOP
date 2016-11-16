@@ -7,6 +7,7 @@ const GET_BYID = "getByid";
 const GET_SEARCH = "getSearch";
 const GET_DETAILS = "getDetails";
 const ADD_RDV = "addRdv";
+const GET_ALL_LIEUX = "getAllLieux";
 
 class WS_Rdv implements IWebServiciable
 {
@@ -34,6 +35,9 @@ class WS_Rdv implements IWebServiciable
                 return returnOneArray($sql);
             case GET_DETAILS :
                 $sql = "SELECT * FROM Rdv rdv INNER JOIN Utilisateur user ON user.id = rdv.idCreateur LEFT JOIN Verdict verd ON verd.idRdv = rdv.id WHERE rdv.id ="  . $_POST['idRdv'];
+                return returnOneArray($sql);
+            case GET_ALL_LIEUX:
+                $sql = "SELECT * FROM lieu";
                 return returnOneArray($sql);
             case ADD_RDV :
                 $sql = "SELECT idLieu FROM Lieu WHERE coordonnees ='".$_POST['coordonnees']."' AND nomLieu ='".$_POST['nom']."'";

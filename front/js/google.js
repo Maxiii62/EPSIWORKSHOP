@@ -212,3 +212,36 @@ $( "#creationRDV" ).click(function() {
                }
           });
 });
+
+function initLieuxSelect(){
+  $.ajax({
+      method: "POST",
+      url : "/EPSIWORKSHOP/controller/controller.php?",
+      data: { ws: 'rdv', action : 'getAllLieux'},
+      success: function(response) {
+        $("#selectLesLieux option").remove();
+
+         $("#selectLesLieux").append("<option value='' disabled selected>Choissez un endroit où manger</option>")
+
+        for(var i = 0; i < JSON.parse(response).length;i++){
+            console.log("ok");
+            $("#selectLesLieux").append("<option value='" + response[i].coordonnees + "'>" + response[i].nomLieu + "</option>");
+        }
+      }
+ });
+}
+
+function searchRdv(){
+  $.ajax({
+      method: "POST",
+      url : "/EPSIWORKSHOP/controller/controller.php?",
+      data: { ws: 'rdv', action : 'getSearch', date: $("#dateRDV").val(), horaire: $("#heureRDV").val(), coordonnees : destinationObjectif.geometry.location.lat() + ", " + destinationObjectif.geometry.location.lng(), nom : destinationObjectif.name, idUser : 1, nbPlaces : $("#nbPlaces").val()},
+      success: function(response) {
+         if(response === "true"){
+           Materialize.toast('Rendez-vous ajouté ! ;-)', 4000 ,'green');
+          }else{
+            Materialize.toast('Problème(s) pour créer un rendez-vous', 4000 ,'red');
+          }
+      }
+ });
+}

@@ -24,11 +24,9 @@ include '../../fragments/header.php';
 
     <div class=" row card">
         <div class="row">
-        <select class="browser-default select">
-            <option value="" disabled selected>Choose your option</option>
-            <option value="1">Option 1</option>
-            <option value="2">Option 2</option>
-            <option value="3">Option 3</option>
+        <select class="browser-default select" id="selectLesLieux">
+
+
         </select>
 
         <input type="date" placeholder="dd/mm/yyyy" />
@@ -45,7 +43,7 @@ include '../../fragments/header.php';
                     </tr>
                 </thead>
                 <tbody>
-                    <tr > 
+                    <tr >
                         <td>18/11/2016</td>
                         <td>Roussel Maxime</td>
                         <td>Macdonalds</td>
@@ -54,7 +52,7 @@ include '../../fragments/header.php';
                 </tbody>
 
             </table>
-        </div>  
+        </div>
     </div>
     <?php
     include '../../fragments/footer.php';
@@ -95,6 +93,7 @@ include '../../fragments/header.php';
 
 </script>
 <script>
+    initLieuxSelect();
     initMap();
     $('#mode').material_select();
 </script>
