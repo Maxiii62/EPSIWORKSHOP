@@ -11,7 +11,7 @@
             
         ?>
   <nav>
-    <div class="navbar-fixed blue-grey ">
+    <div class="nav-wrapper blue-grey ">
       <ul id="nav-mobile" class="hide-on-med-and-down blue-grey">
           <div class="left">
             <li><a href="">Carte</a></li>
