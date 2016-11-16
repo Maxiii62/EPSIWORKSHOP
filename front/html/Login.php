@@ -1,5 +1,5 @@
 <?php
-$title = "Inscription";
+$title = "EATinéraire";
 include '../../fragments/header.php';
 ?>
 <html>
