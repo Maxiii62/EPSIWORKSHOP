@@ -1,12 +1,6 @@
 <?php $title = "Inscription";
 include '../../fragments/header.php';?>
-<html>
-	<head>
-		<link href="../../materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-		<link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<title>Inscription</title>
-	</head>
+
 	<body>
 		<div id="login-page" class="row">
 			<div class="transparence">
