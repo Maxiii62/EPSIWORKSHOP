@@ -1,50 +1,88 @@
-
 <?php
 $title = "Mon profil";
 include '../../fragments/header.php';
 ?>
+
+<html>
+<head>
+    <link href="../../materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Mon Profil</title>
+</head>
 <body>
-    <div class="contain row card horizontal">
-        </br>
-        <h3 class="center">Mon Profil</h3>
+    <div id="login-page" class="row">
+        <div class="transparence col s12 z-depth-4 card-panel">
+            <form class="login-form">
+                <div class="row">
+                    <div class="input-field col s12 center">
 
-        <table class="responsive-table">
+                        <p class="center login-form-text">Mon Profil</p>
+                    </div>
+                </div>
 
-            <tbody>
-                <tr> 
-                    <td><h5>Nom</h5></td>
-                    <td>Eclair</td>
-                    <td>$0.87</td>
-                </tr>
-                <tr>
-                   <td><h5>Prénom</h5></td>
-                    <td>Jellybean</td>
-                    <td>$3.76</td>
-                </tr>
-                <tr>
-                    <td><h5>Email</h5></td>
-                    <td>Lollipop</td>
-                    <td>$7.00</td>
-                </tr>
-                <tr>
-                    <td><h5>Date de naisance</h5></td>
-                    <td>Lollipop</td>
-                    <td>$7.00</td>
-                </tr>
-                <tr>
-                    <td><h5>N° de telephone</h5></td>
-                    <td>Lollipop</td>
-                    <td>$7.00</td>
-                </tr>
-            </tbody>
-             
-        </table>
- </br>
+                <ul id="profile-page-about-details" class="collection z-depth-1">
+                    <li class="collection-item">
+                        <div class="row">
+                            <div class="col s5 grey-text darken-1"><i class="mdi-action-wallet-travel"></i> Nom</div>
+                            <div class="col s7 grey-text text-darken-4 right-align">
+                            <?php
+                                echo $_SESSION['monUserCo']['nom'];
+                            ?>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="collection-item">
+                        <div class="row">
+                            <div class="col s5 grey-text darken-1"><i class="mdi-social-poll"></i>Pr&eacutenom</div>
+                            <div class="col s7 grey-text text-darken-4 right-align">
+                            <?php
+                                echo $_SESSION['monUserCo']['prenom'];
+                            ?>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="collection-item">
+                        <div class="row">
+                            <div class="col s5 grey-text darken-1"><i class="mdi-social-domain"></i>Date de naissance</div>
+                            <div class="col s7 grey-text text-darken-4 right-align"> <?php
+                                echo $_SESSION['monUserCo']['dateNaissance'];
+                                ?></div>
+                        </div>
+                    </li>
+                    <li class="collection-item">
+                        <div class="row">
+                            <div class="col s5 grey-text darken-1"><i class="mdi-social-cake"></i>Mail</div>
+                            <div class="col s7 grey-text text-darken-4 right-align"> <?php
+                                echo $_SESSION['monUserCo']['mail'];
+                                ?></div>
+                        </div>
+                    </li>
+                    <li class="collection-item">
+                        <div class="row">
+                            <div class="col s5 grey-text darken-1"><i class="mdi-social-cake"></i>T&eacutel&eacutephone</div>
+                            <div class="col s7 grey-text text-darken-4 right-align" <?php
+                            echo $_SESSION['monUserCo']['numeroTelephone'];
+                            ?></div>
+                        </div>
+                    </li>
+                    <li class="collection-item">
+                        <div class="row">
+                            <div class="col s5 grey-text darken-1"><i class="mdi-social-cake"></i>Nombre de points</div>
+                            <div class="col s7 grey-text text-darken-4 right-align"> <?php
+                                echo $_SESSION['monUserCo']['nombrePoints'];
+                                ?></div>
+                        </div>
+                    </li>
+                </ul>
+
+            </form>
+        </div>
     </div>
-
+</body>
+</html>
    
     <?php
     include '../../fragments/footer.php';
     ?>
-</body>
-</html>
+

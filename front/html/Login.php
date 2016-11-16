@@ -5,12 +5,12 @@ include '../../fragments/header.php';
 
 <html>
         <div id="login-page" class="row">
-            <div class="col s12 z-depth-4 card-panel">
+            <div class="transparence col s12 z-depth-4 card-panel">
                 <form class="login-form">
                     <div class="row">
                         <div class="input-field col s12 center">
                             <img src="../img/logo.png" alt="" height="280" width="280" class="circle responsive-img valign profile-image-login">
-                            <p class="center login-form-text">EATinéraire</p>
+                            <p class="center login-form-text">Connexion</p>
                         </div>
                     </div>
                     <div class="row margin">
