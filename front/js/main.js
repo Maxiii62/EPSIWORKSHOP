@@ -35,3 +35,7 @@ $('#connexion').click(function() {
         }
     });
 });
+
+$('#deconnexion').click(function(){
+    alert('walla');
+})

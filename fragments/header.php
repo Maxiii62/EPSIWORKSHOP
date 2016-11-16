@@ -4,7 +4,15 @@
         <meta charset="UTF-8">
         <link href="../../materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
         <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-        <title><?php echo $title; ?></title>
+        <title>
+
+            <?php echo $title;
+
+            session_start();
+
+            ?>
+
+        </title>
     </head>
     <body>
   <nav>
@@ -12,13 +20,29 @@
       <ul id="nav-mobile" class="hide-on-med-and-down blue-grey">
           <div class="left">
             <li><a href="">Carte</a></li>
-             <li><a href="">Historique</a></li>
+
+            <?php
+              if(isset($_SESSION['monUserCo'])){
+                  echo "<li><a href=''>Historique</a></li>";
+              }
+            ?>
+
+
+
           </div>
           <div class="right">
-              <li><a href="">Mon profil</a></li>
-              <li><a class="" href="../html/Inscription.php">Inscription</a></li>
-              <li><a class="" href="../html/Login.php">Connexion</a></li>
-              <li><a class="" href="../html/Login.php">Déconnexion</a></li>
+
+              <?php
+                if(isset($_SESSION['monUserCo'])){
+                    echo "<li><a id='deconnexion' class=''>Déconnexion</a></li>
+                          <li><a href=''>Mon profil</a></li>";
+                } else {
+                    echo "<li><a class='' href='../html/Login.php'>Connexion</a></li>
+                          <li><a class='' href='../html/Inscription.php'>Inscription</a></li>";
+                }
+              ?>
+
+
           </div>
       </ul>
     </div>
