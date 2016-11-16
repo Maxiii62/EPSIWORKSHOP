@@ -23,6 +23,7 @@ session_start();
                 <ul id="nav-mobile" class="hide-on-med-and-down blue-grey">
                     <div class="left">
                         <li><a href="../html/Appointements.php">Carte</a></li>
+                        <li><a href="../html/ranking.php">Classement</a></li>
 
                     </div>
                     <div class="right">
