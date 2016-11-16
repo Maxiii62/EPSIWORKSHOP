@@ -37,7 +37,7 @@ include '../../fragments/header.php';?>
 						</div>
 						<div class="row">
 							<div class="input-field col s12">
-								<input id="telephone" type="email" class="validate">
+								<input id="telephone" type="text" class="validate">
 								<label for="telephone"><i class="tiny material-icons">phone</i> Telephone</label>
 							</div>
 						</div>

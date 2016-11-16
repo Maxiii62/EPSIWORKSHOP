@@ -9,7 +9,7 @@ include '../../fragments/header.php';
                 <form class="login-form">
                     <div class="row">
                         <div class="input-field col s12 center">
-                            <img src="images/login-logo.png" alt="" class="circle responsive-img valign profile-image-login">
+                            <img src="../img/logo.png" alt="" height="280" width="280" class="circle responsive-img valign profile-image-login">
                             <p class="center login-form-text">EATinéraire</p>
                         </div>
                     </div>
@@ -36,9 +36,6 @@ include '../../fragments/header.php';
                         <div class="input-field col s6 m6 l6">
                             <p class="margin medium-small"><a href="Inscription.php">S'inscrire</a></p>
                         </div>
-                        <div class="input-field col s6 m6 l6">
-                            <p class="margin right-align medium-small"><a href="page-forgot-password.html">Mot de passe oublié</a></p>
-                        </div>          
                     </div>
 
                 </form>

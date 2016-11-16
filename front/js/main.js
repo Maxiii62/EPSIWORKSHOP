@@ -5,7 +5,7 @@ $('#valider').click(function() {
         async: false,
         data: {'ws' : 'utilisateur', 'action' : 'addUser','prenom': $('#first_name').val(), 'nom': $('#last_name').val(), 'password': $('#password').val(), 'email': $('#email').val(), 'datepicker_register': $('#datepicker_register').val(), 'numeroTelephone' : $('#telephone').val()},
         success: function (response) {
-            alert(response);
+            document.location.href="../html/Login.php";
         },
         error: function (msg) {
             console.log(msg.responseType);
@@ -26,7 +26,7 @@ $('#connexion').click(function() {
             if(response.idUtilisateur == null){
                 alert('Wrong');
             } else {
-                document.location.href="../html/Mon_Profil.php"
+                document.location.href="../html/Appointements.php"
             }
         },
         error: function (msg) {

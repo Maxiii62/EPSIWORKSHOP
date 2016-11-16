@@ -25,8 +25,9 @@ class WS_Utilisateur implements IWebServiciable{
         switch ($_POST['action']) {
             case ADD_USER :
 
-                if (!isset($_POST['nom']))
+                if ($_POST['nom'] == null || $_POST['prenom'] == null|| $_POST['datepicker_register'] == null|| $_POST['email'] == null|| $_POST['password'] == null|| $_POST['numeroTelephone'] == null){
                     Helper::ThrowAccessDenied();
+                }
 
                 $sql = "INSERT INTO `utilisateur`(`nom`, `prenom`, `dateNaissance`, `mail`, `password`, `numeroTelephone`, `nombrePoints`) VALUES ('" .$_POST['nom']. "', '". $_POST['prenom'] . "', '1994-01-01', '". $_POST['email'] . "', '". $_POST['password'] ."', '". $_POST['numeroTelephone'] ."',0)";
                 execReqWithoutResult($sql);
