@@ -2,6 +2,7 @@
 $title = "EATinéraire";
 include '../../fragments/header.php';
 ?>
+
 <html>
         <div id="login-page" class="row">
             <div class="col s12 z-depth-4 card-panel">
@@ -45,7 +46,7 @@ include '../../fragments/header.php';
         </div>
     </body>
 </html>
+
 <?php
 include '../../fragments/footer.php';
-
 ?>
