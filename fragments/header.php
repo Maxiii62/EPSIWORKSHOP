@@ -22,7 +22,7 @@ session_start();
             <div class="nav-wrapper blue-grey ">
                 <ul id="nav-mobile" class="hide-on-med-and-down blue-grey">
                     <div class="left">
-                        <li><a href="">Carte</a></li>
+                        <li><a href="../html/Appointements.php">Carte</a></li>
 
                     </div>
                     <div class="right">
@@ -30,7 +30,7 @@ session_start();
                         <?php
                         if (isset($_SESSION['monUserCo'])) {
                             echo "<li><a id='deconnexion' class=''>Déconnexion</a></li>
-                          <li><a href=''>Mon profil</a></li>";
+                          <li><a href='../html/Mon_Profil.php'>Mon profil</a></li>";
                         } else {
                             echo "<li><a class='' href='../html/Login.php'>Connexion</a></li>
                           <li><a class='' href='../html/Inscription.php'>Inscription</a></li>";
