@@ -33,6 +33,11 @@ class WS_Utilisateur implements IWebServiciable{
                 execReqWithoutResult($sql);
                 return "GG";
             case UPDATE_USER :
+
+                if ($_POST['id'] == null || $_POST['nom'] == null || $_POST['prenom'] == null|| $_POST['datepicker_register'] == null|| $_POST['email'] == null|| $_POST['password'] == null|| $_POST['numeroTelephone'] == null){
+                    Helper::ThrowAccessDenied();
+                }
+
                 $sql = "UPDATE UTILISATEUR SET nom = '" .$_POST['nom']. "', prenom = '" .$_POST['prenom']. "', dateNaissance = '" .$_POST['datepicker_register']. "', mail = '" .$_POST['email']. "', numeroTelephone = '" .$_POST['numeroTelephone']. "', password = '" .$_POST['password']."' WHERE idUtilisateur = " .$_POST['id'];
                 execReqWithoutResult($sql);
                 $sql = "SELECT * FROM UTILISATEUR WHERE idUtilisateur = '" . $_POST['id']. "'";

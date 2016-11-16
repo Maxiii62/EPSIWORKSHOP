@@ -51,9 +51,10 @@
 	// execution de la méthode
 	$result = $service->$method();
 	// si il y a un résultat, on retourne se résultat
-	if ($_POST['action'] == 'verifUser' && $_POST['ws'] == 'utilisateur')
+	if ($_POST['action'] == 'verifUser' && $_POST['ws'] == 'utilisateur' && isset($result['idUtilisateur']))
 		$_SESSION['monUserCo'] = $result;
-	if ($_POST['action'] == 'updateUser' && $_POST['ws'] == 'utilisateur')
+
+	if ($_POST['action'] == 'updateUser' && $_POST['ws'] == 'utilisateur' && isset($result['idUtilisateur']))
 		$_SESSION['monUserCo'] = $result;
 
 	if ($result !== null)

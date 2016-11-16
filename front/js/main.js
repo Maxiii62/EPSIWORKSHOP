@@ -5,7 +5,11 @@ $('#valider').click(function() {
         async: false,
         data: {'ws' : 'utilisateur', 'action' : 'addUser','prenom': $('#first_name').val(), 'nom': $('#last_name').val(), 'password': $('#password').val(), 'email': $('#email').val(), 'datepicker_register': $('#datepicker_register').val(), 'numeroTelephone' : $('#telephone').val()},
         success: function (response) {
-            document.location.href="../html/Login.php";
+            if (response == "You are not allowed to access to this page."){
+                Materialize.toast('Tous les champs doivent etre renseignes.', 4000);
+            }else{
+                document.location.href="../html/Login.php";
+            }
         },
         error: function (msg) {
             console.log(msg.responseType);
@@ -24,7 +28,7 @@ $('#connexion').click(function() {
             response = JSON.parse(response);
 
             if(response.idUtilisateur == null){
-                alert('Wrong');
+                Materialize.toast('Utilisateur inconnu.', 4000);
             } else {
                 document.location.href="../html/Appointements.php"
             }
@@ -51,7 +55,11 @@ $('#modifier').click(function(){
         async: false,
         data: {'ws' : 'utilisateur', 'action' : 'updateUser', 'id':$('#id').val(), 'prenom': $('#first_name').val(), 'nom': $('#last_name').val(), 'password': $('#password').val(), 'email': $('#email').val(), 'datepicker_register': $('#datepicker_register').val(), 'numeroTelephone' : $('#telephone').val()},
         success: function (response) {
-            document.location.href = "../html/Mon_Profil.php";
+            if (response == "You are not allowed to access to this page."){
+                Materialize.toast('Tous les champs doivent etre renseignes.', 4000);
+            }else {
+                document.location.href = "../html/Mon_Profil.php";
+            }
         },
         error: function (msg) {
             console.log(msg.responseType);
