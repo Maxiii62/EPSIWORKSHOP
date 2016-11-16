@@ -71,3 +71,26 @@ $('#modifier').click(function(){
 $('#reset').click(function(){
     $('.reset').val('');
 })
+
+function classement(){
+    $.ajax({
+        url: "http://localhost/EPSIWORKSHOP/controller/controller.php?",
+        type: 'POST',
+        async: false,
+        data: {'ws' : 'utilisateur', 'action' : 'getClassement'},
+        success: function (response) {
+            var obj = jQuery.parseJSON(response);
+            for(var i = 0; i < obj.length;i++){
+                $("#tbody").append("<tr class='odd'><td> " + (i+1) + "</td>" +
+                    "<td class='td-mc1'> " + obj[i].nom + ' ' + obj[i].prenom + "</td>" +
+                    "<td class='td-mc1'> " + obj[i].nombrePoints + "</tr>");
+            }
+
+
+        },
+        error: function (msg) {
+            console.log(msg.responseType);
+            console.log('Problème rencontré dans le réseau.');
+        }
+    });
+}
