@@ -57,5 +57,7 @@ include '../../fragments/header.php';
         </div>
     </div>
 </body>
+
 </html>
 <?php include '../../fragments/footer.php'; ?>
+
