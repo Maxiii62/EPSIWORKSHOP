@@ -55,8 +55,6 @@
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript" src="../js/jquery/jquery-1.11.0.min.js"></script>
-	<script src="../js/main.js" />
 </body>
 </html>
 <?phpinclude '../../fragments/footer.php';?>
