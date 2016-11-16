@@ -39,3 +39,7 @@ $('#connexion').click(function() {
 $('#deconnexion').click(function(){
     document.location.href="../html/Logout.php"
 })
+
+$('#modifierProfil').click(function(){
+
+})

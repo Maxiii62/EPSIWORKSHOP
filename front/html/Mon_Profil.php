@@ -66,7 +66,7 @@ include '../../fragments/header.php';
                     <li class="collection-item">
                         <div class="row">
                             <div class="col s5 grey-text darken-1"><i class="mdi-social-cake"></i>T&eacutel&eacutephone</div>
-                            <div class="col s7 grey-text text-darken-4 right-align" <?php
+                            <div class="col s7 grey-text text-darken-4 right-align"> <?php
                             echo $_SESSION['monUserCo']['numeroTelephone'];
                             ?></div>
                         </div>
@@ -80,6 +80,12 @@ include '../../fragments/header.php';
                         </div>
                     </li>
                 </ul>
+
+                <div class="row">
+                    <div class="input-field col s12" >
+                        <a id="modifierProfil" class="btn waves-effect waves-light col s12">Modifier</a>
+                    </div>
+                </div>
 
             </form>
         </div>
