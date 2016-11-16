@@ -57,4 +57,4 @@
 	</div>
 </body>
 </html>
-<?phpinclude '../../fragments/footer.php';?>
+<?php include '../../fragments/footer.php';?>

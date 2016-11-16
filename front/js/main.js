@@ -1,4 +1,4 @@
-$('#sauvegarder').click(function() {
+$('#valider').click(function() {
     $.ajax({
         url: "http://localhost/EPSIWORKSHOP/controller/controller.php?",
         type: 'POST',
