@@ -1,5 +1,7 @@
 <?php
 
+require_once '../ws/require.php';
+
 const GET_MINE = "getMine";
 const GET_BYID = "getByid";
 const GET_SEARCH = "getSearch";
@@ -34,30 +36,41 @@ class WS_Rdv implements IWebServiciable
                 $sql = "SELECT * FROM Rdv rdv INNER JOIN Utilisateur user ON user.id = rdv.idCreateur LEFT JOIN Verdict verd ON verd.idRdv = rdv.id WHERE rdv.id ="  . $_POST['idRdv'];
                 return returnOneArray($sql);
             case ADD_RDV :
-                add_rdv();
+                $sql = "SELECT idLieu FROM Lieu WHERE coordonnees ='".$_POST['coordonnees']."' AND nomLieu ='".$_POST['nom']."'";
+                $idLieu = returnOneLine($sql);
+
+                if ($idLieu[0] == null){
+
+                    $sql = "INSERT INTO LIEU (coordonnees, nomLieu) VALUES ('".$_POST['coordonnees']."','".$_POST['nom']."')";
+                    $idLieu = execReqWithoutResult($sql);
+
+                    $sql = "SELECT MAX(idLieu) as id FROM LIEU";
+                    $idLieu = returnOneLine($sql);
+
+                    $idLieu = $idLieu['id'];
+                }else{
+                  $idLieu = $idLieu['idLieu'];
+                }
+
+
+
+                $sql = "INSERT INTO RDV (horaire, idUtilisateur, dateRdv, idLieu ) VALUES ('".$_POST['horaire']."','".$_POST['idUser']."','".$_POST['date']."','".$idLieu."')";
+                execReqWithoutResult($sql);
+
+                $sql = "SELECT MAX(idRDV) as id FROM rdv";
+                $idRdv = returnOneLine($sql);
+
+                $idRdv = $idRdv['id'];
+
+                $sql = "INSERT INTO UTILISATEUR_RDV (idUtilisateur, idRdv ) VALUES  ('".$_POST['idUser']."','".$idRdv."')";
+
+                execReqWithoutResult($sql);
+
+                return true;
             default:
                 Helper::ThrowAccessDenied();
                 break;
         }
 
-        function add_rdv(){
-
-            $sql = "SELECT id FROM Lieu WHERE coordonnees =" . $_POST['coordonnees'] . "AND nom =" . $_POST['nom'];
-            $idLieu = returnOneLine($sql);
-
-            if ($idLieu == null){
-                $sql = "INSERT INTO LIEU ('coordonnees', 'nom') VALUES (" .$_POST['coordonnees']. ", ". $_POST['nom'] . ")";
-                $idLieu = retournemoiunid($sql);
-            }
-
-            $sql = "INSERT INTO RDV ('horraire', 'idCreateur', 'date', idLieu ) VALUES (" .$_POST['horraire']. ", ". $_POST['idCreateur'] . ", ". $_POST['date'] . ", " . $idLieu .")";
-            $idRdv = retournemoiunid($sql);
-
-            $sql = "INSERT INTO UTILISATEUR_RDV ('idUtilisateur', 'idRdv') VALUES (" .$_POST['idUser']. ", ". $idRdv . ")";
-            execReqWithoutResult($sql);
-
-             return true;
-
-        }
     }
 }
