@@ -23,8 +23,11 @@
     border: 1px solid black;
 }
 
-
+.select{
+    float: right;
+}
 .footer{
+    z-index: 8;
     width: 100%;
     position:absolute;
     bottom:0px;
