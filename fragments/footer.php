@@ -1,26 +1,6 @@
 
-        <?php if($title != "EATinéraire"){
-            
-        ?>
 <footer class="page-footer  blue-grey footer">
-    <div class="container container-footer">
-        <div class="row">
-            <div class="col l6 s12">
-                <h5 class="white-text">EATinéraire</h5>
-                <p class="grey-text text-lighten-4">La solution pour ne jamais manger seul le midi ! et surout toujours savoir ou manger</p>
-            </div>
-            <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Lien partenaire</h5>
-                <ul>
-                    <li><a class="grey-text text-lighten-3" href="#!">Macdonalds</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">KFC</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Burger king</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Quick</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-        <?php } ?>
+
     <div class="footer-copyright copyright">
         <div class="container">
             © 2016   Copyright Text EATMen 
