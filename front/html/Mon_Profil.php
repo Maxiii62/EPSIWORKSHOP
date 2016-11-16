@@ -1,6 +1,11 @@
 <?php
 $title = "Mon profil";
 include '../../fragments/header.php';
+
+    if (!isset($_SESSION['monUserCo'])){
+        header('Location: ../html/Login.php');
+    }
+
 ?>
 
 <html>
