@@ -26,7 +26,7 @@ $('#connexion').click(function() {
             if(response.idUtilisateur == null){
                 alert('Wrong');
             } else {
-                document.location.href="../html/Appointement.php"
+                document.location.href="../html/Mon_Profil.php"
             }
         },
         error: function (msg) {
@@ -37,5 +37,5 @@ $('#connexion').click(function() {
 });
 
 $('#deconnexion').click(function(){
-    alert('walla');
+    document.location.href="../html/Logout.php"
 })

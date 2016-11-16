@@ -1,5 +1,4 @@
 <?php
-	session_start();
 	include_once('helper.php');
 	const PATH_WEBSERVICES = '../ws';
 
@@ -21,8 +20,12 @@
 	// si il y a un résultat, on retourne se résultat
 
   // à voir si on fait la connexion
-	if ($_POST['action'] == 'utilisateur' && $_POST['ws'] == 'verifUser')
+	if ($_POST['action'] == 'verifUser'){
+
 		$_SESSION['monUserCo'] = $result;
+
+	}
+
 
 	if ($result !== null)
 		echo json_encode($result);
