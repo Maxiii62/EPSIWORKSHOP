@@ -55,7 +55,7 @@ class WS_Rdv implements IWebServiciable
 
 
 
-                $sql = "INSERT INTO RDV (horaire, idUtilisateur, dateRdv, idLieu ) VALUES ('".$_POST['horaire']."','".$_POST['idUser']."','".$_POST['date']."','".$idLieu."')";
+                $sql = "INSERT INTO RDV (horaire, idCreateur, dateRdv, idLieu, nbPlaces ) VALUES ('".$_POST['horaire']."','".$_POST['idUser']."','".$_POST['date']."','".$idLieu."', '".$_POST['nbPlaces']."')";
                 execReqWithoutResult($sql);
 
                 $sql = "SELECT MAX(idRDV) as id FROM rdv";
@@ -63,7 +63,7 @@ class WS_Rdv implements IWebServiciable
 
                 $idRdv = $idRdv['id'];
 
-                $sql = "INSERT INTO UTILISATEUR_RDV (idUtilisateur, idRdv ) VALUES  ('".$_POST['idUser']."','".$idRdv."')";
+                $sql = "INSERT INTO UTILISATEUR_RDV (idUtilisateur, idRdv) VALUES  ('".$_POST['idUser']."','".$idRdv."')";
 
                 execReqWithoutResult($sql);
 

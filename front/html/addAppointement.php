@@ -81,6 +81,11 @@
                 <input id="heureRDV" type="text" class="validate">
                 <label for="icon_prefix">Heure</label>
               </div>
+			   <div class="input-field col s10">
+                <i class="material-icons prefix">av_timer</i>
+                <input id="nbPlaces" type="text" class="validate">
+                <label for="icon_prefix">Nombre de places</label>
+              </div>
             </div>
           </div>
           <div class="modal-footer">

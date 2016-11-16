@@ -202,7 +202,7 @@ $( "#creationRDV" ).click(function() {
            $.ajax({
                method: "POST",
                url : "/EPSIWORKSHOP/controller/controller.php",
-               data: { ws: 'rdv', action : 'addRdv', date: $("#dateRDV").val(), horaire: $("#heureRDV").val(), coordonnees : destinationObjectif.geometry.location.lat() + ", " + destinationObjectif.geometry.location.lng(), nom : destinationObjectif.name, idUser : 1},
+               data: { ws: 'rdv', action : 'addRdv', date: $("#dateRDV").val(), horaire: $("#heureRDV").val(), coordonnees : destinationObjectif.geometry.location.lat() + ", " + destinationObjectif.geometry.location.lng(), nom : destinationObjectif.name, idUser : 1, nbPlaces : $("#nbPlaces").val()},
                success: function(response) {
                   if(response === "true"){
                     Materialize.toast('Rendez-vous ajouté ! ;-)', 4000 ,'green');
