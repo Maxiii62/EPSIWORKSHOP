@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 
 <?php
-
-    if (!isset($_SESSION)){
-        session_start();
-    }
-
+    session_start();
 ?>
 
 <html>
@@ -26,16 +22,13 @@
 
             <?php
 
-            if(isset($_SESSION{'monUserCo'})){
-                var_dump($_SESSION);
-            }
+            Print_r ($_SESSION);
 
-
-            echo "ok";
-
-              if(isset($_SESSION['monUserCo'])){
+              /*if(isset($_SESSION['monUserCo'])){
                   echo "<li><a href=''>Historique</a></li>";
-              }
+              }*/
+
+
 
             ?>
 

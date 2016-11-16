@@ -7,6 +7,13 @@ include '../../fragments/header.php';
     <div class="contain row card horizontal">
         </br>
         <h3 class="center">Mon Profil</h3>
+
+        <?php
+
+            var_dump($_SESSION);
+
+        ?>
+
         <table class="responsive-table">
 
             <tbody>
