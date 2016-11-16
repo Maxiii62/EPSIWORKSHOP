@@ -1,15 +1,27 @@
 
 #login-page
 {
-    margin-top: 0%;
+    margin-top: 5%;
     margin-left:  20%;
     margin-right: 20%;
     z-index : 1;
 }
 
-.cadre
-{
+
+.contain{
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.cadre{
     border: 1px solid black;
+}
+
+
+.footer{
+    width: 100%;
+    position:absolute;
+    bottom:0px;
 }
 
 body:before
