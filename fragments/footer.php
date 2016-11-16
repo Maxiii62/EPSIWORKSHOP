@@ -1,6 +1,3 @@
-
-
-
 <div class="page-footer blue-grey copyright footer">
     <div class="container">
         © 2016   Copyright Text EATMen 
