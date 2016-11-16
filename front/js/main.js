@@ -44,3 +44,22 @@ $('#modifierProfil').click(function(){
     document.location.href = "../html/Modification.php";
 })
 
+$('#modifier').click(function(){
+    $.ajax({
+        url: "http://localhost/EPSIWORKSHOP/controller/controller.php?",
+        type: 'POST',
+        async: false,
+        data: {'ws' : 'utilisateur', 'action' : 'updateUser', 'id':$('#id').val(), 'prenom': $('#first_name').val(), 'nom': $('#last_name').val(), 'password': $('#password').val(), 'email': $('#email').val(), 'datepicker_register': $('#datepicker_register').val(), 'numeroTelephone' : $('#telephone').val()},
+        success: function (response) {
+            document.location.href = "../html/Mon_Profil.php";
+        },
+        error: function (msg) {
+            console.log(msg.responseType);
+            console.log('Problème rencontré dans le réseau.');
+        }
+    });
+})
+
+$('#reset').click(function(){
+    $('.reset').val('');
+})

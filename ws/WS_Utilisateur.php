@@ -31,10 +31,12 @@ class WS_Utilisateur implements IWebServiciable{
 
                 $sql = "INSERT INTO `utilisateur`(`nom`, `prenom`, `dateNaissance`, `mail`, `password`, `numeroTelephone`, `nombrePoints`) VALUES ('" .$_POST['nom']. "', '". $_POST['prenom'] . "', '1994-01-01', '". $_POST['email'] . "', '". $_POST['password'] ."', '". $_POST['numeroTelephone'] ."',0)";
                 execReqWithoutResult($sql);
-                return $sql;
+                return "GG";
             case UPDATE_USER :
-                $sql = "UPDATE UTILISATEUR SET nom = " .$_POST['nom']. ", prenom = " .$_POST['nom']. ", dateNaissance = " .$_POST['dateNaissance']. ", mail = " .$_POST['mail']. ", numeroTelephone = " .$_POST['numeroTelephone']. ", password = " .$_POST['password'];
-                return execReqWithoutResult($sql);
+                $sql = "UPDATE UTILISATEUR SET nom = '" .$_POST['nom']. "', prenom = '" .$_POST['prenom']. "', dateNaissance = '" .$_POST['datepicker_register']. "', mail = '" .$_POST['email']. "', numeroTelephone = '" .$_POST['numeroTelephone']. "', password = '" .$_POST['password']."' WHERE idUtilisateur = " .$_POST['id'];
+                execReqWithoutResult($sql);
+                $sql = "SELECT * FROM UTILISATEUR WHERE idUtilisateur = '" . $_POST['id']. "'";
+                return returnOneLine($sql);
             case GET_USER :
                 $sql = "SELECT * FROM UTILISATEUR WHERE id = " . $_POST['idUtilisateur'];
                 return returnOneLine($sql);

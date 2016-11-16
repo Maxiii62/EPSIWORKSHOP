@@ -53,6 +53,9 @@
 	// si il y a un résultat, on retourne se résultat
 	if ($_POST['action'] == 'verifUser' && $_POST['ws'] == 'utilisateur')
 		$_SESSION['monUserCo'] = $result;
+	if ($_POST['action'] == 'updateUser' && $_POST['ws'] == 'utilisateur')
+		$_SESSION['monUserCo'] = $result;
+
 	if ($result !== null)
 		echo json_encode($result);
 

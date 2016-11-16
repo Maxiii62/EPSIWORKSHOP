@@ -29,11 +29,12 @@ session_start();
 
                         <?php
                         if (isset($_SESSION['monUserCo'])) {
-                            echo "<li><a id='deconnexion' class=''>Déconnexion</a></li>
-                          <li><a href='../html/Mon_Profil.php'>Mon profil</a></li>";
+                            echo "<li><a href='../html/Mon_Profil.php'>Mon profil</a></li>
+                                   <li><a id='deconnexion' class=''>Déconnexion</a></li>
+                          ";
                         } else {
-                            echo "<li><a class='' href='../html/Login.php'>Connexion</a></li>
-                          <li><a class='' href='../html/Inscription.php'>Inscription</a></li>";
+                            echo "<li><a class='' href='../html/Inscription.php'>Inscription</a></li>
+                            <li><a class='' href='../html/Login.php'>Connexion</a></li>";
                         }
                         ?>
 
