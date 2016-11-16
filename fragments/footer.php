@@ -3,7 +3,7 @@
         <?php if($title != "EATinéraire"){
             
         ?>
-<footer class="page-footer fixe blue-grey">
+<footer class="page-footer  blue-grey footer">
     <div class="container">
         <div class="row">
             <div class="col l6 s12">
