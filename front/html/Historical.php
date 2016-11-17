@@ -11,7 +11,7 @@
 
                 <div class=" row horizontal">
                    
-                    <h3 class="center">Historique</h3>
+                    <h3 class="center">Mon Historique</h3>
                     <table class="">
                         <thead>
                             <tr>
