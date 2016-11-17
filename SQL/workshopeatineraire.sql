@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mer 16 Novembre 2016 à 13:38
+-- Généré le :  Jeu 17 Novembre 2016 à 15:42
 -- Version du serveur :  5.7.9
 -- Version de PHP :  5.6.16
 
@@ -58,7 +58,6 @@ CREATE TABLE IF NOT EXISTS `rdv` (
   `dateRdv` date NOT NULL,
   `nbPlaces` int(11) DEFAULT NULL,
   `idLieu` int(11) NOT NULL,
-  `positionInitiale` varchar(255) NOT NULL,
   PRIMARY KEY (`idRDV`),
   KEY `FK_Rdv_idLieu` (`idLieu`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
@@ -67,9 +66,9 @@ CREATE TABLE IF NOT EXISTS `rdv` (
 -- Contenu de la table `rdv`
 --
 
-INSERT INTO `rdv` (`idRDV`, `horaire`, `idCreateur`, `dateRdv`, `nbPlaces`, `idLieu`, `positionInitiale`) VALUES
-(1, '12:00', 1, '2016-11-17', 3, 1, "0"),
-(2, '13h', 3, '2016-11-23', 1, 1, "0");
+INSERT INTO `rdv` (`idRDV`, `horaire`, `idCreateur`, `dateRdv`, `nbPlaces`, `idLieu`) VALUES
+(1, '12h30', 1, '2016-11-17', 3, 1),
+(2, '13h00', 3, '2016-11-23', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -104,6 +103,7 @@ CREATE TABLE IF NOT EXISTS `trajet` (
   `idRdv` int(11) NOT NULL,
   `numEtape` int(11) DEFAULT NULL,
   `idUtilisateur` int(11) NOT NULL,
+  `positionParticipant` varchar(250) DEFAULT NULL,
   PRIMARY KEY (`idTrajet`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
@@ -111,8 +111,8 @@ CREATE TABLE IF NOT EXISTS `trajet` (
 -- Contenu de la table `trajet`
 --
 
-INSERT INTO `trajet` (`idTrajet`, `idRdv`, `numEtape`, `idUtilisateur`) VALUES
-(1, 1, 3, 2);
+INSERT INTO `trajet` (`idTrajet`, `idRdv`, `numEtape`, `idUtilisateur`, `positionParticipant`) VALUES
+(1, 1, 3, 2, '0');
 
 -- --------------------------------------------------------
 
@@ -138,10 +138,10 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
 --
 
 INSERT INTO `utilisateur` (`idUtilisateur`, `nom`, `prenom`, `dateNaissance`, `mail`, `password`, `numeroTelephone`, `nombrePoints`) VALUES
-(1, 'LECAILLE', 'Maxime', '1994-08-19', 'maxime.lecaille@epsi.fr', 'maxmax', '0610684839', NULL),
-(2, 'ROUSSEL', 'Maxime', '1993-09-13', 'maxime.roussel1@epsi.fr', 'maxmax', '0606060606', NULL),
-(3, 'GOMEL', 'Benjamin', '1994-08-09', 'benjamin.gomel@epsi.fr', 'benben', '0606060606', NULL),
-(4, 'COUSSEMAEKER', 'Arnaud', '1994-06-14', 'arnaud.coussmaeker@epsi.fr', 'arnaudarnaud', '0606060606', NULL);
+(1, 'LECAILLE', 'Maxime', '1994-08-19', 'maxime.lecaille@epsi.fr', 'maxmax', '0610684839', 0),
+(2, 'ROUSSEL', 'Maxime', '1993-09-13', 'maxime.roussel1@epsi.fr', 'maxmax', '0606060606', 0),
+(3, 'GOMEL', 'Benjamin', '1994-08-09', 'benjamin.gomel@epsi.fr', 'benben', '0606060606', 0),
+(4, 'COUSSEMAEKER', 'Arnaud', '1994-06-14', 'arnaud.coussmaeker@epsi.fr', 'arnaudarnaud', '0606060606', 0);
 
 -- --------------------------------------------------------
 
@@ -153,7 +153,6 @@ DROP TABLE IF EXISTS `utilisateur_rdv`;
 CREATE TABLE IF NOT EXISTS `utilisateur_rdv` (
   `note` int(11) DEFAULT NULL,
   `description` varchar(255) DEFAULT NULL,
-  `idCreateur` int(11) DEFAULT NULL,
   `idUtilisateur` int(11) NOT NULL,
   `idRDV` int(11) NOT NULL,
   PRIMARY KEY (`idUtilisateur`,`idRDV`),
@@ -164,8 +163,8 @@ CREATE TABLE IF NOT EXISTS `utilisateur_rdv` (
 -- Contenu de la table `utilisateur_rdv`
 --
 
-INSERT INTO `utilisateur_rdv` (`note`, `description`, `idCreateur`, `idUtilisateur`, `idRDV`) VALUES
-(5, 'TOP TOP TOP', 1, 3, 2);
+INSERT INTO `utilisateur_rdv` (`note`, `description`, `idUtilisateur`, `idRDV`) VALUES
+(5, 'TOP TOP TOP', 3, 2);
 
 --
 -- Contraintes pour les tables exportées
