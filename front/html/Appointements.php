@@ -20,17 +20,17 @@
             <label for="changetype-geocode" style="color:white;">Transport en commun</label>
         </div>
         <div id="div_map" class="row ">
-            <div  class="col s3 push-s9 ">
+            <div  class="col s12 m4 l3 grey">
                 <h3>Itinéraire</h3>
                 <div id="right-panel" ></div>
             </div>
-            <div  class="col s9 pull-s3 white">
+            <div  class="col s12 m4 l6 white">
                 <h3>Carte</h3>
                 <div id="map" ></div>
             </div>
-        </div>
+        
 
-        <div class=" row card">
+        <div class="col s12 m4 l3 row card">
             <div class="row">
                 <p> Le lieu </p>
                 <select class="browser-default select" id="selectLesLieux"></select>
@@ -53,8 +53,11 @@
                     <i class="material-icons right">search</i>
                 </button>
             </div>
+            </div>
+            </br>
             <div class="">
-                <table class="" >
+                
+                <table class="card" >
                     <thead>
                         <tr>
                             <th>Conducteur</th>
