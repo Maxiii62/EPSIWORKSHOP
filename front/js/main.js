@@ -122,8 +122,8 @@ function getHistorique(){
                 $("#tbody").append("<tr class='odd'><td> " + obj[i].dateRdv + "</td>" +
                     "<td class='td-mc1'> " + obj[i].nom + ' ' + obj[i].prenom + "</td>" +
                     "<td class='td-mc1'> " + obj[i].nomLieu + "</td><td>" +
-                    "<a class='btn-floating btn-large waves-effect waves-light blue-grey' id='detail' value='" + obj[i].idRdv +"'>" +
-                    "<i class='material-icons'>add</i></a></td></tr>");
+                    "<a class='btn-floating btn-large waves-effect waves-light blue-grey detail' id='detail' value='" + obj[i].idRdv +"'>" +
+                    "<i class='material-icons'>add</i></a></td></tr><script type='text/javascript' src='../../materialize/js/script.js'></script>");
             }
 
         },
