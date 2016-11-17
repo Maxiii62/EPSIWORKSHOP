@@ -36,7 +36,8 @@ session_start();
 
                         <?php
                         if (isset($_SESSION['monUserCo'])) {
-                            echo "<li><a href='../html/Mon_Profil.php'>Mon profil</a></li>
+                            echo "<li><a href='../html/historical.php'>Mon historique</a></li>
+                                   <li><a href='../html/Mon_Profil.php'>Mon profil</a></li>
                                    <li><a id='deconnexion' class=''>Déconnexion</a></li>
                                    <input type='hidden' id='id' value='" . $_SESSION['monUserCo']['idUtilisateur'] . "'>
                           ";

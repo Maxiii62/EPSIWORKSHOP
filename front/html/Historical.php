@@ -16,14 +16,8 @@
                         <th>Détail</th>
                     </tr>
                 </thead>
-                <tbody>
-                        <td>18/11/2016</td>
-                        <td>Roussel Maxime</td>
-                        <td>Macdonalds</td>
-                        <td>
-                            <a class="btn-floating btn-large waves-effect waves-light blue-grey"><i class="material-icons">add</i></a>
-                        </td>
-                    </tr>
+                <tbody id="tbody">
+
                 </tbody>
 
             </table>
@@ -34,5 +28,12 @@
     <?php
     include '../../fragments/footer.php';
     ?>
+
+<script>
+
+    getHistorique();
+
+</script>
+
 </body>
 </html>

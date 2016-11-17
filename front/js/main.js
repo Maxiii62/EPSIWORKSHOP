@@ -97,9 +97,34 @@ function classement(){
             for(var i = 0; i < obj.length;i++){
                 $("#tbody").append("<tr class='odd'><td> " + (i+1) + "</td>" +
                     "<td class='td-mc1'> " + obj[i].nom + ' ' + obj[i].prenom + "</td>" +
-                    "<td class='td-mc1'> " + obj[i].nombrePoints + "</tr>");
+                    "<td class='td-mc1'> " + obj[i].nombrePoints + "</td></tr>");
             }
 
+
+        },
+        error: function (msg) {
+            console.log(msg.responseType);
+            console.log('Probl�me rencontr� dans le r�seau.');
+        }
+    });
+}
+
+function getHistorique(){
+    $.ajax({
+        url: "http://localhost/EPSIWORKSHOP/controller/controller.php?",
+        type: 'POST',
+        async: false,
+        data: {'ws' : 'rdv', 'action' : 'getMine', 'idUser' : $('#id').val()},
+        success: function (response) {
+
+            var obj = jQuery.parseJSON(response);
+            for(var i = 0; i < obj.length;i++){
+                $("#tbody").append("<tr class='odd'><td> " + obj[i].dateRdv + "</td>" +
+                    "<td class='td-mc1'> " + obj[i].nom + ' ' + obj[i].prenom + "</td>" +
+                    "<td class='td-mc1'> " + obj[i].nomLieu + "</td><td>" +
+                    "<a class='btn-floating btn-large waves-effect waves-light blue-grey' id='detail' value='" + obj[i].idRdv +"'>" +
+                    "<i class='material-icons'>add</i></a></td></tr>");
+            }
 
         },
         error: function (msg) {
