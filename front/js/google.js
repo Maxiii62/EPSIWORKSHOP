@@ -348,3 +348,22 @@ $("#joinRdv").on("click",function(){
       }
  });
 })
+
+$("#selectLesLieux").on("change",function(){
+ var coordonnees = {
+     geometry : {
+         location : {
+           lat : "",
+           lng : ""
+         }
+     }
+ };
+
+ var string = $("#selectLesLieux").val().split(",");
+
+ coordonnees.geometry.location.lat = parseFloat(string[0]);
+ coordonnees.geometry.location.lng = parseFloat(string[1]);
+
+ calculateAndDisplayRoute(coordonnees);
+ displayInfos(coordonnees);
+ });
