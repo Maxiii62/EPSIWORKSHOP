@@ -1,3 +1,4 @@
+<body>
 <?php
 $title = "Mon profil";
 include '../../fragments/header.php';
@@ -7,15 +8,6 @@ include '../../fragments/header.php';
     }
 
 ?>
-
-<html>
-<head>
-    <link href="../../materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <title>Mon Profil</title>
-</head>
-<body>
     <div id="login-page" class="row">
         <div class="transparence col s12 z-depth-4 card-panel">
             <form class="login-form">
@@ -90,10 +82,9 @@ include '../../fragments/header.php';
             </form>
         </div>
     </div>
-</body>
-</html>
-   
+
     <?php
     include '../../fragments/footer.php';
     ?>
 
+</body>
