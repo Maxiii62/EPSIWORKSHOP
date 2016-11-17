@@ -65,7 +65,7 @@ class WS_Rdv implements IWebServiciable
 
                 return returnOneArray($sql);
             case GET_DETAILS :
-                $sql = "SELECT user.nom, user.prenom, urdv.note, urdv.description FROM utilisateur_rdv urdv INNER JOIN utilisateur user ON user.idUtilisateur = urdv.idUtilisateur WHERE idRDV =  " . $_POST['idRdv']." AND urdv.note != null OR urdv.description != null";
+                $sql = "SELECT user.nom, user.prenom, urdv.note, urdv.description FROM utilisateur_rdv urdv INNER JOIN utilisateur user ON user.idUtilisateur = urdv.idUtilisateur WHERE idRDV =  " . $_POST['idRdv']." AND urdv.note is not null OR urdv.description is not null";
                 return returnOneArray($sql);
             case GET_ALL_LIEUX:
                 $sql = "SELECT * FROM lieu  WHERE coordonnees != ''";
@@ -152,7 +152,7 @@ class WS_Rdv implements IWebServiciable
 
                         $sql2 = "UPDATE UTILISATEUR SET nombrePoints = nombrePoints + 1 WHERE idUtilisateur = " .$_POST['idUser'];
                         execReqWithoutResult($sql2);
-                        
+
                     }
                 }
 
