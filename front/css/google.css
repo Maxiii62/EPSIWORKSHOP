@@ -46,7 +46,9 @@ font-size: 12px;
 }
 
 #map {
-  margin-right: 400px;
+  margin-right: 2%;
+  margin-bottom: 2%;
+  margin-left: 2%;
 }
 
 #floating-panel {

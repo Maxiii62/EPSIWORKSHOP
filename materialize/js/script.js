@@ -225,3 +225,7 @@ $('select').on('contentChanged', function () {
 // re-initialize (update)
     $(this).material_select();
 });
+
+$(".detail").on('click',function(){
+  $("#modalhistorique").openModal();
+})
