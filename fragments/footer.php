@@ -1,5 +1,5 @@
 <footer class="page-footer blue-grey footer">
-    <div class="container container-footer">
+    <div class="container">
         <div class="row">
             <div class="col l6 s12">
                 <h5 class="white-text">EATinéraire</h5>
@@ -16,7 +16,7 @@
             </div>
         </div>
     </div>
-    <div class="footer-copyright blue-grey">
+    <div class="footer-copyright blue-grey c">
         <div class="container">
             © 2016   Copyright Text EATMen 
         </div>

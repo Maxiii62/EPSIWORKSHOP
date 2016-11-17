@@ -1,9 +1,9 @@
-<?php
-$title = "EATinéraire";
-include '../../fragments/header.php';
-?>
-
-<html>
+<body>
+    <?php
+    $title = "EATinéraire";
+    include '../../fragments/header.php';
+    ?>
+    <main>
         <div id="login-page" class="row">
             <div class="transparence col s12 z-depth-4 card-panel">
                 <form class="login-form">
@@ -41,9 +41,8 @@ include '../../fragments/header.php';
                 </form>
             </div>
         </div>
-    </body>
-</html>
-
-<?php
-include '../../fragments/footer.php';
-?>
+    </main>
+    <?php
+    include '../../fragments/footer.php';
+    ?>
+</body>
