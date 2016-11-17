@@ -26,25 +26,15 @@ class WS_Rdv implements IWebServiciable
 
         switch ($_POST['action']) {
             case GET_MINE :
-<<<<<<< HEAD
-                $sql = "SELECT rdv.horraire, rdv.dateRdv, lieu.nomLieu FROM Rdv rdv INNER JOIN utilisateur_rdv urdv ON urdv.idRdv = rdv.id AND Lieu lieu ON lieu.id = rdv.idLieu  WHERE urdv.idUser =" . $_POST['idUser'];
-                return returnOneArray($sql);
-            case GET_BYID :
-                $sql = "SELECT rdv.horraire, rdv.dateRdv, lieu.nomLieu FROM Rdv rdv INNER JOIN utilisateur_rdv urdv ON urdv.idRdv = rdv.id AND Lieu lieu ON lieu.id = rdv.idLieu  WHERE urdv.idRdv =" . $_POST['idRdv'];
-                return returnOneLine($sql);
-            case GET_SEARCH :
-                $sql = "SELECT horaire,nom,prenom,dateRdv,nbPlaces,positionInitiale FROM rdv,utilisateur_rdv,utilisateur,lieu WHERE  lieu.idLieu = rdv.idLieu AND rdv.idCreateur = utilisateur_rdv.idCreateur AND utilisateur.idUtilisateur = utilisateur_rdv.idCreateur AND lieu.nomLieu = '".$_POST['nom']."' AND rdv.horaire = '".$_POST['horaire']."' AND rdv.dateRdv ='". $_POST['date']."' AND lieu.coordonnees ='".$_POST['coordonnees']."'";
-              //  return $sql;
-=======
                 $sql = "SELECT rdv.horaire, rdv.dateRdv, rdv.idRdv, lieu.nomLieu, rdv.idCreateur, user.nom, user.prenom FROM Rdv rdv INNER JOIN utilisateur_rdv urdv ON urdv.idRdv = rdv.idRdv INNER JOIN Utilisateur user ON user.idUtilisateur = rdv.idCreateur INNER JOIN Lieu lieu ON lieu.idLieu = rdv.idLieu WHERE urdv.idUtilisateur =" . $_POST['idUser'];
                 return   returnOneArray($sql);
             case GET_BYID :
                 $sql = "SELECT rdv.horraire, rdv.dateRdv,  lieu.nomLieu FROM Rdv rdv INNER JOIN utilisateur_rdv urdv ON rdv.idRdv = rdv.id AND Lieu lieu ON lieu.id = rdv.idLieu  WHERE urdv.idRdv =" . $_POST['idRdv'];
                 return returnOneLine($sql);
             case GET_SEARCH :
-                $sql = "SELECT rdv.horaire, rdv.dateRdv, rdv.nbPlaces, lieu.nomLieu, user.nom, user.prenom, user.idUtilisateur  FROM Rdv rdv 
-                        INNER JOIN utilisateur_rdv urdv ON rdv.idRdv = rdv.idRdv 
-                        INNER JOIN Lieu lieu ON lieu.idLieu = rdv.idLieu 
+                $sql = "SELECT rdv.horaire, rdv.dateRdv, rdv.nbPlaces, lieu.nomLieu, user.nom, user.prenom, user.idUtilisateur  FROM Rdv rdv
+                        INNER JOIN utilisateur_rdv urdv ON rdv.idRdv = rdv.idRdv
+                        INNER JOIN Lieu lieu ON lieu.idLieu = rdv.idLieu
                         INNER JOIN utilisateur user ON user.idUtilisateur = urdv.idCreateur
                         WHERE rdv.dateRdv <= CURRENT_DATE";
 
@@ -63,7 +53,7 @@ class WS_Rdv implements IWebServiciable
                 if(isset($_POST['date'])){
                     $sql = $sql + "AND rdv.dateRdv = '" .$_POST['date']."'";
                 };
->>>>>>> origin/master
+
                 return returnOneArray($sql);
             case GET_DETAILS :
                 $sql = "SELECT * FROM Rdv rdv INNER JOIN Utilisateur user ON user.id = rdv.idCreateur LEFT JOIN Verdict verd ON verd.idRdv = rdv.id WHERE rdv.id ="  . $_POST['idRdv'];
@@ -107,11 +97,7 @@ class WS_Rdv implements IWebServiciable
                 execReqWithoutResult($sql);
 
                 return true;
-<<<<<<< HEAD
 
-              // décremnter nombre de place
-
-=======
             case GO_RDV :
 
                 $sql = "SELECT * FROM UTILISATEUR_RDV WHERE idUtilisateur = '" .$_POST['idUser']."' AND idRDV = '" .$_POST['idRdv']."'";
@@ -144,7 +130,7 @@ class WS_Rdv implements IWebServiciable
                 }
 
                 return $var;
->>>>>>> origin/master
+
             default:
                 Helper::ThrowAccessDenied();
                 break;

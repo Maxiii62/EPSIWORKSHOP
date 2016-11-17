@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<<<<<<< HEAD
+<!-- <<<<<<< HEAD -->
 	<head>
 		<?php $title = "Créer un rendez-vous";include '../../fragments/header.php';?>
 		<title>Créer un rendez-vous</title>
@@ -130,7 +130,7 @@
 			$('#mode').material_select();
 		</script>
 	</html>
-=======
+<!-- =======
     <body>
         <?php $title = "Créer un rendez-vous";
         include '../../fragments/header.php'; ?>
@@ -170,31 +170,31 @@
                 <div class="card-content col s12 m3">
                     <div>
                         <p>
-                            ADRESSE : 
+                            ADRESSE :
                             <span id="adresseMagasin"></span>
                         </p>
                     </div>
                     <div>
                         <p>
-                            TELEPHONE : 
+                            TELEPHONE :
                             <span id="telephoneMagasin"></span>
                         </p>
                     </div>
                     <div>
                         <p>
-                            SITE WEB : 
+                            SITE WEB :
                             <a href="" id="siteWebMagasin"></a>
                         </p>
                     </div>
                     <div id="statut">
                         <p>
-                            STATUT : 
+                            STATUT :
                             <span id="estOuvert" style="font-weight: bold;"></span>
                         </p>
                     </div>
                     <div>
                         <p>
-                            NOTE : 
+                            NOTE :
                             <span id="noteMagasin"></span>
                         </p>
                     </div>
@@ -257,7 +257,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgaxtdS0y_Mwk-ennUmyB9mHlpQbBGHLg&libraries=places&callback=initMap" async defer></script>
     <script src="../js/google.js" />
     <script>  $('.datepicker').pickadate({
-            selectMonths: true, // Creates a dropdown to control monthselectYears: 15 // Creates a dropdown of 15 years to control year 
+            selectMonths: true, // Creates a dropdown to control monthselectYears: 15 // Creates a dropdown of 15 years to control year
             format: 'yyyy-mm-dd'
         });
     </script>
@@ -267,4 +267,4 @@
         $('#mode').material_select();
     </script>
 </html>
->>>>>>> origin/master
+>>>>>>> origin/master -->

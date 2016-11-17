@@ -33,7 +33,20 @@
         <div class=" row card">
             <div class="row">
                 <select class="browser-default select" id="selectLesLieux"></select>
-                <input id="heureRDV" type="text" class="validate">
+                <select class="browser-default select" id="horaireRDV">
+									<option value="" disabled selected>Horaire souhaité</option>
+									<option value="11h30">11h30</option>
+									<option value="11h45">11h45</option>
+									<option value="12h00">12h00</option>
+									<option value="12h15">12h15</option>
+									<option value="12h30">12h30</option>
+									<option value="12h45">12h45</option>
+									<option value="13h00">13h00</option>
+									<option value="13h15">13h15</option>
+									<option value="13h30">13h30</option>
+									<option value="13h45">13h45</option>
+									<option value="14h00">14h00</option>
+								</select>
                 <input id="dateRDV" type="date" class="datepicker">
                 <button class="btn waves-effect waves-light blue" id="searchRdv" type="button" name="goto">Rechercher
                     <i class="material-icons right">search</i>

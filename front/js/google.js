@@ -314,7 +314,7 @@ $( "#searchRdv" ).click(function() {
   $.ajax({
       method: "POST",
       url : "/EPSIWORKSHOP/controller/controller.php?",
-      data: { ws: 'rdv', action : 'getSearch', date: $("#dateRDV").val(), horaire: $("#heureRDV").val(), coordonnees : $("#selectLesLieux").val(), nom: $("#selectLesLieux option:selected").text().replace("'","''"), idUser : $("#id").val()},
+      data: { ws: 'rdv', action : 'getSearch', date: $("#dateRDV").val(), horaire: $("#horaireRDV").val(), coordonnees : $("#selectLesLieux").val(), nom: $("#selectLesLieux option:selected").text().replace("'","''"), idUser : $("#id").val()},
       success: function(response) {
         $("#lesRdv tr").remove();
 
