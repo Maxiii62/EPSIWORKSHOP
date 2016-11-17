@@ -1,4 +1,4 @@
-<footer class="page-footer blue-grey footer">
+<footer class="page-footer black white-text footer">
     <div class="container">
         <div class="row">
             <div class="col l6 s12">
@@ -16,7 +16,7 @@
             </div>
         </div>
     </div>
-    <div class="footer-copyright blue-grey c">
+    <div class="footer-copyright black white-text">
         <div class="container">
             © 2016   Copyright Text EATMen 
         </div>

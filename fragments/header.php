@@ -19,7 +19,7 @@ session_start();
     </head>
     <body>
         <nav>
-            <div class="nav-wrapper blue-grey ">
+            <div class="nav-wrapper black white-text ">
                 <ul id="nav-mobile" class="hide-on-med-and-down blue-grey">
                     <div class="left">
                         <li><a href="../html/Appointements.php">Carte</a></li>
