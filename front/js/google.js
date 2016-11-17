@@ -81,6 +81,78 @@ function initMap() {
   }, callback);
 }
 
+function initMapAppointements() {
+
+  directionsService = new google.maps.DirectionsService;
+  directionsDisplay = new google.maps.DirectionsRenderer;
+
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: geoPosition,
+    zoom: 15
+  });
+
+  var infoWindow = new google.maps.InfoWindow({map: map});
+
+  map.controls[google.maps.ControlPosition.TOP_LEFT].push(document.getElementById('pac-input'));
+  map.controls[google.maps.ControlPosition.TOP_RIGHT].push(document.getElementById('type-selector'));
+
+  var autocomplete = new google.maps.places.Autocomplete(document.getElementById('pac-input'));
+  autocomplete.bindTo('bounds', map);
+
+  // Try HTML5 geolocation.
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      geoPosition = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+
+      infoWindow.setPosition(geoPosition);
+      infoWindow.setContent('Vous êtes ici');
+      map.setCenter(geoPosition);
+    }, function() {
+      handleLocationError(true, infoWindow, map.getCenter());
+    });
+  } else {
+    // Browser doesn't support Geolocation
+    handleLocationError(false, infoWindow, map.getCenter());
+  }
+
+  map.addListener('dblclick', function(place) {
+   placeMarkerAndPanTo(place, map);
+  });
+
+  infowindow = new google.maps.InfoWindow();
+
+  // var service = new google.maps.places.PlacesService(map);
+  // service.nearbySearch({
+  //   location: geoPosition,
+  //   radius: 15000,
+  //   types: ['restaurant']//,'meal_takeaway','meal_delivery','cafe','food','resto','bakery']
+  // }, callback);
+
+  $("#selectLesLieux").on("change",function(){
+    var coordonnees = {
+        geometry : {
+            location : {
+              lat : "",
+              lng : ""
+            }
+        }
+    };
+
+    var string = $("#selectLesLieux").val().split(",");
+
+    coordonnees.geometry.location.lat = parseFloat(string[0]);
+    coordonnees.geometry.location.lng = parseFloat(string[1]);
+
+    calculateAndDisplayRoute(coordonnees);
+
+  });
+
+}
+
+
 function placeMarkerAndPanTo(place, map) {
   var marker = new google.maps.Marker({
     position: place.latLng,
