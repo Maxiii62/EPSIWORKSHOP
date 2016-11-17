@@ -119,6 +119,7 @@
 		<script src="../js/google.js" />
 			  <script>  $('.datepicker').pickadate({
 				selectMonths: true, // Creates a dropdown to control monthselectYears: 15 // Creates a dropdown of 15 years to control year 
+			 format: 'yyyy-mm-dd'
 			});
 		</script>
 		<script>
