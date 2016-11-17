@@ -32,31 +32,31 @@
 				<div class="card-content col s12 m3">
 					<div>
 						<p>
-							ADRESSE : 
+							ADRESSE :
 							<span id="adresseMagasin"></span>
 						</p>
 					</div>
 					<div>
 						<p>
-							TELEPHONE : 
+							TELEPHONE :
 							<span id="telephoneMagasin"></span>
 						</p>
 					</div>
 					<div>
 						<p>
-							SITE WEB : 
+							SITE WEB :
 							<a href="" id="siteWebMagasin"></a>
 						</p>
 					</div>
 					<div id="statut">
 						<p>
-							STATUT : 
+							STATUT :
 							<span id="estOuvert" style="font-weight: bold;"></span>
 						</p>
 					</div>
 					<div>
 						<p>
-							NOTE : 
+							NOTE :
 							<span id="noteMagasin"></span>
 						</p>
 					</div>
@@ -83,20 +83,20 @@
 <script type="text/javascript" src="../js/main.js" ></script>
 <script type="text/javascript" src="../../materialize/js/script.js"></script>
 						<div class="input-field col s10">
-							<div id="dateRDV" class="input-field col s12">
-								<select>
-									<option id="dateRDV" value="" disabled selected>Horaire souhaité</option>
-									<option id="dateRDV" value="11h30">11h30</option>
-									<option id="dateRDV" value="11h45">11h45</option>
-									<option id="dateRDV" value="12h00">12h00</option>
-									<option id="dateRDV" value="12h15">12h15</option>
-									<option id="dateRDV" value="12h30">12h30</option>
-									<option id="dateRDV" value="12h45">12h45</option>
-									<option id="dateRDV" value="13h00">13h00</option>
-									<option id="dateRDV" value="13h15">13h15</option>
-									<option id="dateRDV" value="13h30">13h30</option>
-									<option id="dateRDV" value="13h45">13h45</option>
-									<option id="dateRDV" value="14h00">14h00</option>
+							<div class="input-field col s12">
+								<select id="horaireRDV">
+									<option value="" disabled selected>Horaire souhaité</option>
+									<option value="11h30">11h30</option>
+									<option value="11h45">11h45</option>
+									<option value="12h00">12h00</option>
+									<option value="12h15">12h15</option>
+									<option value="12h30">12h30</option>
+									<option value="12h45">12h45</option>
+									<option value="13h00">13h00</option>
+									<option value="13h15">13h15</option>
+									<option value="13h30">13h30</option>
+									<option value="13h45">13h45</option>
+									<option value="14h00">14h00</option>
 								</select>
 								<label>Horaire</label>
 							</div>
@@ -118,8 +118,9 @@
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgaxtdS0y_Mwk-ennUmyB9mHlpQbBGHLg&libraries=places&callback=initMap" async defer></script>
 		<script src="../js/google.js" />
 			  <script>  $('.datepicker').pickadate({
-				selectMonths: true, // Creates a dropdown to control monthselectYears: 15 // Creates a dropdown of 15 years to control year 
-			 format: 'yyyy-mm-dd'
+					selectMonths: true, // Creates a dropdown to control month
+	    		selectYears: 15, // Creates a dropdown of 15 years to control year
+	    		format: 'dd-mm-yyyy'
 			});
 		</script>
 		<script>
