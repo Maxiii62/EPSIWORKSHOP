@@ -9,6 +9,7 @@ const GET_DETAILS = "getDetails";
 const ADD_RDV = "addRdv";
 const GET_ALL_LIEUX = "getAllLieux";
 const GO_RDV = "goRdv";
+const ADD_NOTE = "addNote";
 
 class WS_Rdv implements IWebServiciable
 {
@@ -64,7 +65,7 @@ class WS_Rdv implements IWebServiciable
 
                 return returnOneArray($sql);
             case GET_DETAILS :
-                $sql = "SELECT * FROM Rdv rdv INNER JOIN Utilisateur user ON user.id = rdv.idCreateur LEFT JOIN Verdict verd ON verd.idRdv = rdv.id WHERE rdv.id ="  . $_POST['idRdv'];
+                $sql = "SELECT user.nom, user.prenom, urdv.note, urdv.description FROM utilisateur_rdv urdv INNER JOIN utilisateur user ON user.idUtilisateur = urdv.idUtilisateur WHERE idRDV =  " . $_POST['idRdv']." AND urdv.note != null OR urdv.description != null";
                 return returnOneArray($sql);
             case GET_ALL_LIEUX:
                 $sql = "SELECT * FROM lieu  WHERE coordonnees != ''";
@@ -139,6 +140,23 @@ class WS_Rdv implements IWebServiciable
 
                 return $var;
 
+            case ADD_NOTE :
+                $sql = "UPDATE utilisateur_rdv SET note= " .$_POST['note']. ",description= '" .$_POST['description']. "' WHERE idUtilisateur = " .$_POST['idUser']. " AND idRDV = " .$_POST['idRdv']. "";
+
+                if ($_POST['note'] > 2){
+
+                    $sql2 = "SELECT * FROM utilisateur_rdv WHERE note = 0 idRdv = " .$_POST['idRdv']. " AND idUtilisateur = " .$_POST['idUser']."";
+                    $resp = returnOneLine($sql);
+
+                    if (!isset($resp)){
+
+                        $sql2 = "UPDATE UTILISATEUR SET nombrePoints = nombrePoints + 1 WHERE idUtilisateur = " .$_POST['idUser'];
+                        execReqWithoutResult($sql2);
+                        
+                    }
+                }
+
+                return execReqWithoutResult($sql);
             default:
                 Helper::ThrowAccessDenied();
                 break;

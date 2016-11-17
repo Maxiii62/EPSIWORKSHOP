@@ -122,8 +122,8 @@ function getHistorique(){
                 $("#tbody").append("<tr class='odd'><td> " + obj[i].dateRdv + "</td>" +
                     "<td class='td-mc1'> " + obj[i].nom + ' ' + obj[i].prenom + "</td>" +
                     "<td class='td-mc1'> " + obj[i].nomLieu + "</td><td>" +
-                    "<a class='btn-floating btn-large waves-effect waves-light blue-grey detail' id='detail' value='" + obj[i].idRdv +"'>" +
-                    "<i class='material-icons'>add</i></a></td></tr><script type='text/javascript' src='../../materialize/js/script.js'></script>");
+                    "<a class='btn-floating btn-large waves-effect waves-light blue-grey detail' id='detail'  value=" + obj[i].idRdv +">" +
+                    "<i class='material-icons'>add</i></></a></td></tr><script type='text/javascript' src='../../materialize/js/script.js'></script><script type='text/javascript' src='../../front/js/main.js'></script>");
             }
 
         },
@@ -133,3 +133,48 @@ function getHistorique(){
         }
     });
 }
+
+$('#detail').on('click', function(){
+    $id = $($(event.target).parent()).attr("value");
+
+    $.ajax({
+        url: "http://localhost/EPSIWORKSHOP/controller/controller.php?",
+        type: 'POST',
+        async: false,
+        data: {'ws' : 'rdv', 'action' : 'getDetails', 'idRdv' : $id},
+        success: function (response) {
+
+            var obj = jQuery.parseJSON(response);
+            $('#idRdv').val($id);
+            for(var i = 0; i < obj.length;i++){
+                $("#tbodyNotation").append("<tr class='odd'><td class='td-mc1'> " + obj[i].nom + ' ' + obj[i].prenom + "</td>" +
+                    "<td class='td-mc1'>" + obj[i].description + "</td><td class='td-mc1'> " + obj[i].note + "</td></tr>");
+            }
+        },
+        error: function (msg) {
+            console.log(msg.responseType);
+            console.log('Problï¿½me rencontrï¿½ dans le rï¿½seau.');
+        }
+    });
+});
+
+$('#ajouterNote').on('click', function(){
+    $.ajax({
+        url: "http://localhost/EPSIWORKSHOP/controller/controller.php?",
+        type: 'POST',
+        async: false,
+        data: {'ws' : 'rdv', 'action' : 'addNote', 'idRdv' : $('#idRdv').val(), 'idUser' : $('#id').val(), 'note' : $('#addNote').val(), 'description' : $('#addDescription').val()},
+        success: function (response) {
+
+            Materialize.toast('Note ajouté.', 4000);
+
+            document.location.href = "../html/Historical.php";
+
+        },
+        error: function (msg) {
+            console.log(msg.responseType);
+            console.log('Problï¿½me rencontrï¿½ dans le rï¿½seau.');
+        }
+    });
+
+});
