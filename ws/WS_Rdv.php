@@ -25,13 +25,13 @@ class WS_Rdv implements IWebServiciable
 
         switch ($_POST['action']) {
             case GET_MINE :
-                $sql = "SELECT rdv.horraire, rdv.dateRdv, lieu.nomLieu FROM Rdv rdv INNER JOIN utilisateur_rdv urdv ON urdv.idRdv = rdv.id AND Lieu lieu ON lieu.id = rdv.idLieu  WHERE urdv.idUser =" . $_POST['idUser'];
+                $sql = "SELECT rdv.horraire, rdv.dateRdv, lieu.nomLieu FROM Rdv rdv INNER JOIN utilisateur_rdv urdv ON rdv.idRdv = rdv.id AND Lieu lieu ON lieu.id = rdv.idLieu  WHERE urdv.idUser =" . $_POST['idUser'];
                 return returnOneArray($sql);
             case GET_BYID :
-                $sql = "SELECT rdv.horraire, rdv.dateRdv, lieu.nomLieu FROM Rdv rdv INNER JOIN utilisateur_rdv urdv ON urdv.idRdv = rdv.id AND Lieu lieu ON lieu.id = rdv.idLieu  WHERE urdv.idRdv =" . $_POST['idRdv'];
+                $sql = "SELECT rdv.horraire, rdv.dateRdv, lieu.nomLieu FROM Rdv rdv INNER JOIN utilisateur_rdv urdv ON rdv.idRdv = rdv.id AND Lieu lieu ON lieu.id = rdv.idLieu  WHERE urdv.idRdv =" . $_POST['idRdv'];
                 return returnOneLine($sql);
             case GET_SEARCH :
-                $sql = "SELECT rdv.horraire, rdv.dateRdv, lieu.nomLieu FROM Rdv rdv INNER JOIN utilisateur_rdv urdv ON urdv.idRdv = rdv.id AND Lieu lieu ON lieu.id = rdv.idLieu  WHERE lieu.nom = " . $_POST['idLieu'] . " AND rdv.horraire = ". $_POST['horraire'] . " AND rdv.date = ". $_POST['date'];
+                $sql = "SELECT rdv.horaire, rdv.dateRdv, lieu.nomLieu FROM Rdv rdv INNER JOIN utilisateur_rdv urdv ON rdv.idRdv = rdv.idRdv INNER JOIN Lieu lieu ON lieu.idLieu = rdv.idLieu  WHERE lieu.nomLieu = '" . $_POST['nom'] . "' AND lieu.coordonnees = '".$_POST['coordonnees']."' AND rdv.horaire = '".$_POST['horaire']."' AND rdv.dateRdv ='". $_POST['date']."'";
                 return returnOneArray($sql);
             case GET_DETAILS :
                 $sql = "SELECT * FROM Rdv rdv INNER JOIN Utilisateur user ON user.id = rdv.idCreateur LEFT JOIN Verdict verd ON verd.idRdv = rdv.id WHERE rdv.id ="  . $_POST['idRdv'];

@@ -224,18 +224,17 @@ function initLieuxSelect(){
          $("#selectLesLieux").append("<option value='' disabled selected>Choissez un endroit où manger</option>")
 
         for(var i = 0; i < JSON.parse(response).length;i++){
-            console.log("ok");
-            $("#selectLesLieux").append("<option value='" + response[i].coordonnees + "'>" + response[i].nomLieu + "</option>");
+            $("#selectLesLieux").append("<option value='" + JSON.parse(response)[i].coordonnees + "'>" + JSON.parse(response)[i].nomLieu + "</option>");
         }
       }
  });
 }
 
-function searchRdv(){
+$( "#searchRdv" ).click(function() {
   $.ajax({
       method: "POST",
       url : "/EPSIWORKSHOP/controller/controller.php?",
-      data: { ws: 'rdv', action : 'getSearch', date: $("#dateRDV").val(), horaire: $("#heureRDV").val(), coordonnees : destinationObjectif.geometry.location.lat() + ", " + destinationObjectif.geometry.location.lng(), nom : destinationObjectif.name, idUser : 1, nbPlaces : $("#nbPlaces").val()},
+      data: { ws: 'rdv', action : 'getSearch', date: $("#dateRDV").val(), horaire: $("#heureRDV").val(), coordonnees : $("#selectLesLieux").val(), nom: $("#selectLesLieux option:selected").text().replace("'","''"), idUser : 1},
       success: function(response) {
          if(response === "true"){
            Materialize.toast('Rendez-vous ajouté ! ;-)', 4000 ,'green');
@@ -244,4 +243,4 @@ function searchRdv(){
           }
       }
  });
-}
+});

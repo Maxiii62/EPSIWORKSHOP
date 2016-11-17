@@ -24,13 +24,12 @@ include '../../fragments/header.php';
 
     <div class=" row card">
         <div class="row">
-        <select class="browser-default select" id="selectLesLieux">
-
-
-        </select>
-
-        <input type="date" placeholder="dd/mm/yyyy" />
-        <input type="button" value="rechercher"/>
+        <select class="browser-default select" id="selectLesLieux"></select>
+        <input id="heureRDV" type="text" class="validate">
+        <input id="dateRDV" type="date" class="datepicker">
+        <button class="btn waves-effect waves-light blue" id="searchRdv" type="button" name="goto">Rechercher
+            <i class="material-icons right">search</i>
+        </button>
         </div>
         <div class="">
             <table class="">
