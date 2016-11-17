@@ -1,9 +1,16 @@
 $('#valider').click(function() {
+
+    var date = new Date($("#datepicker_register").val());
+
+    var day = date.getDate();
+    var month = date.getMonth()+1;
+    var year = date.getFullYear();
+
     $.ajax({
         url: "http://localhost/EPSIWORKSHOP/controller/controller.php?",
         type: 'POST',
         async: false,
-        data: {'ws' : 'utilisateur', 'action' : 'addUser','prenom': $('#first_name').val(), 'nom': $('#last_name').val(), 'password': $('#password').val(), 'email': $('#email').val(), 'datepicker_register': $('#datepicker_register').val(), 'numeroTelephone' : $('#telephone').val()},
+        data: {'ws' : 'utilisateur', 'action' : 'addUser','prenom': $('#first_name').val(), 'nom': $('#last_name').val(), 'password': $('#password').val(), 'email': $('#email').val(), 'datepicker_register': year + '-' + month + '-' + day, 'numeroTelephone' : $('#telephone').val()},
         success: function (response) {
             if (response == "You are not allowed to access to this page."){
                 Materialize.toast('Tous les champs doivent etre renseignes.', 4000);
@@ -13,7 +20,7 @@ $('#valider').click(function() {
         },
         error: function (msg) {
             console.log(msg.responseType);
-            console.log('Problème rencontré dans le réseau.');
+            console.log('Problï¿½me rencontrï¿½ dans le rï¿½seau.');
         }
     });
 });
@@ -35,7 +42,7 @@ $('#connexion').click(function() {
         },
         error: function (msg) {
             console.log(msg.responseType);
-            console.log('Problème rencontré dans le réseau.');
+            console.log('Problï¿½me rencontrï¿½ dans le rï¿½seau.');
         }
     });
 });
@@ -49,11 +56,18 @@ $('#modifierProfil').click(function(){
 })
 
 $('#modifier').click(function(){
+
+    var date = new Date($("#datepicker_register").val());
+
+    var day = date.getDate();
+    var month = date.getMonth()+1;
+    var year = date.getFullYear();
+
     $.ajax({
         url: "http://localhost/EPSIWORKSHOP/controller/controller.php?",
         type: 'POST',
         async: false,
-        data: {'ws' : 'utilisateur', 'action' : 'updateUser', 'id':$('#id').val(), 'prenom': $('#first_name').val(), 'nom': $('#last_name').val(), 'password': $('#password').val(), 'email': $('#email').val(), 'datepicker_register': $('#datepicker_register').val(), 'numeroTelephone' : $('#telephone').val()},
+        data: {'ws' : 'utilisateur', 'action' : 'updateUser', 'id':$('#id').val(), 'prenom': $('#first_name').val(), 'nom': $('#last_name').val(), 'password': $('#password').val(), 'email': $('#email').val(), 'datepicker_register': year + '-' + month + '-' + day, 'numeroTelephone' : $('#telephone').val()},
         success: function (response) {
             if (response == "You are not allowed to access to this page."){
                 Materialize.toast('Tous les champs doivent etre renseignes.', 4000);
@@ -63,7 +77,7 @@ $('#modifier').click(function(){
         },
         error: function (msg) {
             console.log(msg.responseType);
-            console.log('Problème rencontré dans le réseau.');
+            console.log('Problï¿½me rencontrï¿½ dans le rï¿½seau.');
         }
     });
 })
@@ -90,7 +104,7 @@ function classement(){
         },
         error: function (msg) {
             console.log(msg.responseType);
-            console.log('Problème rencontré dans le réseau.');
+            console.log('Problï¿½me rencontrï¿½ dans le rï¿½seau.');
         }
     });
 }

@@ -29,7 +29,7 @@ class WS_Utilisateur implements IWebServiciable{
                     Helper::ThrowAccessDenied();
                 }
 
-                $sql = "INSERT INTO `utilisateur`(`nom`, `prenom`, `dateNaissance`, `mail`, `password`, `numeroTelephone`, `nombrePoints`) VALUES ('" .$_POST['nom']. "', '". $_POST['prenom'] . "', '1994-01-01', '". $_POST['email'] . "', '". $_POST['password'] ."', '". $_POST['numeroTelephone'] ."',0)";
+                $sql = "INSERT INTO `utilisateur`(`nom`, `prenom`, `dateNaissance`, `mail`, `password`, `numeroTelephone`, `nombrePoints`) VALUES ('" .$_POST['nom']. "', '". $_POST['prenom'] . "', '" .$_POST['datepicker_register']."', '". $_POST['email'] . "', '". $_POST['password'] ."', '". $_POST['numeroTelephone'] ."',0)";
                 execReqWithoutResult($sql);
                 return "GG";
             case UPDATE_USER :

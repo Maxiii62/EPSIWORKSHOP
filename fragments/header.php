@@ -24,6 +24,7 @@ session_start();
                     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                     <div class="left">
                         <li><a href="../html/Appointements.php">Carte</a></li>
+                        <li><a href="../html/addAppointement.php">Créer</a></li>
                         <li><a href="../html/ranking.php">Classement</a></li>
                         <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Informations<i class="material-icons right">arrow_drop_down</i></a></li>
 
