@@ -19,8 +19,9 @@ session_start();
     </head>
     <body>
         <nav>
-            <div class="nav-wrapper blue-grey ">
-                <ul id="nav-mobile" class="hide-on-med-and-down blue-grey">
+            <div class="nav-wrapper black white-text ">
+                <ul  class="hide-on-med-and-down blue-grey">
+                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                     <div class="left">
                         <li><a href="../html/Appointements.php">Carte</a></li>
                         <li><a href="../html/ranking.php">Classement</a></li>
@@ -34,14 +35,19 @@ session_start();
                         if (isset($_SESSION['monUserCo'])) {
                             echo "<li><a href='../html/Mon_Profil.php'>Mon profil</a></li>
                                    <li><a id='deconnexion' class=''>Déconnexion</a></li>
-                                   <input type='hidden' id='id' value='" . $_SESSION['monUserCo']['idUtilisateur']."'>
+                                   <input type='hidden' id='id' value='" . $_SESSION['monUserCo']['idUtilisateur'] . "'>
                           ";
                         } else {
                             echo "<li><a class='' href='../html/Inscription.php'>Inscription</a></li>
                             <li><a class='' href='../html/Login.php'>Connexion</a></li>";
                         }
                         ?>
-
+                        <ul class="side-nav" id="mobile-demo">
+                            <li><a href="sass.html">Sass</a></li>
+                            <li><a href="badges.html">Components</a></li>
+                            <li><a href="collapsible.html">Javascript</a></li>
+                            <li><a href="mobile.html">Mobile</a></li>
+                        </ul>
                     </div>
                 </ul>
             </div>

@@ -7,7 +7,7 @@ include '../../fragments/header.php';
     <main>
 <div id="login-page">
     <h3>Classement</h3>
-<table id="tab_classement" class="trietable dataTable card ">
+<table id="tab_classement" class="trietable dataTable card responsive-table ">
     <thead>
         <tr>
             <th>Position</th>
