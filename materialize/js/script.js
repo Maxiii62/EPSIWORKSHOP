@@ -226,6 +226,6 @@ $('select').on('contentChanged', function () {
     $(this).material_select();
 });
 
-$(".detail").on('click',function(){
+$("#detail").on('click',function(){
   $("#modalhistorique").openModal();
-})
+});

@@ -19,9 +19,16 @@
             <input type="radio" name="mode" id="changetype-geocode" value="TRANSIT">
             <label for="changetype-geocode" style="color:white;">Transport en commun</label>
         </div>
-
-        <div id="right-panel"></div>
-        <div id="map"></div>
+        <div id="div_map" class="row ">
+            <div  class="col s3 push-s9 black white-text">
+                <h3>Itinéraire</h3>
+                <div id="right-panel" ></div>
+            </div>
+            <div  class="col s9 pull-s3 white">
+                <h3>Carte</h3>
+                <div id="map" ></div>
+            </div>
+        </div>
 
         <div class=" row card">
             <div class="row">
@@ -65,7 +72,7 @@
                 <h4>Rejoindre un rendez-vous</h4><hr>
                 <div class="row">
                     <div class="switch" >
-                      <span>J'y vais directement ?</span>
+                        <span>J'y vais directement ?</span>
                         <label>
                             Non
                             <input type="checkbox" id="switchDirect" checked>
@@ -79,14 +86,14 @@
                         <!-- <input id="endroitConducteurPrendre" class="controls" type="text"
                                           placeholder="Indiquez un lieu"> -->
 
-                                          <style>
+                        <style>
 
-                                          .pac-container {
-                              z-index: 1051 !important;
-                              }
-                                          </style>
-                                          <input id="endroitConducteurPrendre" class="controls" type="text"
-                                                            placeholder="Indiquez un lieu">
+                            .pac-container {
+                                z-index: 1051 !important;
+                            }
+                        </style>
+                        <input id="endroitConducteurPrendre" class="controls" type="text"
+                               placeholder="Indiquez un lieu">
 
                     </div>
                     <div class="input-field col s10">
@@ -101,6 +108,7 @@
             </div>
 
         </div>
+    </div>
 </body>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgaxtdS0y_Mwk-ennUmyB9mHlpQbBGHLg&libraries=places&callback=initMapAppointements" async defer></script>
