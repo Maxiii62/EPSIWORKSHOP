@@ -83,6 +83,9 @@ class WS_Rdv implements IWebServiciable
                 $sql = "INSERT INTO RDV (horaire, idCreateur, dateRdv, idLieu, nbPlaces ) VALUES ('".$_POST['horaire']."','".$_POST['idUser']."','".$_POST['date']."','".$idLieu."', '".$_POST['nbPlaces']."')";
                 execReqWithoutResult($sql);
 
+                $sql = "UPDATE UTILISATEUR SET nombrePoints = nombrePoints + 5 WHERE idUtilisateur = " .$_POST['idUser'];
+                execReqWithoutResult($sql);
+
                 $sql = "SELECT MAX(idRDV) as id FROM rdv";
                 $idRdv = returnOneLine($sql);
 
@@ -102,6 +105,10 @@ class WS_Rdv implements IWebServiciable
                 if (!isset($resp)){
                     $sql = "INSERT INTO Utilisateur_RDV ('idUtilisateur', 'idRDV') VALUES  ('".$_POST['idUser']."','".$_POST['idRdv']."')";
                     execReqWithoutResult($sql);
+
+                    $sql = "UPDATE UTILISATEUR SET nombrePoints = nombrePoints + 3 WHERE idUtilisateur = " .$_POST['idUser'];
+                    execReqWithoutResult($sql);
+
                     $var = 'ok';
 
                     if(isset($_POST['position'])){

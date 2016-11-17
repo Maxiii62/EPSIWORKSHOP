@@ -46,7 +46,7 @@ class WS_Utilisateur implements IWebServiciable{
                 $sql = "SELECT * FROM UTILISATEUR WHERE id = " . $_POST['idUtilisateur'];
                 return returnOneLine($sql);
             case GET_CLASSEMENT :
-                $sql = "SELECT * FROM Utilisateur ORDER BY nombrePoints";
+                $sql = "SELECT * FROM Utilisateur ORDER BY nombrePoints DESC ";
                 return returnOneArray($sql);
             case VERIF_USER :
                 $sql = "SELECT * FROM UTILISATEUR WHERE mail = '" . $_POST['email']. "' AND password = '" .$_POST['password'] ."'";
