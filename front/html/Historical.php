@@ -28,11 +28,7 @@
     include '../../fragments/footer.php';
     ?>
 
-    <script>
 
-        getHistorique();
-
-    </script>
     <div id="modalhistorique" class="modal">
         <div class="row">
             <div class="modal-content">
@@ -98,3 +94,9 @@
     </div>    
 </body>
 </html>
+
+<script>
+
+    getHistorique();
+
+</script>

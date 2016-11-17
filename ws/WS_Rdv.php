@@ -37,7 +37,7 @@ class WS_Rdv implements IWebServiciable
               //  return $sql;
 =======
                 $sql = "SELECT rdv.horaire, rdv.dateRdv, rdv.idRdv, lieu.nomLieu, rdv.idCreateur, user.nom, user.prenom FROM Rdv rdv INNER JOIN utilisateur_rdv urdv ON urdv.idRdv = rdv.idRdv INNER JOIN Utilisateur user ON user.idUtilisateur = rdv.idCreateur INNER JOIN Lieu lieu ON lieu.idLieu = rdv.idLieu WHERE urdv.idUtilisateur =" . $_POST['idUser'];
-                return   returnOneArray($sql);;
+                return   returnOneArray($sql);
             case GET_BYID :
                 $sql = "SELECT rdv.horraire, rdv.dateRdv,  lieu.nomLieu FROM Rdv rdv INNER JOIN utilisateur_rdv urdv ON rdv.idRdv = rdv.id AND Lieu lieu ON lieu.id = rdv.idLieu  WHERE urdv.idRdv =" . $_POST['idRdv'];
                 return returnOneLine($sql);
