@@ -3,14 +3,14 @@
     $title = "Historique";
     include '../../fragments/header.php';
     ?>
-    <main class="Site-content">
-        <div class="row">
+    <main >
+        <div id="login-page" class="card">
             <div class="transparence">
-
+                 </br>
                 <input type='hidden' id='idRdv'>
 
-                <div class="contain row card horizontal">
-                    </br>
+                <div class=" row horizontal">
+                   
                     <h3 class="center">Historique</h3>
                     <table class="">
                         <thead>

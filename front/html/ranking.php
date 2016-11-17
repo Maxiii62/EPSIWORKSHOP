@@ -1,30 +1,32 @@
 <body>
-<?php
-
-$title = "Prendre Rendez vous";
-include '../../fragments/header.php';
-?>
+    <?php
+    $title = "Classement";
+    include '../../fragments/header.php';
+    ?>
     <main>
-<div id="login-page">
-    <h3>Classement</h3>
-<table id="tab_classement" class="trietable dataTable card responsive-table ">
-    <thead>
-        <tr>
-            <th>Position</th>
-            <th>Nom</th>
-            <th>Points</th>
-        </tr>
-    </thead>
+        <div id="login-page" class="card">
+            <div class="transparence">
+                </br>
+                <h3 class="center">Classement</h3>
+            <table id="tab_classement" class="">
+                <thead>
+                    <tr>
+                        <th>Position</th>
+                        <th>Nom</th>
+                        <th>Points</th>
+                    </tr>
+                </thead>
 
-    <tbody id="tbody" role="alert" aria-live="polite" aria-relevant="all">
+                <tbody id="tbody" role="alert" aria-live="polite" aria-relevant="all">
 
-    </tbody>
-</table>
-</div>
+                </tbody>
+            </table>
+        </div>
+        </div>
     </main>
-<?php
-include '../../fragments/footer.php';
-?>
+    <?php
+    include '../../fragments/footer.php';
+    ?>
 </body>
 <script>
     classement();
