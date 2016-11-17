@@ -282,7 +282,7 @@ $( "#creationRDV" ).click(function() {
            $.ajax({
                method: "POST",
                url : "/EPSIWORKSHOP/controller/controller.php",
-               data: { ws: 'rdv', action : 'addRdv', date: year+"-"+month + "-" + day, horaire: $("#horaireRDV").val(), coordonnees : destinationObjectif.geometry.location.lat() + ", " + destinationObjectif.geometry.location.lng(), nom : destinationObjectif.name, idUser : $("#id").val(), nbPlaces : $("#nbPlaces").val()},
+               data: { ws: 'rdv', action : 'addRdv', date: year+"-"+month + "-" + day, horaire: $("#horaireRDV").val(), coordonnees : destinationObjectif.geometry.location.lat() + ", " + destinationObjectif.geometry.location.lng(), nom : destinationObjectif.name, idUser : $("#id").val(), nbPlaces : $("#nbPlaces").val(),geoPosition : geoPosition.lat + ", " + geoPosition.lng},
                success: function(response) {
                   if(response === "true"){
                     Materialize.toast('Rendez-vous ajouté ! ;-)', 4000 ,'green');
@@ -316,10 +316,33 @@ $( "#searchRdv" ).click(function() {
       url : "/EPSIWORKSHOP/controller/controller.php?",
       data: { ws: 'rdv', action : 'getSearch', date: $("#dateRDV").val(), horaire: $("#heureRDV").val(), coordonnees : $("#selectLesLieux").val(), nom: $("#selectLesLieux option:selected").text().replace("'","''"), idUser : $("#id").val()},
       success: function(response) {
-         if(response === "true"){
-           Materialize.toast('Rendez-vous ajouté ! ;-)', 4000 ,'green');
+        $("#lesRdv tr").remove();
+
+         if(JSON.parse(response).length > 0){
+           for(var i = 0; i < JSON.parse(response).length;i++){
+               $("#lesRdv").append("<tr><td>" + JSON.parse(response)[i].nom + " " + JSON.parse(response)[i].prenom + "'</td><td>" + JSON.parse(response)[i].horaire + "</td><td>" + JSON.parse(response)[i].nbPlaces + "</td><td>" + JSON.parse(response)[i].positionInitiale + "</td><td><input type='button' class='participer' value='participer'/></td><tr>");
+
+               var coordonnees = {
+                   geometry : {
+                       location : {
+                         lat : "",
+                         lng : ""
+                       }
+                   }
+               };
+
+               var string = JSON.parse(response)[i].positionInitiale.split(",");
+
+               coordonnees.geometry.location.lat = parseFloat(string[0]);
+               coordonnees.geometry.location.lng = parseFloat(string[1]);
+
+               var infoWindow = new google.maps.InfoWindow({map: map});
+               infoWindow.setPosition(coordonnees);
+               infoWindow.setContent('Position de départ de ' + JSON.parse(response)[i].nom + " " + JSON.parse(response)[i].prenom);
+           }
           }else{
-            Materialize.toast('Problème(s) pour créer un rendez-vous', 4000 ,'red');
+            $("#lesRdv").append("<tr><td colspan='4'>Aucun résulat</td><tr>");
+            Materialize.toast('Aucun résultat', 4000 ,'red');
           }
       }
  });
@@ -337,7 +360,7 @@ $("#joinRdv").on("click",function(){
   $.ajax({
       method: "POST",
       url : "/EPSIWORKSHOP/controller/controller.php?",
-      data: { ws: 'trajet', action : 'getSearch', date: $("#dateRDV").val(), horaire: $("#horaireRDV option selected").val(), coordonnees : $("#selectLesLieux").val(), nom: $("#selectLesLieux option:selected").text().replace("'","''"), idUser : $("#id").val()},
+      data: { ws: 'trajet', action : 'getSearch', date: $("#dateRDV").val(), horaire: $("#horaireRDV option selected").val(), coordonnees : $("#selectLesLieux").val(), nom: $("#selectLesLieux option:selected").text().replace("'","\'"), idUser : $("#id").val()},
       success: function(response) {
          if(response === "true"){
            Materialize.toast('Rendez-vous ajouté ! ;-)', 4000 ,'green');

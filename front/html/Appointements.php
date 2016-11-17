@@ -33,21 +33,19 @@
                 </button>
             </div>
             <div class="">
-                <table class="">
+                <table class="" >
                     <thead>
                         <tr>
-                            <th>Date</th>
                             <th>Conducteur</th>
-                            <th>Lieu</th>
+                            <th>horaire</th>
+                            <th>Place(s) restantes</th>
+                            <th>Position initiale</th>
                             <th></th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="lesRdv">
                         <tr >
-                            <td>18/11/2016</td>
-                            <td>Roussel Maxime</td>
-                            <td>Macdonalds</td>
-                            <td><input type="button" class="participer" value="participer"/></td>
+                            <td colspan="4">Veuillez chercher des rdv</td>
                         </tr>
                     </tbody>
 

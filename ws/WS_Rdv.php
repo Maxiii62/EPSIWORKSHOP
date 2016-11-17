@@ -31,13 +31,14 @@ class WS_Rdv implements IWebServiciable
                 $sql = "SELECT rdv.horraire, rdv.dateRdv, lieu.nomLieu FROM Rdv rdv INNER JOIN utilisateur_rdv urdv ON urdv.idRdv = rdv.id AND Lieu lieu ON lieu.id = rdv.idLieu  WHERE urdv.idRdv =" . $_POST['idRdv'];
                 return returnOneLine($sql);
             case GET_SEARCH :
-                $sql = "SELECT rdv.horraire, rdv.dateRdv, lieu.nomLieu FROM Rdv rdv INNER JOIN utilisateur_rdv urdv ON urdv.idRdv = rdv.id AND Lieu lieu ON lieu.id = rdv.idLieu  WHERE lieu.nom = " . $_POST['idLieu'] . " AND rdv.horraire = ". $_POST['horraire'] . " AND rdv.date = ". $_POST['date'];
+                $sql = "SELECT horaire,nom,prenom,dateRdv,nbPlaces,positionInitiale FROM rdv,utilisateur_rdv,utilisateur,lieu WHERE  lieu.idLieu = rdv.idLieu AND rdv.idCreateur = utilisateur_rdv.idCreateur AND utilisateur.idUtilisateur = utilisateur_rdv.idCreateur AND lieu.nomLieu = '".$_POST['nom']."' AND rdv.horaire = '".$_POST['horaire']."' AND rdv.dateRdv ='". $_POST['date']."' AND lieu.coordonnees ='".$_POST['coordonnees']."'";
+              //  return $sql;
                 return returnOneArray($sql);
             case GET_DETAILS :
                 $sql = "SELECT * FROM Rdv rdv INNER JOIN Utilisateur user ON user.id = rdv.idCreateur LEFT JOIN Verdict verd ON verd.idRdv = rdv.id WHERE rdv.id ="  . $_POST['idRdv'];
                 return returnOneArray($sql);
             case GET_ALL_LIEUX:
-                $sql = "SELECT * FROM lieu";
+                $sql = "SELECT * FROM lieu  WHERE coordonnees != ''";
                 return returnOneArray($sql);
             case ADD_RDV :
                 $sql = "SELECT idLieu FROM Lieu WHERE coordonnees ='".$_POST['coordonnees']."' AND nomLieu ='".$_POST['nom']."'";
@@ -59,7 +60,7 @@ class WS_Rdv implements IWebServiciable
 
 
 
-                $sql = "INSERT INTO RDV (horaire, idCreateur, dateRdv, idLieu, nbPlaces,positionInitiale ) VALUES ('".$_POST['horaire']."','".$_POST['idUser']."','".$_POST['date']."','".$idLieu."', '".$_POST['nbPlaces']."','".$_POST['coordonnees']."')";
+                $sql = "INSERT INTO RDV (horaire, idCreateur, dateRdv, idLieu, nbPlaces,positionInitiale ) VALUES ('".$_POST['horaire']."','".$_POST['idUser']."','".$_POST['date']."','".$idLieu."', '".$_POST['nbPlaces']."','".$_POST['geoPosition']."')";
                 execReqWithoutResult($sql);
 
                 $sql = "SELECT MAX(idRDV) as id FROM rdv";
@@ -72,6 +73,9 @@ class WS_Rdv implements IWebServiciable
                 execReqWithoutResult($sql);
 
                 return true;
+
+              // décremnter nombre de place
+
             default:
                 Helper::ThrowAccessDenied();
                 break;
