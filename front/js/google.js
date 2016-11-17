@@ -150,13 +150,6 @@ function initMapAppointements(){
 
   infowindow = new google.maps.InfoWindow();
 
-  var service = new google.maps.places.PlacesService(map);
-  service.nearbySearch({
-    location: geoPosition,
-    radius: 15000,
-    types: ['restaurant']//,'meal_takeaway','meal_delivery','cafe','food','resto','bakery']
-  }, callback);
-
 }
 function placeMarkerAndPanTo(place, map) {
   var marker = new google.maps.Marker({
