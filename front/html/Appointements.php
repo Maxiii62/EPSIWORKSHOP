@@ -52,6 +52,7 @@
                     </tbody>
 
                 </table>
+
             </div>
         </div>
     </main>
@@ -63,21 +64,33 @@
             <div class="modal-content">
                 <h4>Rejoindre un rendez-vous</h4><hr>
                 <div class="row">
-                    <div class="switch">
+                    <div class="switch" >
+                      <span>J'y vais directement ?</span>
                         <label>
                             Non
-                            <input type="checkbox">
+                            <input type="checkbox" id="switchDirect" checked>
                             <span class="lever"></span>
                             Oui
                         </label>
                     </div>
-                    <div class="input-field col s10">
-                        <i class="material-icons prefix">perm_contact_calendar</i>
-                        <input id="dateRDV" type="date" class="datepicker">
-                        <label for="icon_prefix">Date</label>
+                    <div class="input-field col s10 hide" id="prendsMoiEndroit">
+                        <label for="icon_prefix">Lieu où le conducteur va me prendre :</label>
+
+                        <!-- <input id="endroitConducteurPrendre" class="controls" type="text"
+                                          placeholder="Indiquez un lieu"> -->
+
+                                          <style>
+
+                                          .pac-container {
+                              z-index: 1051 !important;
+                              }
+                                          </style>
+                                          <input id="endroitConducteurPrendre" class="controls" type="text"
+                                                            placeholder="Indiquez un lieu">
+
                     </div>
                     <div class="input-field col s10">
-                        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                        <button class="btn waves-effect waves-light" id="joinRdv" type="submit" name="action">JOINDRE
                             <i class="material-icons right">send</i>
                         </button>
                     </div>
@@ -86,8 +99,8 @@
             <div class="modal-footer">
                 <a class="modal-action modal-close waves-effect waves-green btn-flat closeModal">Annuler</a>
             </div>
-        </div>
 
+        </div>
 </body>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgaxtdS0y_Mwk-ennUmyB9mHlpQbBGHLg&libraries=places&callback=initMapAppointements" async defer></script>
@@ -101,6 +114,7 @@
 
 </script>
 <script>
+    $('#endroitConducteurPrendre').on('')
     initLieuxSelect();
     initMap();
     $('#mode').material_select();

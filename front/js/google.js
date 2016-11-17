@@ -5,6 +5,7 @@ var destinationObjectif;
 var directionsDisplay;
 var directionsService;
 var waypts = [];
+var autoStop;
 
 
 function initMap() {
@@ -81,8 +82,8 @@ function initMap() {
   }, callback);
 }
 
-function initMapAppointements() {
 
+function initMapAppointements(){
   directionsService = new google.maps.DirectionsService;
   directionsDisplay = new google.maps.DirectionsRenderer;
 
@@ -93,10 +94,9 @@ function initMapAppointements() {
 
   var infoWindow = new google.maps.InfoWindow({map: map});
 
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(document.getElementById('pac-input'));
   map.controls[google.maps.ControlPosition.TOP_RIGHT].push(document.getElementById('type-selector'));
 
-  var autocomplete = new google.maps.places.Autocomplete(document.getElementById('pac-input'));
+  var autocomplete = new google.maps.places.Autocomplete(document.getElementById('endroitConducteurPrendre'));
   autocomplete.bindTo('bounds', map);
 
   // Try HTML5 geolocation.
@@ -118,41 +118,46 @@ function initMapAppointements() {
     handleLocationError(false, infoWindow, map.getCenter());
   }
 
+  directionsDisplay.setMap(map);
+  directionsDisplay.setPanel(document.getElementById('right-panel'));
+
+  $("input[name=mode]").on('click',function(){
+    if(destinationObjectif){
+     displayInfos(destinationObjectif);
+     calculateAndDisplayRoute(destinationObjectif);
+   }
+  });
+
+  autocomplete.addListener('place_changed', function() {
+    // infowindow.close();
+      // marker.setVisible(false);
+    var place = autocomplete.getPlace();
+    autoStop = place;
+
+
+    if (!place.geometry) {
+      window.alert("Autocomplete's returned place contains no geometry");
+      return;
+    }
+
+    calculateAndDisplayRoute(place);
+    displayInfos(place);
+  });
+
   map.addListener('dblclick', function(place) {
    placeMarkerAndPanTo(place, map);
   });
 
   infowindow = new google.maps.InfoWindow();
 
-  // var service = new google.maps.places.PlacesService(map);
-  // service.nearbySearch({
-  //   location: geoPosition,
-  //   radius: 15000,
-  //   types: ['restaurant']//,'meal_takeaway','meal_delivery','cafe','food','resto','bakery']
-  // }, callback);
-
-  $("#selectLesLieux").on("change",function(){
-    var coordonnees = {
-        geometry : {
-            location : {
-              lat : "",
-              lng : ""
-            }
-        }
-    };
-
-    var string = $("#selectLesLieux").val().split(",");
-
-    coordonnees.geometry.location.lat = parseFloat(string[0]);
-    coordonnees.geometry.location.lng = parseFloat(string[1]);
-
-    calculateAndDisplayRoute(coordonnees);
-
-  });
+  var service = new google.maps.places.PlacesService(map);
+  service.nearbySearch({
+    location: geoPosition,
+    radius: 15000,
+    types: ['restaurant']//,'meal_takeaway','meal_delivery','cafe','food','resto','bakery']
+  }, callback);
 
 }
-
-
 function placeMarkerAndPanTo(place, map) {
   var marker = new google.maps.Marker({
     position: place.latLng,
@@ -320,3 +325,26 @@ $( "#searchRdv" ).click(function() {
       }
  });
 });
+
+$("#switchDirect").on("change",function(){
+  if ($("#switchDirect").prop( "checked" )){
+    $("#prendsMoiEndroit").addClass("hide");
+  }else{
+    $("#prendsMoiEndroit").removeClass("hide");
+  }
+})
+
+$("#joinRdv").on("click",function(){
+  $.ajax({
+      method: "POST",
+      url : "/EPSIWORKSHOP/controller/controller.php?",
+      data: { ws: 'trajet', action : 'getSearch', date: $("#dateRDV").val(), horaire: $("#heureRDV").val(), coordonnees : $("#selectLesLieux").val(), nom: $("#selectLesLieux option:selected").text().replace("'","''"), idUser : 1},
+      success: function(response) {
+         if(response === "true"){
+           Materialize.toast('Rendez-vous ajouté ! ;-)', 4000 ,'green');
+          }else{
+            Materialize.toast('Problème(s) pour créer un rendez-vous', 4000 ,'red');
+          }
+      }
+ });
+})
