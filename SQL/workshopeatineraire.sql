@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `lieu` (
 
 INSERT INTO `lieu` (`idLieu`, `coordonnees`, `nomLieu`) VALUES
 (1, '50.292761, 2.780611', 'Ch''ti Charivary'),
-(2, '50.290722, 2.774200', 'Le Petit Théâtre');
+(2, '50.290722, 2.774200', 'Le Petit Theatre');
 
 -- --------------------------------------------------------
 
@@ -58,6 +58,7 @@ CREATE TABLE IF NOT EXISTS `rdv` (
   `dateRdv` date NOT NULL,
   `nbPlaces` int(11) DEFAULT NULL,
   `idLieu` int(11) NOT NULL,
+  `positionInitiale` varchar(255) NOT NULL,
   PRIMARY KEY (`idRDV`),
   KEY `FK_Rdv_idLieu` (`idLieu`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
@@ -66,9 +67,9 @@ CREATE TABLE IF NOT EXISTS `rdv` (
 -- Contenu de la table `rdv`
 --
 
-INSERT INTO `rdv` (`idRDV`, `horaire`, `idCreateur`, `dateRdv`, `nbPlaces`, `idLieu`) VALUES
-(1, '12:00', 1, '2016-11-17', 3, 1),
-(2, '13h', 3, '2016-11-23', 1, 1);
+INSERT INTO `rdv` (`idRDV`, `horaire`, `idCreateur`, `dateRdv`, `nbPlaces`, `idLieu`, `positionInitiale`) VALUES
+(1, '12:00', 1, '2016-11-17', 3, 1, "0"),
+(2, '13h', 3, '2016-11-23', 1, 1, "0");
 
 -- --------------------------------------------------------
 
