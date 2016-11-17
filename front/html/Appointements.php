@@ -20,7 +20,7 @@
             <label for="changetype-geocode" style="color:white;">Transport en commun</label>
         </div>
         <div id="div_map" class="row ">
-            <div  class="col s3 push-s9 black white-text">
+            <div  class="col s3 push-s9 ">
                 <h3>Itinéraire</h3>
                 <div id="right-panel" ></div>
             </div>
