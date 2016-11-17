@@ -27,32 +27,40 @@ class WS_Rdv implements IWebServiciable
         switch ($_POST['action']) {
             case GET_MINE :
                 $sql = "SELECT rdv.horaire, rdv.dateRdv, rdv.idRdv, lieu.nomLieu, rdv.idCreateur, user.nom, user.prenom FROM Rdv rdv INNER JOIN utilisateur_rdv urdv ON urdv.idRdv = rdv.idRdv INNER JOIN Utilisateur user ON user.idUtilisateur = rdv.idCreateur INNER JOIN Lieu lieu ON lieu.idLieu = rdv.idLieu WHERE urdv.idUtilisateur =" . $_POST['idUser'];
-                return   returnOneArray($sql);
+                return returnOneArray($sql);
             case GET_BYID :
                 $sql = "SELECT rdv.horraire, rdv.dateRdv,  lieu.nomLieu FROM Rdv rdv INNER JOIN utilisateur_rdv urdv ON rdv.idRdv = rdv.id AND Lieu lieu ON lieu.id = rdv.idLieu  WHERE urdv.idRdv =" . $_POST['idRdv'];
                 return returnOneLine($sql);
             case GET_SEARCH :
-                $sql = "SELECT rdv.horaire, rdv.dateRdv, rdv.nbPlaces, lieu.nomLieu, user.nom, user.prenom, user.idUtilisateur  FROM Rdv rdv
-                        INNER JOIN utilisateur_rdv urdv ON rdv.idRdv = rdv.idRdv
-                        INNER JOIN Lieu lieu ON lieu.idLieu = rdv.idLieu
-                        INNER JOIN utilisateur user ON user.idUtilisateur = urdv.idCreateur
-                        WHERE rdv.dateRdv <= CURRENT_DATE";
+                // $sql = "SELECT rdv.horaire, rdv.dateRdv, rdv.nbPlaces, lieu.nomLieu, user.nom, user.prenom, user.idUtilisateur  FROM Rdv rdv
+                //         INNER JOIN utilisateur_rdv urdv ON rdv.idRdv = rdv.idRdv
+                //         INNER JOIN Lieu lieu ON lieu.idLieu = rdv.idLieu
+                //         INNER JOIN utilisateur user ON user.idUtilisateur = urdv.idCreateur
+                //         WHERE rdv.dateRdv >= CURRENT_DATE";
 
-                if(isset($_POST['nom'])){
-                    $sql = $sql + "AND lieu.nomLieu = '" .$_POST['nom']."'";
-                };
+                $sql = "SELECT horaire,nom,prenom,dateRdv,nbPlaces,positionInitiale ";
+                $sql = $sql."FROM rdv,utilisateur_rdv,utilisateur,lieu ";
+                $sql = $sql."WHERE lieu.idLieu = rdv.idLieu AND rdv.idCreateur = utilisateur_rdv.idUtilisateur ";
+                $sql = $sql."AND utilisateur.idUtilisateur = utilisateur_rdv.idUtilisateur ";
+                $sql = $sql."AND rdv.dateRdv >= CURRENT_DATE";
 
-                if(isset($_POST['coordonnes'])){
-                    $sql = $sql + "AND lieu.coordonnees = '" .$_POST['coordonnes']."'";
-                };
+                if(isset($_POST['nom']) && $_POST['nom'] != ""){
+                    $sql = $sql." AND lieu.nomLieu = '" .$_POST['nom']."' ";
+                }
 
-                if(isset($_POST['horaire'])){
-                    $sql = $sql + "AND rdv.horaire = '" .$_POST['horaire']."'";
-                };
+                if(isset($_POST['coordonnes']) && $_POST['coordonnes'] != ""){
+                    $sql = $sql." AND lieu.coordonnees = '" .$_POST['coordonnes']."' ";
+                }
 
-                if(isset($_POST['date'])){
-                    $sql = $sql + "AND rdv.dateRdv = '" .$_POST['date']."'";
-                };
+                if(isset($_POST['horaire']) && $_POST['horaire'] != ""){
+                    $sql = $sql." AND rdv.horaire = '" .$_POST['horaire']."' ";
+                }
+
+                if(!isset($_POST['date']) && $_POST['date'] != ""){
+                    $sql = $sql." AND rdv.dateRdv = '" .$_POST['date']."' ";
+                }
+
+                //return $sql;
 
                 return returnOneArray($sql);
             case GET_DETAILS :

@@ -32,6 +32,7 @@
 
         <div class=" row card">
             <div class="row">
+                <p> Le lieu </p>
                 <select class="browser-default select" id="selectLesLieux"></select>
                 <select class="browser-default select" id="horaireRDV">
 									<option value="" disabled selected>Horaire souhaité</option>

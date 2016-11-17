@@ -57,6 +57,7 @@ CREATE TABLE IF NOT EXISTS `rdv` (
   `idCreateur` int(11) NOT NULL,
   `dateRdv` date NOT NULL,
   `nbPlaces` int(11) DEFAULT NULL,
+  `positionInitiale` varchar(255) DEFAULT NULL,
   `idLieu` int(11) NOT NULL,
   PRIMARY KEY (`idRDV`),
   KEY `FK_Rdv_idLieu` (`idLieu`)
@@ -66,9 +67,9 @@ CREATE TABLE IF NOT EXISTS `rdv` (
 -- Contenu de la table `rdv`
 --
 
-INSERT INTO `rdv` (`idRDV`, `horaire`, `idCreateur`, `dateRdv`, `nbPlaces`, `idLieu`) VALUES
-(1, '12h30', 1, '2016-11-17', 3, 1),
-(2, '13h00', 3, '2016-11-23', 1, 1);
+INSERT INTO `rdv` (`idRDV`, `horaire`, `idCreateur`, `dateRdv`, `nbPlaces`,`positionInitiale`, `idLieu`) VALUES
+(1, '12h30', 1, '2016-11-17', 3,'50.486331, 2.788783', 1),
+(2, '13h00', 3, '2016-11-23', 1,'50.286331, 2.788783', 1);
 
 -- --------------------------------------------------------
 

@@ -301,7 +301,7 @@ function initLieuxSelect(){
       success: function(response) {
         $("#selectLesLieux option").remove();
 
-         $("#selectLesLieux").append("<option value='' disabled selected>Choissez un endroit où manger</option>")
+        $("#selectLesLieux").append("<option value='' disabled selected></option>")
 
         for(var i = 0; i < JSON.parse(response).length;i++){
             $("#selectLesLieux").append("<option value='" + JSON.parse(response)[i].coordonnees + "'>" + JSON.parse(response)[i].nomLieu + "</option>");
@@ -333,11 +333,12 @@ $( "#searchRdv" ).click(function() {
 
                var string = JSON.parse(response)[i].positionInitiale.split(",");
 
-               coordonnees.geometry.location.lat = parseFloat(string[0]);
-               coordonnees.geometry.location.lng = parseFloat(string[1]);
+               var obj = {};
+               obj.lat = parseFloat(string[0]);
+               obj.lng = parseFloat(string[1]);
 
                var infoWindow = new google.maps.InfoWindow({map: map});
-               infoWindow.setPosition(coordonnees);
+               infoWindow.setPosition(obj);
                infoWindow.setContent('Position de départ de ' + JSON.parse(response)[i].nom + " " + JSON.parse(response)[i].prenom);
            }
           }else{
