@@ -8,6 +8,7 @@ const GET_SEARCH = "getSearch";
 const GET_DETAILS = "getDetails";
 const ADD_RDV = "addRdv";
 const GET_ALL_LIEUX = "getAllLieux";
+const GO_RDV = "goRdv";
 
 class WS_Rdv implements IWebServiciable
 {
@@ -35,7 +36,7 @@ class WS_Rdv implements IWebServiciable
                         INNER JOIN utilisateur_rdv urdv ON rdv.idRdv = rdv.idRdv 
                         INNER JOIN Lieu lieu ON lieu.idLieu = rdv.idLieu 
                         INNER JOIN utilisateur user ON user.idUtilisateur = urdv.idCreateur
-                        WHERE 1 ";
+                        WHERE rdv.dateRdv <= CURRENT_DATE";
 
                 if(isset($_POST['nom'])){
                     $sql = $sql + "AND lieu.nomLieu = '" .$_POST['nom']."'";
@@ -92,6 +93,34 @@ class WS_Rdv implements IWebServiciable
                 execReqWithoutResult($sql);
 
                 return true;
+            case GO_RDV :
+
+                $sql = "SELECT * FROM UTILISATEUR_RDV WHERE idUtilisateur = '" .$_POST['idUser']."' AND idRDV = '" .$_POST['idRdv']."'";
+                $resp = returnOneLine($sql);
+                $var = 'ko';
+
+                if (!isset($resp)){
+                    $sql = "INSERT INTO Utilisateur_RDV ('idUtilisateur', 'idRDV') VALUES  ('".$_POST['idUser']."','".$_POST['idRdv']."')";
+                    execReqWithoutResult($sql);
+                    $var = 'ok';
+
+                    if(isset($_POST['position'])){
+                        $sql = "SELECT MAX(numEtape) as numMax FROM Trajet WHERE idRdv = '" .$_POST['idRdv']."'";
+                        $resp = returnOneLine($sql);
+
+                        $sql = "INSERT INTO Trajet ('idRdv', 'numEtape', 'idUtilisateur', 'positionParticipant') VALUES ('".$_POST['idRdv']."', '" .($resp['numMax'] + 1). "', '".$_POST['idUser']."', '".$_POST['position']."')";
+
+                        execReqWithoutResult($sql);
+
+                        $sql = "SELECT MAX(idTrajet) FROM Trajet";
+                        $resp = returnOneLine($sql);
+
+                        $sql = "INSERT INTO RDV_TRAJET ('idRdv', 'idTrajet') VALUES ('".$_POST['idRdv']."', '".$resp['idTrajet']."')";
+                        execReqWithoutResult($sql);
+                    }
+                }
+
+                return $var;
             default:
                 Helper::ThrowAccessDenied();
                 break;
