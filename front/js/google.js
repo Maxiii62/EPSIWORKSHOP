@@ -193,6 +193,10 @@ $("#createRdv").on('click',function(){
   $("#modalConnexion").openModal();
 })
 
+$(".participer").on('click',function(){
+  $("#modalParticiper").openModal();
+})
+
 $(".closeModal").on('click',function(){
   $($(".modal").closest()).closeModal();
 })
