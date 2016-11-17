@@ -25,6 +25,8 @@ session_start();
                     <div class="left">
                         <li><a href="../html/Appointements.php">Carte</a></li>
                         <li><a href="../html/ranking.php">Classement</a></li>
+                        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Informations<i class="material-icons right">arrow_drop_down</i></a></li>
+
 
                     </div>
                     <div class="right">
@@ -42,13 +44,14 @@ session_start();
                             <li><a class='' href='../html/Login.php'>Connexion</a></li>";
                         }
                         ?>
-                        <ul class="side-nav" id="mobile-demo">
-                            <li><a href="sass.html">Sass</a></li>
-                            <li><a href="badges.html">Components</a></li>
-                            <li><a href="collapsible.html">Javascript</a></li>
-                            <li><a href="mobile.html">Mobile</a></li>
-                        </ul>
                     </div>
+                </ul>
+                <ul id="dropdown1" class="dropdown-content">
+                    <li><a href="../html/presentation.php">Présentation</a></li>
+                    <li class="divider"></li>
+                    <li><a href="../html/Points.php">Comment gagner des points ?</a></li>
+                    <li class="divider"></li>
+                    <li><a href="../html/Partenaires.php">Partenaires</a></li>
                 </ul>
             </div>
         </nav>
