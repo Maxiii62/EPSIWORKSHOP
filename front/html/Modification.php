@@ -20,7 +20,7 @@ if (!isset($_SESSION['monUserCo'])){
             <form class="col s12">
                 <div class="row">
 
-                    <input type="hidden" id="id" value="<?php echo $_SESSION['monUserCo']['idUtilisateur'] ?>">
+
 
                     <div class="input-field col s6">
                         <input id="first_name" type="text" class="validate reset" value="<?php echo $_SESSION['monUserCo']['prenom'] ?>">

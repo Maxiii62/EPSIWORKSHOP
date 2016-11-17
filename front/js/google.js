@@ -283,7 +283,7 @@ $( "#creationRDV" ).click(function() {
            $.ajax({
                method: "POST",
                url : "/EPSIWORKSHOP/controller/controller.php",
-               data: { ws: 'rdv', action : 'addRdv', date: $("#dateRDV").val(), horaire: $("#heureRDV").val(), coordonnees : destinationObjectif.geometry.location.lat() + ", " + destinationObjectif.geometry.location.lng(), nom : destinationObjectif.name, idUser : 1, nbPlaces : $("#nbPlaces").val()},
+               data: { ws: 'rdv', action : 'addRdv', date: $("#dateRDV").val(), horaire: $("#heureRDV").val(), coordonnees : destinationObjectif.geometry.location.lat() + ", " + destinationObjectif.geometry.location.lng(), nom : destinationObjectif.name, idUser : $("#id").val(), nbPlaces : $("#nbPlaces").val()},
                success: function(response) {
                   if(response === "true"){
                     Materialize.toast('Rendez-vous ajouté ! ;-)', 4000 ,'green');
@@ -315,7 +315,7 @@ $( "#searchRdv" ).click(function() {
   $.ajax({
       method: "POST",
       url : "/EPSIWORKSHOP/controller/controller.php?",
-      data: { ws: 'rdv', action : 'getSearch', date: $("#dateRDV").val(), horaire: $("#heureRDV").val(), coordonnees : $("#selectLesLieux").val(), nom: $("#selectLesLieux option:selected").text().replace("'","''"), idUser : 1},
+      data: { ws: 'rdv', action : 'getSearch', date: $("#dateRDV").val(), horaire: $("#heureRDV").val(), coordonnees : $("#selectLesLieux").val(), nom: $("#selectLesLieux option:selected").text().replace("'","''"), idUser : $("#id").val()},
       success: function(response) {
          if(response === "true"){
            Materialize.toast('Rendez-vous ajouté ! ;-)', 4000 ,'green');
@@ -338,7 +338,7 @@ $("#joinRdv").on("click",function(){
   $.ajax({
       method: "POST",
       url : "/EPSIWORKSHOP/controller/controller.php?",
-      data: { ws: 'trajet', action : 'getSearch', date: $("#dateRDV").val(), horaire: $("#heureRDV").val(), coordonnees : $("#selectLesLieux").val(), nom: $("#selectLesLieux option:selected").text().replace("'","''"), idUser : 1},
+      data: { ws: 'trajet', action : 'getSearch', date: $("#dateRDV").val(), horaire: $("#heureRDV").val(), coordonnees : $("#selectLesLieux").val(), nom: $("#selectLesLieux option:selected").text().replace("'","''"), idUser : $("#id").val()},
       success: function(response) {
          if(response === "true"){
            Materialize.toast('Rendez-vous ajouté ! ;-)', 4000 ,'green');

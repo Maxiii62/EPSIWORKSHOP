@@ -19,20 +19,22 @@ session_start();
     </head>
     <body>
         <nav>
-            <div class="nav-wrapper black white-text ">
+            <div class="nav-wrapper blue-grey ">
                 <ul id="nav-mobile" class="hide-on-med-and-down blue-grey">
                     <div class="left">
                         <li><a href="../html/Appointements.php">Carte</a></li>
                         <li><a href="../html/ranking.php">Classement</a></li>
-						<li><a class="dropdown-button" href="#!" data-activates="dropdown1">Informations<i class="material-icons right">arrow_drop_down</i></a></li>
+
                     </div>
-					
                     <div class="right">
+
+
 
                         <?php
                         if (isset($_SESSION['monUserCo'])) {
                             echo "<li><a href='../html/Mon_Profil.php'>Mon profil</a></li>
                                    <li><a id='deconnexion' class=''>Déconnexion</a></li>
+                                   <input type='hidden' id='id' value='" . $_SESSION['monUserCo']['idUtilisateur']."'>
                           ";
                         } else {
                             echo "<li><a class='' href='../html/Inscription.php'>Inscription</a></li>
@@ -42,12 +44,5 @@ session_start();
 
                     </div>
                 </ul>
-			<ul id="dropdown1" class="dropdown-content">
-  <li><a href="../html/presentation.php">Présentation</a></li>
-    <li class="divider"></li>
-  <li><a href="../html/Points.php">Comment gagner des points ?</a></li>
-  <li class="divider"></li>
-  <li><a href="../html/Partenaires.php">Partenaires</a></li>
-</ul>
             </div>
         </nav>
