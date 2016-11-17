@@ -1,9 +1,10 @@
+<body>
 <?php
 
 $title = "Prendre Rendez vous";
 include '../../fragments/header.php';
 ?>
-
+    <main>
 <div id="login-page">
     <h3>Classement</h3>
 <table id="tab_classement" class="trietable dataTable card ">
@@ -20,11 +21,11 @@ include '../../fragments/header.php';
     </tbody>
 </table>
 </div>
-
+    </main>
 <?php
 include '../../fragments/footer.php';
 ?>
-
+</body>
 <script>
     classement();
 </script>
