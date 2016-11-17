@@ -4,7 +4,7 @@
     include '../../fragments/header.php';
     ?>
     <main >
-        <div id="login-page" class="card">
+        <div id="login-page" class="card transparence">
             <div class="transparence">
                  </br>
                 <input type='hidden' id='idRdv'>
