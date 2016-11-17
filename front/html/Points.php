@@ -14,8 +14,8 @@
 				</p>
 				<ul class="collection">
 					<li class="collection-item">+5 points : Créer un événement</li>
-					<li class="collection-item">+3 points : Lorsque vous obtenez une moyenne supérieur à 3/5 pour votre RDV </li>
-					<li class="collection-item">+1 point : En particpant à un évenement</li>
+					<li class="collection-item">+3 point : En particpant à un évenement</li>
+					<li class="collection-item">+1 points : Lorsque vous obtenez une moyenne supérieur à 3/5 pour votre RDV </li>
 				</ul>
 				<h5 class="center">Mais à quoi cela sert-il ?</h5>
 				<p>En gagnant des points, un classement est établi et permet aux 5 premiers d'obtenir des coupons de réduction dans divers restaurants. Le classement sera réinitialisé tous les trimestres. Cela permet aux nouveaux d'obtenir une chance.

@@ -42,7 +42,8 @@ include '../../fragments/header.php';
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="datepicker_register" type="date" class="validate reset" placeholder="Date de naissance">
+                        <input id="datepicker_register" type="date" class="datepicker">
+                        <label for="icon_prefix">Date</label>
                     </div>
                 </div>
                 <span><button class="btn waves-effect waves-light" type="button" id="valider" name="action">Valider</button></span>
@@ -57,6 +58,12 @@ include '../../fragments/header.php';
     </div>
 </div>
 </main>
+
+<script>  $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control monthselectYears: 15 // Creates a dropdown of 15 years to control year
+        format: 'yyyy-mm-dd'
+    });
+</script>
 
 <?php include '../../fragments/footer.php'; ?>
 </body>

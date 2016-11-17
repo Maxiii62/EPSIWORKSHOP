@@ -51,7 +51,8 @@ if (!isset($_SESSION['monUserCo'])){
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="datepicker_register" type="date" class="validate reset" placeholder="Date de naissance" value="<?php echo $_SESSION['monUserCo']['dateNaissance'] ?>">
+                        <input id="datepicker_register" type="date" class="datepicker" value="<?php echo $_SESSION['monUserCo']['dateNaissance']?>">
+                        <label for="icon_prefix">Date</label>
                     </div>
                 </div>
                 <span><button class="btn waves-effect waves-light" type="button" id="modifier" name="action">Modifier</button></span>
@@ -66,5 +67,11 @@ if (!isset($_SESSION['monUserCo'])){
     </div>
 </div>
 </body>
+
+<script>  $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control monthselectYears: 15 // Creates a dropdown of 15 years to control year
+        format: 'yyyy-mm-dd'
+    });
+</script>
 </html>
 <?php include '../../fragments/footer.php';?>

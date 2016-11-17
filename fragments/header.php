@@ -24,7 +24,10 @@ session_start();
                     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                     <div class="left">
                         <li><a href="../html/Appointements.php">Carte</a></li>
+                        <li><a href="../html/addAppointement.php">Créer</a></li>
                         <li><a href="../html/ranking.php">Classement</a></li>
+                        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Informations<i class="material-icons right">arrow_drop_down</i></a></li>
+
 
                     </div>
                     <div class="right">
@@ -33,7 +36,8 @@ session_start();
 
                         <?php
                         if (isset($_SESSION['monUserCo'])) {
-                            echo "<li><a href='../html/Mon_Profil.php'>Mon profil</a></li>
+                            echo "<li><a href='../html/historical.php'>Mon historique</a></li>
+                                   <li><a href='../html/Mon_Profil.php'>Mon profil</a></li>
                                    <li><a id='deconnexion' class=''>Déconnexion</a></li>
                                    <input type='hidden' id='id' value='" . $_SESSION['monUserCo']['idUtilisateur'] . "'>
                           ";
@@ -42,13 +46,14 @@ session_start();
                             <li><a class='' href='../html/Login.php'>Connexion</a></li>";
                         }
                         ?>
-                        <ul class="side-nav" id="mobile-demo">
-                            <li><a href="sass.html">Sass</a></li>
-                            <li><a href="badges.html">Components</a></li>
-                            <li><a href="collapsible.html">Javascript</a></li>
-                            <li><a href="mobile.html">Mobile</a></li>
-                        </ul>
                     </div>
+                </ul>
+                <ul id="dropdown1" class="dropdown-content">
+                    <li><a href="../html/presentation.php">Présentation</a></li>
+                    <li class="divider"></li>
+                    <li><a href="../html/Points.php">Comment gagner des points ?</a></li>
+                    <li class="divider"></li>
+                    <li><a href="../html/Partenaires.php">Partenaires</a></li>
                 </ul>
             </div>
         </nav>
