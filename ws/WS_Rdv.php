@@ -9,6 +9,7 @@ const GET_DETAILS = "getDetails";
 const ADD_RDV = "addRdv";
 const GET_ALL_LIEUX = "getAllLieux";
 const GO_RDV = "goRdv";
+const DRAW_TRAJET = "draw";
 
 class WS_Rdv implements IWebServiciable
 {
@@ -38,11 +39,13 @@ class WS_Rdv implements IWebServiciable
                 //         INNER JOIN utilisateur user ON user.idUtilisateur = urdv.idCreateur
                 //         WHERE rdv.dateRdv >= CURRENT_DATE";
 
-                $sql = "SELECT horaire,nom,prenom,dateRdv,nbPlaces,positionInitiale ";
+                $sql = "SELECT rdv.idRdv,horaire,nom,prenom,dateRdv,nbPlaces,positionInitiale ";
                 $sql = $sql."FROM rdv,utilisateur_rdv,utilisateur,lieu ";
                 $sql = $sql."WHERE lieu.idLieu = rdv.idLieu AND rdv.idCreateur = utilisateur_rdv.idUtilisateur ";
                 $sql = $sql."AND utilisateur.idUtilisateur = utilisateur_rdv.idUtilisateur ";
-                $sql = $sql."AND rdv.dateRdv >= CURRENT_DATE";
+                $sql = $sql."AND rdv.dateRdv >= CURRENT_DATE ";
+                $sql = $sql."AND rdv.nbPlaces > 0 ";
+                $sql = $sql."AND rdv.idCreateur != ".$_POST['idUser'];
 
                 if(isset($_POST['nom']) && $_POST['nom'] != ""){
                     $sql = $sql." AND lieu.nomLieu = '" .$_POST['nom']."' ";
@@ -108,36 +111,77 @@ class WS_Rdv implements IWebServiciable
 
             case GO_RDV :
 
+                $req = [];
+
                 $sql = "SELECT * FROM UTILISATEUR_RDV WHERE idUtilisateur = '" .$_POST['idUser']."' AND idRDV = '" .$_POST['idRdv']."'";
                 $resp = returnOneLine($sql);
-                $var = 'ko';
+                $var = '1';
 
-                if (!isset($resp)){
-                    $sql = "INSERT INTO Utilisateur_RDV ('idUtilisateur', 'idRDV') VALUES  ('".$_POST['idUser']."','".$_POST['idRdv']."')";
+                array_push($req,$sql);
+
+                if (isset($resp)){
+                    $sql = "INSERT INTO Utilisateur_RDV (idUtilisateur, idRDV) VALUES  ('".$_POST['idUser']."','".$_POST['idRdv']."')";
                     execReqWithoutResult($sql);
+
+                    array_push($req,$sql);
 
                     $sql = "UPDATE UTILISATEUR SET nombrePoints = nombrePoints + 3 WHERE idUtilisateur = " .$_POST['idUser'];
                     execReqWithoutResult($sql);
 
-                    $var = 'ok';
+                    array_push($req,$sql);
+
+                    $sql = "UPDATE rdv SET nbPlaces= (nbPlaces-1) WHERE idRdv='".$_POST['idRdv']."'";
+                    execReqWithoutResult($sql);
+
+                    array_push($req,$sql);
+
+                    $sql = "UPDATE UTILISATEUR SET nombrePoints = (nombrePoints+3) WHERE idUtilisateur = " .$_POST['idUser'];
+                    execReqWithoutResult($sql);
+
+                    array_push($req,$sql);
+
+                    $var = '2';
 
                     if(isset($_POST['position'])){
-                        $sql = "SELECT MAX(numEtape) as numMax FROM Trajet WHERE idRdv = '" .$_POST['idRdv']."'";
+                        $sql = "SELECT ISNULL(MAX(numEtape)) as numMax FROM Trajet WHERE idRdv = '" .$_POST['idRdv']."'";
                         $resp = returnOneLine($sql);
 
-                        $sql = "INSERT INTO Trajet ('idRdv', 'numEtape', 'idUtilisateur', 'positionParticipant') VALUES ('".$_POST['idRdv']."', '" .($resp['numMax'] + 1). "', '".$_POST['idUser']."', '".$_POST['position']."')";
+                        array_push($req,$sql);
+
+                        $sql = "INSERT INTO Trajet (idRdv, numEtape, idUtilisateur, positionParticipant) VALUES ('".$_POST['idRdv']."', '" .($resp['numMax']). "', '".$_POST['idUser']."', '".$_POST['position']."')";
 
                         execReqWithoutResult($sql);
 
-                        $sql = "SELECT MAX(idTrajet) FROM Trajet";
+                        array_push($req,$sql);
+
+                        $sql = "SELECT MAX(idTrajet) as numMax FROM Trajet";
                         $resp = returnOneLine($sql);
 
-                        $sql = "INSERT INTO RDV_TRAJET ('idRdv', 'idTrajet') VALUES ('".$_POST['idRdv']."', '".$resp['idTrajet']."')";
+                        array_push($req,$sql);
+
+                        $sql = "INSERT INTO RDV_TRAJET (idRdv, idTrajet) VALUES ('".$_POST['idRdv']."', '".$resp['numMax']."')";
                         execReqWithoutResult($sql);
+
+                        array_push($req,$sql);
+
+                        $var = "3";
                     }
                 }
-
+                //return $req;
                 return $var;
+
+              case DRAW_TRAJET :
+
+                    $chemin = [];
+
+                    $sql = "SELECT positionInitiale as debut,CONCAT(nom,' ',prenom) as conducteur, lieu.coordonnees as fin,nomLieu FROM rdv,utilisateur_rdv,utilisateur,lieu WHERE lieu.idLieu = rdv.idLieu AND rdv.idCreateur = utilisateur_rdv.idUtilisateur AND utilisateur.idUtilisateur = utilisateur_rdv.idUtilisateur AND rdv.idRDV = ".$_POST['idRdv'];
+
+                    $chemin["infoTrajet"] = returnOneLine($sql);
+
+                    $sql = "SELECT positionParticipant,CONCAT(nom,' ',prenom) as autostoppeur,googlePlaceId FROM trajet,utilisateur WHERE trajet.idUtilisateur = utilisateur.idUtilisateur AND idRdv = ".$_POST['idRdv'];
+                    $chemin["detours"] = returnOneArray($sql);
+
+                    return $chemin;
 
             default:
                 Helper::ThrowAccessDenied();

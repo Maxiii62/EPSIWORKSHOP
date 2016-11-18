@@ -6,6 +6,8 @@ var directionsDisplay;
 var directionsService;
 var waypts = [];
 var autoStop;
+var idRdv;
+var demarrageRoute;
 
 
 function initMap() {
@@ -78,7 +80,8 @@ function initMap() {
   service.nearbySearch({
     location: geoPosition,
     radius: 15000,
-    types: ['restaurant']//,'meal_takeaway','meal_delivery','cafe','food','resto','bakery']
+    //types: ['restaurant']//,'meal_takeaway','meal_delivery','cafe','food','resto','bakery']
+    types: ['restaurant','meal_takeaway','meal_delivery','cafe','food','resto','bakery']
   }, callback);
 }
 
@@ -193,6 +196,8 @@ function createMarker(place) {
 
 function displayInfos(place){
 
+  $(".hideMagasin").removeClass("hide");
+
   var request = {
     placeId: place.place_id
   };
@@ -267,6 +272,11 @@ $(".participer").on('click',function(){
   $("#modalParticiper").openModal();
 })
 
+function participer(){
+  $("#modalParticiper").openModal();
+  idRdv = $(event.target).parents().closest("tr").attr("id");
+}
+
 $(".closeModal").on('click',function(){
   $($(".modal").closest()).closeModal();
 })
@@ -282,7 +292,7 @@ $( "#creationRDV" ).click(function() {
            $.ajax({
                method: "POST",
                url : "/EPSIWORKSHOP/controller/controller.php",
-               data: { ws: 'rdv', action : 'addRdv', date: year+"-"+month + "-" + day, horaire: $("#horaireRDV").val(), coordonnees : destinationObjectif.geometry.location.lat() + ", " + destinationObjectif.geometry.location.lng(), nom : destinationObjectif.name, idUser : $("#id").val(), nbPlaces : $("#nbPlaces").val(),geoPosition : geoPosition.lat + ", " + geoPosition.lng},
+               data: { ws: 'rdv', action : 'addRdv', date: year+"-"+month + "-" + day, horaire: $("#horaireRDV").val(), coordonnees : formatPositionDataBase(destinationObjectif.geometry.location.lat()) + ", " + formatPositionDataBase(destinationObjectif.geometry.location.lng()), nom : destinationObjectif.name, idUser : $("#id").val(), nbPlaces : $("#nbPlaces").val(),geoPosition : formatPositionDataBase(geoPosition.lat) + ", " + formatPositionDataBase(geoPosition.lng)},
                success: function(response) {
                   if(response === "true"){
                     Materialize.toast('Rendez-vous ajouté ! ;-)', 4000 ,'green');
@@ -320,7 +330,7 @@ $( "#searchRdv" ).click(function() {
 
          if(JSON.parse(response).length > 0){
            for(var i = 0; i < JSON.parse(response).length;i++){
-               $("#lesRdv").append("<tr><td>" + JSON.parse(response)[i].nom + " " + JSON.parse(response)[i].prenom + "'</td><td>" + JSON.parse(response)[i].horaire + "</td><td>" + JSON.parse(response)[i].nbPlaces + "</td><td>" + JSON.parse(response)[i].positionInitiale + "</td><td><input type='button' class='participer' value='participer'/></td><tr>");
+               $("#lesRdv").append("<tr id="+JSON.parse(response)[i].idRdv+"><td>" + JSON.parse(response)[i].nom + " " + JSON.parse(response)[i].prenom + "'</td><td>" + JSON.parse(response)[i].horaire + "</td><td>" + JSON.parse(response)[i].nbPlaces + "</td><td>" + JSON.parse(response)[i].positionInitiale + "</td><td></button><button class='btn waves-effect waves-light blue' onclick='drawTrajetRDV("+JSON.parse(response)[i].idRdv + ")' name='action'>Voir le chemin<i class='material-icons right'>search</i></button><button class='btn waves-effect waves-light' onclick='participer()' type='submit' name='action'>JOINDRE<i class='material-icons right'>send</i></td><tr>");
 
                var coordonnees = {
                    geometry : {
@@ -337,10 +347,7 @@ $( "#searchRdv" ).click(function() {
                obj.lat = parseFloat(string[0]);
                obj.lng = parseFloat(string[1]);
 
-               var infoWindow = new google.maps.InfoWindow({map: map});
-               infoWindow.setPosition(obj);
-               infoWindow.setContent('Position de départ de ' + JSON.parse(response)[i].nom + " " + JSON.parse(response)[i].prenom);
-           }
+             }
           }else{
             $("#lesRdv").append("<tr><td colspan='4'>Aucun résulat</td><tr>");
             Materialize.toast('Aucun résultat', 4000 ,'red');
@@ -358,18 +365,38 @@ $("#switchDirect").on("change",function(){
 })
 
 $("#joinRdv").on("click",function(){
-  $.ajax({
-      method: "POST",
-      url : "/EPSIWORKSHOP/controller/controller.php?",
-      data: { ws: 'trajet', action : 'getSearch', date: $("#dateRDV").val(), horaire: $("#horaireRDV option selected").val(), coordonnees : $("#selectLesLieux").val(), nom: $("#selectLesLieux option:selected").text().replace("'","\'"), idUser : $("#id").val()},
-      success: function(response) {
-         if(response === "true"){
-           Materialize.toast('Rendez-vous ajouté ! ;-)', 4000 ,'green');
-          }else{
-            Materialize.toast('Problème(s) pour créer un rendez-vous', 4000 ,'red');
+
+    var bool = $("#switchDirect").attr("checked");
+
+    if (autoStop){
+      $.ajax({
+          method: "POST",
+          url : "/EPSIWORKSHOP/controller/controller.php?",
+          data: { ws: 'rdv', action : 'goRdv', idUser: $("#id").val(), idRdv: idRdv, position : formatPositionDataBase(autoStop.geometry.location.lat()) + ", " + formatPositionDataBase(autoStop.geometry.location.lng())},
+          success: function(response) {
+             if(parseFloat(JSON.parse(response)) > 0){
+               Materialize.toast('Quelqu\'un viendra vous chercher ! ;-)', 4000 ,'green');
+              }else{
+                Materialize.toast('Problème(s) pour créer un rendez-vous', 4000 ,'red');
+              }
           }
-      }
- });
+     });
+   }else{
+     $.ajax({
+         method: "POST",
+         url : "/EPSIWORKSHOP/controller/controller.php?",
+         data: { ws: 'rdv', action : 'goRdv', idUser: $("#id").val(), idRdv: idRdv },
+         success: function(response) {
+            if(parseFloat(JSON.parse(response)) > 0){
+              Materialize.toast('On se rejoint là bas ! ;-)', 4000 ,'green');
+             }else{
+               Materialize.toast('Problème(s) pour créer un rendez-vous', 4000 ,'red');
+             }
+         }
+    });
+   }
+   $("#modalParticiper").closeModal();
+   drawTrajetRDV(idRdv);
 })
 
 $("#selectLesLieux").on("change",function(){
@@ -390,3 +417,90 @@ $("#selectLesLieux").on("change",function(){
  calculateAndDisplayRoute(coordonnees);
  displayInfos(coordonnees);
  });
+
+
+function drawTrajetRDV(idRdv){
+  infoWindow = new google.maps.InfoWindow({map: map});
+
+  $.ajax({
+      method: "POST",
+      url : "/EPSIWORKSHOP/controller/controller.php?",
+      data: { ws: 'rdv', action : 'draw', idRdv: idRdv },
+      success: function(response) {
+
+        var result = JSON.parse(response);
+        var coordonneesFin = result.infoTrajet.fin;
+        var coordonneesDebut = result.infoTrajet.debut;
+          //50.292761, 2.780611
+
+          var debut = {
+                    lat : parseFloat(coordonneesDebut.toString().split(",")[0]),
+                    lng : parseFloat(coordonneesDebut.toString().split(",")[1])
+          };
+
+          infoWindow.setPosition(debut);
+          infoWindow.setContent("Point de départ du conducteur " + result.infoTrajet.conducteur);
+
+         var fin = {
+             geometry : {
+                 location : {
+                   lat : parseFloat(coordonneesFin.toString().split(",")[0]),
+                   lng : parseFloat(coordonneesFin.toString().split(",")[1])
+                 }
+             }
+         };
+
+        var finDisplay = debut;
+
+        finDisplay.lat = parseFloat(coordonneesFin.toString().split(",")[0]);
+        finDisplay.lng = parseFloat(coordonneesFin.toString().split(",")[1]);
+
+         infoWindow.setPosition(finDisplay);
+         infoWindow.setContent("Arrivée à " + result.infoTrajet.nomLieu);
+
+         waypts = [];
+
+         for (var i = 0; i < result.detours.length;i++){
+
+           var chaine = result.detours[i].positionParticipant;
+
+           var prendre = {
+             lat : parseFloat(chaine.split(",")[0]),
+             lng : parseFloat(chaine.split(",")[1])
+           }
+
+           waypts.push({
+             location: prendre,
+             stopover: true
+           });
+
+           var affichage = new google.maps.Marker({
+              position: prendre,
+              map: map,
+              title: result.detours[i].autostoppeur
+            });
+            affichage.addListener('click', function() {
+              infowindow.open(map, marker);
+            });
+
+        }
+
+         geoPosition = debut;
+         calculateAndDisplayRoute(fin);
+         displayInfos(fin);
+
+      }
+ });
+}
+
+function formatPositionDataBase(chaine){
+
+  var base = chaine.toString().split(".");
+
+  var premierePartie = base[0];
+  var deuxiemePartie = base[1];
+
+  deuxiemePartie = deuxiemePartie.toString().substring(0,6);
+
+  return premierePartie + "."+deuxiemePartie;
+};
