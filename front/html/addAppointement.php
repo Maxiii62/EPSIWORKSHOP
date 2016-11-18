@@ -7,6 +7,10 @@
     <main>
 
         <div id="type-selector" class="controls">
+
+          <input id="pac-input" class="controls" type="text"
+     placeholder="Entrez un endroit">
+
             <input type="radio" name="mode" id="changetype-all" value="DRIVING" checked="checked">
             <label for="changetype-all" style="color:white;">Voiture</label>
 
