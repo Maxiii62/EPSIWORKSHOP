@@ -19,7 +19,7 @@
             <input type="radio" name="mode" id="changetype-geocode" value="TRANSIT">
             <label for="changetype-geocode" style="color:white;">Transport en commun</label>
         </div>
-        <div id="div_map" class="row ">
+        <div id="div_map" class="row hideMagasin hide">
             <div class="col s12 m4 l3 row white">
                 <div class="card-image" >
                     <img src="" id="photoMagasin"/>
@@ -59,7 +59,7 @@
                     <button class="btn waves-effect waves-light blue" id="createRdv" type="button" name="goto">J'y fonce !<i class="material-icons right">send</i></button>
                 </div>
             </div>
-            
+
             <div  class="col s12 m4 l6 white">
                 </br>
                 <div id="map" ></div>

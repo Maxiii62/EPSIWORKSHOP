@@ -65,6 +65,7 @@
                             <th>Place(s) restantes</th>
                             <th>Position initiale</th>
                             <th></th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody id="lesRdv">
