@@ -91,7 +91,6 @@ body
 .map_no_div{
     margin-top: 1%;
     margin-right: 15%;
-    
 }
 
 .card_rest{
@@ -101,4 +100,17 @@ body
 
 .page-footer{
     padding-top: 20%;
+}
+
+.panel{
+    background-color: white;
+}
+
+.carte{
+    height: 15%;
+}
+
+#photoMagasin{
+    height: 44%;
+    width: 100%;
 }
