@@ -20,41 +20,44 @@
             <label for="changetype-geocode" style="color:white;">Transport en commun</label>
         </div>
         <div id="div_map" class="row ">
-            <div  class="col s3 push-s9 black white-text">
-                <h3>Itinéraire</h3>
-                <div id="right-panel" ></div>
+            <div class="col s12 m4 l3 row white">
+                <div class="row">
+                    <p> Le lieu </p>
+                    <select class="browser-default select" id="selectLesLieux"></select>
+                    <select class="browser-default select" id="horaireRDV">
+                        <option value="" disabled selected>Horaire souhaité</option>
+                        <option value="11h30">11h30</option>
+                        <option value="11h45">11h45</option>
+                        <option value="12h00">12h00</option>
+                        <option value="12h15">12h15</option>
+                        <option value="12h30">12h30</option>
+                        <option value="12h45">12h45</option>
+                        <option value="13h00">13h00</option>
+                        <option value="13h15">13h15</option>
+                        <option value="13h30">13h30</option>
+                        <option value="13h45">13h45</option>
+                        <option value="14h00">14h00</option>
+                    </select>
+                    <input id="dateRDV" type="date" class="datepicker">
+                    <button class="btn waves-effect waves-light blue" id="searchRdv" type="button" name="goto">Rechercher
+                        <i class="material-icons right">search</i>
+                    </button>
+                </div>
             </div>
-            <div  class="col s9 pull-s3 white">
-                <h3>Carte</h3>
+            <div  class="col s12 m4 l6 white">
+                </br>
                 <div id="map" ></div>
             </div>
-        </div>
 
-        <div class=" row card">
-            <div class="row">
-                <p> Le lieu </p>
-                <select class="browser-default select" id="selectLesLieux"></select>
-                <select class="browser-default select" id="horaireRDV">
-									<option value="" disabled selected>Horaire souhaité</option>
-									<option value="11h30">11h30</option>
-									<option value="11h45">11h45</option>
-									<option value="12h00">12h00</option>
-									<option value="12h15">12h15</option>
-									<option value="12h30">12h30</option>
-									<option value="12h45">12h45</option>
-									<option value="13h00">13h00</option>
-									<option value="13h15">13h15</option>
-									<option value="13h30">13h30</option>
-									<option value="13h45">13h45</option>
-									<option value="14h00">14h00</option>
-								</select>
-                <input id="dateRDV" type="date" class="datepicker">
-                <button class="btn waves-effect waves-light blue" id="searchRdv" type="button" name="goto">Rechercher
-                    <i class="material-icons right">search</i>
-                </button>
+
+
+            <div  class="col s12 m4 l3 grey">
+                <div id="right-panel" ></div>
             </div>
+            </br>
             <div class="">
-                <table class="" >
+
+                <table class="card" >
                     <thead>
                         <tr>
                             <th>Conducteur</th>

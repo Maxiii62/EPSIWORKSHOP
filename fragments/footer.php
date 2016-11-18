@@ -4,6 +4,7 @@
             <div class="col l6 s12">
                 <h5 class="white-text">EATinéraire</h5>
                 <p class="grey-text text-lighten-4">La solution pour ne jamais manger seul le midi ! et surout toujours savoir ou manger</p>
+                <li><a class="grey-text text-lighten-3" href="../html/mentionslegales.php">Mention legale</a></li>
             </div>
             <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Lien partenaire</h5>

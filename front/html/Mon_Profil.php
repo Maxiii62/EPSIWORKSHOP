@@ -14,7 +14,7 @@
                     <div class="row">
                         <div class="input-field col s12 center">
 
-                            <p class="center login-form-text">Mon Profil</p>
+                            <h3 class="center">Mon profil</h3>
                         </div>
                     </div>
 
